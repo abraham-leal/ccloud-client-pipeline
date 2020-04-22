@@ -30,7 +30,7 @@ pipeline {
    stage('Deploy') {
         steps {
           echo 'Deploying...'
-          sh 'bash client-run-class.sh --producer-props ~/producer.properties --topic myinternaltopic'
+          sh 'sudo bash client-run-class.sh --producer-props ~/secrets/producer.properties --topic myinternaltopic'
         }
    }
   }
