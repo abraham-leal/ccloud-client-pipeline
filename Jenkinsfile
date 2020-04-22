@@ -27,10 +27,18 @@ pipeline {
         }
    }
 
+   stage('Dockerize') {
+           steps {
+             echo 'Dockerizing...'
+             sh 'docker build -t producer'
+           }
+      }
+
+
    stage('Deploy') {
         steps {
           echo 'Deploying...'
-          sh 'bash client-run-class.sh --producer-props ~/secrets/producer.properties --topic myinternaltopic'
+          sh 'docker run -p 8081:8081 producer'
         }
    }
   }
