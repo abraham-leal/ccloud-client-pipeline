@@ -2,21 +2,36 @@ pipeline {
    agent any
 
    stages {
-      stage('Build') {
+      stage('Clean') {
         steps {
-          echo 'Building...'
-          echo "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
+          echo 'Cleaning...'
+          sh 'mvn clean'
         }
    }
    stage('Test') {
      steps {
         echo 'Testing...'
+        sh 'mvn test'
      }
    }
-   stage('Deploy') {
+   stage('Compile') {
      steps {
-       echo 'Deploying...'
+       echo 'Compiling...'
+       sh 'mvn compile'
      }
+   }
+   stage('Assembling') {
+        steps {
+          echo 'Assembling...'
+          sh 'mvn assembly:assembly'
+        }
+   }
+
+   stage('Deploy') {
+        steps {
+          echo 'Deploying...'
+          sh 'bash client-run-class.sh --producer-props ~/producer.properties --topic myinternaltopic'
+        }
    }
   }
 }
