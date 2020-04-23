@@ -30,7 +30,7 @@ pipeline {
    stage('Dockerize') {
            steps {
              echo 'Dockerizing...'
-             sh 'docker build -t producer'
+             sh 'sudo docker build -t producer'
            }
       }
 
@@ -38,7 +38,7 @@ pipeline {
    stage('Deploy') {
         steps {
           echo 'Deploying...'
-          sh 'docker run -p 8081:8081 producer'
+          sh 'sudo docker run -p 8081:8081 producer'
         }
    }
   }
