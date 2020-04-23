@@ -4,4 +4,4 @@ COPY client-run-class.sh /usr/app/
 COPY producer.properties /usr/app/
 WORKDIR /usr/app
 EXPOSE 8081
-ENTRYPOINT ["sh", "client-run-class.sh", "--producer-props producer.properties", "--topic myinternaltopic"]
+ENTRYPOINT ["sh", "client-run-class.sh", "--producer-props", "producer.properties", "--topic", "myinternaltopic"]
