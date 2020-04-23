@@ -38,7 +38,7 @@ pipeline {
    stage('Deploy') {
         steps {
           echo 'Deploying...'
-          sh 'sudo docker run -p 8081:8081 producer'
+          sh 'docker run -p 8081:8081 producer'
         }
    }
   }
