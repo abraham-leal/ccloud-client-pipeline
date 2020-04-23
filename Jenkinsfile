@@ -30,7 +30,7 @@ pipeline {
    stage('Dockerize') {
            steps {
              echo 'Dockerizing...'
-             sh 'sudo docker build -t producer'
+             sh 'docker build -t producer'
            }
       }
 
