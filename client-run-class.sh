@@ -22,4 +22,4 @@ if [ -z "$KAFKA_JVM_PERFORMANCE_OPTS" ]; then
 fi
 
 # Launch mode
-exec java $KAFKA_HEAP_OPTS $KAFKA_JVM_PERFORMANCE_OPTS $KAFKA_JMX_OPTS -jar target/ccloud-client-pipeline-1.0-SNAPSHOT-jar-with-dependencies.jar  "$@"
+exec java $KAFKA_HEAP_OPTS $KAFKA_JVM_PERFORMANCE_OPTS $KAFKA_JMX_OPTS -jar ccloud-client-pipeline-1.0-SNAPSHOT-jar-with-dependencies.jar  "$@"
