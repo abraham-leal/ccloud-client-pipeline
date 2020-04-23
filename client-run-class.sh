@@ -1,4 +1,5 @@
 #!/bin/bash
+# Not currently used, for use later in Continuous Deployment
 
 CLASSPATH="target/*.jar"
 

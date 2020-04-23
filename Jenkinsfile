@@ -20,27 +20,4 @@ pipeline {
        sh 'mvn compile'
      }
    }
-   stage('Assembling') {
-        steps {
-          echo 'Assembling...'
-          sh 'mvn assembly:assembly'
-        }
-   }
-
-   stage('Dockerize') {
-           steps {
-             echo 'Dockerizing...'
-             sh 'bash docker build -t producer .'
-
-           }
-      }
-
-
-   stage('Deploy') {
-        steps {
-          echo 'Deploying...'
-          sh 'docker run -d -p 8081:8081 producer'
-        }
-   }
-  }
 }
