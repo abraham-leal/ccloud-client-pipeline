@@ -31,6 +31,7 @@ pipeline {
            steps {
              echo 'Dockerizing...'
              sh 'ls -l'
+             sh 'pwd'
              sh 'bash docker build -t producer .'
 
            }
