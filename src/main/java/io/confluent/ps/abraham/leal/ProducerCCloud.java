@@ -10,6 +10,9 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.apache.log4j.BasicConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import java.io.IOException;
@@ -18,8 +21,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static java.util.logging.Level.INFO;
 import static net.sourceforge.argparse4j.impl.Arguments.store;
@@ -44,7 +45,7 @@ schema.registry.basic.auth.user.info=<APIKEYSR>:<APISECRETSR>
 public class ProducerCCloud {
 
     public static  Random getNum = new Random();
-    public static Logger log = Logger.getGlobal();
+    public static Logger log = LoggerFactory.getLogger(ProducerCCloud.class);
 
     // Command Line Argument Parser
     private static ArgumentParser argParser() {
@@ -98,8 +99,9 @@ public class ProducerCCloud {
 
     @SuppressWarnings("InfiniteLoopStatement")
     public static void main(final String[] args) throws IOException, ArgumentParserException {
+
         // Set INFO level logging
-        log.setLevel(INFO);
+        BasicConfigurator.configure();
 
         ArgumentParser parser = argParser();
         KafkaProducer<String, ExtraInfo> producer = null;
@@ -124,11 +126,12 @@ public class ProducerCCloud {
 
             //Production Loop
             produce(producer, topic, getID(), getName(), getFood(), getPC());
+            log.info("Successfully produced messages");
 
         }
         // Error Handling
         catch (org.apache.kafka.common.errors.RetriableException e){
-            log.log(Level.WARNING,"The producer retried sending a batch of messages, but was unable to," +
+            log.info("The producer retried sending a batch of messages, but was unable to," +
                     " upping retires, then restarting");
             Properties props = loadProps(parser.parseArgs(args).getString("producerConfigFile"));
             props.put(ProducerConfig.BATCH_SIZE_CONFIG,String.valueOf(Integer.getInteger(getConfig(props).getProperty("retries"))+5));
@@ -137,23 +140,23 @@ public class ProducerCCloud {
 
         }
         catch (ArgumentParserException a){
-            log.log(Level.WARNING,"Producer could not initialize.");
-            log.log(Level.WARNING,"Error parsing given attributes, make sure you are passing a valid file to " +
+            log.info("Producer could not initialize.");
+            log.info("Error parsing given attributes, make sure you are passing a valid file to " +
                     "--producer-props and a non-special topic name to --topic \"[a-zA-Z0-9\\\\._\\\\-]\"");
             a.printStackTrace();
         }
         catch(OutOfMemoryError m){
             if (producer != null){
-                log.log(Level.WARNING,"Producer has exited with an out of memory error, most likely because " +
+                log.info("Producer has exited with an out of memory error, most likely because " +
                         "the internal aggregator has filled up faster than it can send messages to kafka.");
-                log.log(Level.WARNING,"Flushing Aggregator to Broker...");
+                log.info("Flushing Aggregator to Broker...");
                 producer.flush();
-                log.log(Level.WARNING,"Flushed pending messages, try restarting the producer with a larger heap to handle all the production of messages.");
+                log.info("Flushed pending messages, try restarting the producer with a larger heap to handle all the production of messages.");
                 //Shutdown hook to assure producer close
                 Runtime.getRuntime().addShutdownHook(new Thread(producer::close));
             }
             else{
-                log.log(Level.WARNING,"Producer could not initialize. Trying giving the producer a larger heap.");
+                log.info("Producer could not initialize. Trying giving the producer a larger heap.");
             }
         }
 
@@ -164,7 +167,6 @@ public class ProducerCCloud {
             final ExtraInfo recordValue = new ExtraInfo(Id, name, food, pc);
             final ProducerRecord<String, ExtraInfo> record = new ProducerRecord<String, ExtraInfo>(topic, null, recordValue);
             producer.send(record);
-            log.info("Successfully produced a batch of messages");
         }
     }
 
