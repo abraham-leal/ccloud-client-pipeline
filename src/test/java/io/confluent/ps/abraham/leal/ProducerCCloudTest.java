@@ -5,14 +5,21 @@ import com.salesforce.kafka.test.junit4.SharedKafkaTestResource;
 import io.confluent.kafka.schemaregistry.avro.AvroSchema;
 import io.confluent.kafka.schemaregistry.client.SchemaRegistryClient;
 import io.confluent.kafka.schemaregistry.testutil.MockSchemaRegistry;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.serialization.StringSerializer;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
 
-import com.salesforce.kafka.test.KafkaBroker;
 import com.salesforce.kafka.test.KafkaTestUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
+import java.util.Properties;
+import java.util.concurrent.ExecutionException;
 
 import io.confluent.kafka.schemaregistry.CompatibilityChecker;
 
@@ -33,7 +40,52 @@ public class ProducerCCloudTest {
 
 
     @Test
-    public void mainTest() {
+    public void producingTest() {
+        // Test correct generation of avro record and production
+
+        KafkaProducer<String, ExtraInfo> testingProducer = new KafkaProducer<String, ExtraInfo>(producerProps());
+        ProducerCCloud.produce(testingProducer, "testingTopic",1, "A","L",9);
+
+        assertEquals(1,kafkaUtils.consumeAllRecordsFromTopic("testingTopic").size());
+    }
+
+    @Test
+    public void DLQTest() throws ExecutionException, InterruptedException {
+
+        ProducerRecord<String,ExtraInfo> toDLQRecord =
+                new ProducerRecord<String, ExtraInfo>("dlq-testingTopic", null,
+                        new ExtraInfo(1,"A","L",9));
+        ProducerCCloud.sendToDLQ(toDLQRecord,"dlq-testingTopic",producerProps());
+
+        assertEquals(1,kafkaUtils.consumeAllRecordsFromTopic("dlq-testingTopic").size());
+    }
+
+    @Test
+    public void writeToFileTest() throws IOException {
+
+        ProducerRecord<String,ExtraInfo> writeTestRecord =
+                new ProducerRecord<String, ExtraInfo>("dlq-testingTopic", null,
+                        new ExtraInfo(1,"A","L",9));
+
+        ProducerCCloud.writeToFile(writeTestRecord);
+
+        File testingFile = new File ("ProducerLog.log");
+        assertTrue("The file was successfully created",testingFile.exists());
+
+        assertTrue("The file ws successfully deleted",testingFile.delete());
+    }
+
+    @Test
+    public void triggerDLQTest() {
+        assertEquals(1,1);
+    }
+    @Test
+    public void triggerWriteToFileTest() {
+        assertEquals(1,1);
+    }
+
+    @Test
+    public void getConfigTest(){
         assertEquals(1,1);
     }
 
@@ -63,9 +115,15 @@ public class ProducerCCloudTest {
 
     }
 
-    @Test
-    public void getConfigTest(){
-        assertEquals(1,1);
+    private Properties producerProps (){
+        Properties myProps = new Properties();
+
+        myProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, sharedKafkaTestResource.getKafkaConnectString());
+        myProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class);
+        myProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,io.confluent.kafka.serializers.KafkaAvroSerializer.class);
+        myProps.put(ProducerConfig.CLIENT_ID_CONFIG, "testingProducer");
+        myProps.put("schema.registry.url","mock://mySR");
+        return myProps;
     }
 
 }
