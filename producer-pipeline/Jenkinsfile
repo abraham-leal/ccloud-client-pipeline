@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Cleaning...'
                 sh 'cd producer-pipeline'
+                sh 'ls'
                 sh 'mvn clean'
             }
         }
