@@ -2,11 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage ('Change working directory...'){
+            steps{
+                dir('producer-pipeline'){
+                    sh 'pwd'
+                }
+            }
+        }
         stage('Clean') {
             steps {
                 echo 'Cleaning...'
-                sh 'ls'
-                sh 'cd producer-pipeline/'
                 sh 'ls'
                 sh 'mvn clean'
             }
@@ -23,5 +28,12 @@ pipeline {
                 sh 'mvn compile'
             }
         }
+        stage('Final Clean') {
+                    steps {
+                        echo 'Cleaning...'
+                        sh 'ls'
+                        sh 'mvn clean'
+                    }
+                }
     }
 }
