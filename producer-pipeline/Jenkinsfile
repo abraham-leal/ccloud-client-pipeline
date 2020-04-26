@@ -2,38 +2,40 @@ pipeline {
     agent any
 
     stages {
-        stage ('Change working directory...'){
-            steps{
-                dir('producer-pipeline'){
-                    sh 'pwd'
-                }
-            }
-        }
         stage('Clean') {
             steps {
-                echo 'Cleaning...'
-                sh 'ls'
-                sh 'mvn clean'
+                dir('producer-pipeline'){
+                    echo 'Cleaning...'
+                    sh 'ls'
+                    sh 'mvn clean'
+                }
+
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
-                sh 'mvn test'
+                dir('producer-pipeline'){
+                    echo 'Testing...'
+                    sh 'mvn test'
+                }
             }
         }
         stage('Compile') {
             steps {
-                echo 'Compiling...'
-                sh 'mvn compile'
+                dir('producer-pipeline'){
+                    echo 'Compiling...'
+                    sh 'mvn compile'
+                }
             }
         }
         stage('Final Clean') {
-                    steps {
-                        echo 'Cleaning...'
-                        sh 'ls'
-                        sh 'mvn clean'
-                    }
+            steps {
+                dir('producer-pipeline'){
+                    echo 'Cleaning...'
+                    sh 'mvn clean'
+                    sh 'ls'
                 }
+            }
+        }
     }
 }
