@@ -28,7 +28,8 @@ import static org.junit.Assert.*;
 public class ProducerTest {
 
     @ClassRule
-    public static SharedKafkaTestResource sharedKafkaTestResource = new SharedKafkaTestResource();
+    public static SharedKafkaTestResource sharedKafkaTestResource = new SharedKafkaTestResource()
+            .withBrokerProperty("auto.create.topics.enable","false");
     public static SchemaRegistryClient schemaR = MockSchemaRegistry.getClientForScope("mySR");
     public static KafkaTestUtils kafkaUtils = null;
 
@@ -36,11 +37,12 @@ public class ProducerTest {
     public void setUp(){
         kafkaUtils = sharedKafkaTestResource.getKafkaTestUtils();
         kafkaUtils.createTopic("testingTopic", 1, (short) 1);
+        kafkaUtils.createTopic("dlq-testingTopic", 1, (short) 1);
     }
 
 
     @Test
-    public void producingTest() {
+    public void producingTest() throws IOException {
         // Test correct generation of avro record and production
 
         KafkaProducer<String, ExtraInfo> testingProducer = new KafkaProducer<String, ExtraInfo>(producerProps());
@@ -63,29 +65,44 @@ public class ProducerTest {
     @Test
     public void writeToFileTest() throws IOException {
 
+        String filename = "ProducerLog";
         ProducerRecord<String,ExtraInfo> writeTestRecord =
                 new ProducerRecord<String, ExtraInfo>("dlq-testingTopic", null,
                         new ExtraInfo(1,"A","L",9));
 
-        Producer.writeToFile(writeTestRecord);
+        Producer.writeToFile(writeTestRecord,filename);
 
-        File testingFile = new File ("ProducerLog.log");
+        File testingFile = new File (filename+".log");
         assertTrue("The file was successfully created",testingFile.exists());
 
-        assertTrue("The file ws successfully deleted",testingFile.delete());
+        assertTrue("The file was successfully deleted",testingFile.delete());
     }
 
+    /*
     @Test
-    public void triggerDLQTest() {
-        assertEquals(1,1);
+    public void triggerDLQTest() throws IOException {
+        // Unclear whether a DLQ is needed for the producer at this moment.
+        // Test correct failover to DLQ Topic
+
+        KafkaProducer<String, ExtraInfo> testingProducer = new KafkaProducer<String, ExtraInfo>(producerProps());
+
+        // Topic "testingDLQ" was never created, and we've disabled auto-topic-creation
+        // we expect to failover to "dlq-testingDLQ"
+        Producer.produce(testingProducer, "testingDLQ",1, "A","L",9);
+
+        // Confirm "dlq-testingDLQ" has the record we sent
+        assertEquals(1,kafkaUtils.consumeAllRecordsFromTopic("dlq-testingDLQ").size());
     }
+*/
     @Test
     public void triggerWriteToFileTest() {
+
         assertEquals(1,1);
     }
 
     @Test
     public void getConfigTest(){
+
         assertEquals(1,1);
     }
 
@@ -122,6 +139,7 @@ public class ProducerTest {
         myProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class);
         myProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,io.confluent.kafka.serializers.KafkaAvroSerializer.class);
         myProps.put(ProducerConfig.CLIENT_ID_CONFIG, "testingProducer");
+        myProps.put(ProducerConfig.RETRIES_CONFIG,"5");
         myProps.put("schema.registry.url","mock://mySR");
         return myProps;
     }

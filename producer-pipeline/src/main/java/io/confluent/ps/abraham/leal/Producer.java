@@ -7,6 +7,7 @@ import net.sourceforge.argparse4j.inf.Namespace;
 
 import AvroSchema.ExtraInfo;
 import org.apache.kafka.clients.producer.*;
+import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
@@ -166,37 +167,43 @@ public class Producer {
     // Production method
     // It is important to decouple production from the main method in order to be able to unit test properly
     // Much of the error handling is happening here
-    public static void produce (KafkaProducer<String,ExtraInfo> producer, String topic, int Id, String name, String food, int pc){
+    public static void produce (KafkaProducer<String,ExtraInfo> producer, String topic, int Id, String name, String food, int pc) throws IOException {
         final ExtraInfo recordValue = new ExtraInfo(Id, name, food, pc);
         final ProducerRecord<String, ExtraInfo> record = new ProducerRecord<String, ExtraInfo>(topic, null, recordValue);
-        producer.send(record, (recordMetadata, exception) -> {
-            if (exception != null){
-                if (exception instanceof RetriableException){ // We've received a retriable exception to trying to send
-                    // a record. Due to this, we will try to handle the record in two ways:
-                    // 1. Send to a DLQ topic where it may be available and be retried again
-                    // 2. Flush to disk for later pick up by a scraper
-                    // A third option may be to send the record upstream, but since we generate our records locally,
-                    // this isn't really an option
-                    log.warn("Production has failed after the set amount of retries. Sending to DLQ...");
-                    try {
-                        if (!sendToDLQ(record, "dlq-" + topic, securityConfiguration)) { // Send to DLQ topic, else write to local file
-                            log.warn("DLQ is unreachable, flushing to disk at in local directory");
-                            writeToFile(record);
+        try{
+            producer.send(record, (recordMetadata, exception) -> {
+                if (exception != null) {
+                    if (exception instanceof RetriableException) {
+                        // We've received a retriable exception to trying to send
+                        // a record. Due to this, we will try to handle the record in two ways:
+                        // 1. Send to a DLQ topic where it may be available and be retried again
+                        // 2. Flush to disk for later pick up by a scraper
+                        // A third option may be to send the record upstream, but since we generate our records locally,
+                        // this isn't really an option
+                        log.warn("Production has failed after the set amount of retries. Sending to DLQ...");
+                        try {
+                            if (!sendToDLQ(record, "dlq-" + topic, securityConfiguration)) { // Send to DLQ topic, else write to local file
+                                log.warn("DLQ is unreachable, flushing to disk in local directory");
+                                writeToFile(record, "ProducerRetriableError");
+                            }
+                        } catch (ExecutionException | InterruptedException e) { // Handle not being able to produce to DLQ synchronously
+                            log.warn("Producer was interrupted while sending to DLQ. Aborting.");
+                            e.printStackTrace();
+                        } catch (IOException i) { //Handle not being able to write to file in local directory
+                            log.warn("Could not write to file in local path to handle undelivered record. Aborting.");
+                            i.printStackTrace();
                         }
-                    } catch (ExecutionException | InterruptedException e) { // Handle not being able to produce to DLQ synchronously
-                        log.warn("Producer was interrupting while sending to DLQ. Aborting.");
-                        e.printStackTrace();
-                    }catch (IOException i){ //Handle not being able to write to file in local directory
-                        log.warn("Could not write to file in local path to handle undelivered record. Aborting.");
-                        i.printStackTrace();
-                    }
 
-                } else { //Handle Unretriable Exceptions
-                    log.warn("Production to topic " + recordMetadata.topic() + "Has failed unrecoverably. Ending Producer.");
-                    exception.printStackTrace();
-                }
+                    } else { // Handle Unretriable Exceptions
+                        log.warn("Production to topic " + recordMetadata.topic() + "Has failed unrecoverably. Ending Producer.");
+                        exception.printStackTrace();
+                    }
+                }});
+        }catch (SerializationException s){
+            log.warn("Message could not be properly serialized. Flushing to disk for later retrieval in local" +
+                    "directory='ProducerLog.log' ");
+            writeToFile(record, "ProducerBadSerialization");
         }
-        });
     }
 
     public static boolean sendToDLQ (ProducerRecord<String,ExtraInfo> failedRecord, String dlqTopic, Properties securityConfiguration) throws ExecutionException, InterruptedException {
@@ -228,14 +235,14 @@ public class Producer {
         }
     }
 
-    public static void writeToFile (ProducerRecord<String,ExtraInfo> recordToWrite) throws IOException {
+    public static void writeToFile (ProducerRecord<String,ExtraInfo> recordToWrite, String filename) throws IOException {
         // This method appends unsent records to a file in the local directory
-        File unsentLog = new File("ProducerLog.log");
+        File unsentLog = new File(filename +".log");
         if (unsentLog.exists()) {
-            Files.write(Paths.get("ProducerLog.log"), recordToWrite.toString().getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(filename+".log"), recordToWrite.toString().getBytes(), StandardOpenOption.APPEND);
         }else{
             unsentLog.createNewFile();
-            Files.write(Paths.get("ProducerLog.log"), recordToWrite.toString().getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(filename+".log"), recordToWrite.toString().getBytes(), StandardOpenOption.APPEND);
         }
     }
 
