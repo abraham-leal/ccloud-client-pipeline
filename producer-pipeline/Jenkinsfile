@@ -5,6 +5,7 @@ pipeline {
         stage('Clean') {
             steps {
                 echo 'Cleaning...'
+                sh 'cd producer-pipeline'
                 sh 'mvn clean'
             }
         }
