@@ -1,2 +1,2 @@
-# ccloud-client-pipeline
-CI/CD Pipeline example with Jenkins for versioning, testing, and deploying Kafka Clients
+# kclient-pipeline
+CI Pipeline example with Jenkins for versioning, testing, and compiling Kafka Clients
