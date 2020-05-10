@@ -1,0 +1,15 @@
+{
+ "namespace": "events",
+ "type": "record",
+ "name": "customerInformation",
+ "fields": [
+    {"name":"name", "type" : "string"},
+    {"name":"lastName", "type" : "string"},
+    {"name":"address", "type" : "string"},
+    {"name":"orders", "type" : {
+        "type" : "array",
+        "items" : "string"
+        }
+    }
+   ]
+}

@@ -25,7 +25,7 @@ import io.confluent.kafka.schemaregistry.CompatibilityChecker;
 
 import static org.junit.Assert.*;
 
-public class ProducerTest {
+public class registrationEventTest {
 
     @ClassRule
     public static SharedKafkaTestResource sharedKafkaTestResource = new SharedKafkaTestResource()
@@ -46,7 +46,7 @@ public class ProducerTest {
         // Test correct generation of avro record and production
 
         KafkaProducer<String, ExtraInfo> testingProducer = new KafkaProducer<String, ExtraInfo>(producerProps());
-        Producer.produce(testingProducer, "testingTopic",1, "A","L",9);
+        registrationEvent.produce(testingProducer, "testingTopic",1, "A","L",9);
 
         assertEquals(1,kafkaUtils.consumeAllRecordsFromTopic("testingTopic").size());
     }
@@ -57,7 +57,7 @@ public class ProducerTest {
         ProducerRecord<String,ExtraInfo> toDLQRecord =
                 new ProducerRecord<String, ExtraInfo>("dlq-testingTopic", null,
                         new ExtraInfo(1,"A","L",9));
-        Producer.sendToDLQ(toDLQRecord,"dlq-testingTopic",producerProps());
+        registrationEvent.sendToDLQ(toDLQRecord,"dlq-testingTopic",producerProps());
 
         assertEquals(1,kafkaUtils.consumeAllRecordsFromTopic("dlq-testingTopic").size());
     }
@@ -70,7 +70,7 @@ public class ProducerTest {
                 new ProducerRecord<String, ExtraInfo>("dlq-testingTopic", null,
                         new ExtraInfo(1,"A","L",9));
 
-        Producer.writeToFile(writeTestRecord,filename);
+        registrationEvent.writeToFile(writeTestRecord,filename);
 
         File testingFile = new File (filename+".log");
         assertTrue("The file was successfully created",testingFile.exists());
