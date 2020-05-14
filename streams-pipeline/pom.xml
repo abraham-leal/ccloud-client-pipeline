@@ -27,20 +27,38 @@
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
-            <version>2.4.0</version>
+            <version>2.5.0</version>
         </dependency>
 
         <dependency>
             <groupId>io.confluent</groupId>
-            <artifactId>kafka-avro-serializer</artifactId>
-            <version>5.4.1</version>
+            <artifactId>kafka-streams-json-schema-serde</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-json-schema-serializer</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-schema-registry-client</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-streams</artifactId>
+            <version>2.5.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-streams-test-utils</artifactId>
-            <version>2.4.0</version>
+            <version>2.5.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -94,11 +112,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-streams</artifactId>
-            <version>2.4.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
             <version>9.4.26.v20200117</version>
@@ -115,13 +128,35 @@
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+        </dependency>
 
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                <version>0.4.34</version>
+                <configuration>
+                    <sourceDirectory>${basedir}/src/main/resources/</sourceDirectory>
+                    <targetPackage>io.confluent.gen</targetPackage>
+                    <useCommonsLang3>true</useCommonsLang3>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -143,10 +178,12 @@
                             <goal>schema</goal>
                         </goals>
                         <configuration>
-                            <sourceDirectory>${project.basedir}/src/main/resources/</sourceDirectory>
+                            <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
                             <includes>
-                                <include>order.avsc</include>
-                                <include>PII.avsc</include>
+                                <include>pres.avsc</include>
+                                <include>rx.avsc</include>
+                                <include>rxt.avsc</include>
+                                <include>serving.avsc</include>
                             </includes>
                             <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
                         </configuration>

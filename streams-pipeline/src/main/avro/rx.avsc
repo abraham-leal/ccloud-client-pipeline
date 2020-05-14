@@ -1,0 +1,24 @@
+{
+ "namespace": "io.confluent.ps",
+ "type": "record",
+ "name": "Tbf0Rx",
+ "fields": [
+    {"name":"RXNBR", "type" : "int"},
+    {"name":"PATID", "type" : "int"},
+    {"name":"PARTIALFILLCD", "type" : "boolean"},
+    {"name":"STORENBR", "type" : "int"},
+    {"name":"FILLDAYSSUPPLY", "type" : "int"},
+    {"name":"FILLNBRPRESCRIBED", "type" : "int"},
+    {"name":"FILLNBRDISPENSED", "type" : "int"},
+    {"name":"PARTIALFILINTNDEDQTY", "type" : "string"},
+    {"name":"RXORIGINALQTY", "type" : "int"},
+    {"name":"FILLENTEREDDTTM", "type" : "string"},
+    {"name":"RXREFILLSBYDTTM", "type" : "string"},
+    {"name":"RXSIG", "type" : "string"},
+    {"name":"PBRLASTNAME", "type" : "string"},
+    {"name":"PBRID", "type" : "int"},
+    {"name":"DRUGNONSYSTEMCD", "type" : "string"},
+    {"name":"RX90DAYPREFIND", "type" : "string"},
+    {"name":"FILLAUTOIND", "type" : "string"}
+   ]
+}

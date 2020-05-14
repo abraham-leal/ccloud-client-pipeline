@@ -1,0 +1,10 @@
+{
+ "namespace": "io.confluent.ps",
+ "type": "record",
+ "name": "Tbf0Prescriber",
+ "fields": [
+    { "name" : "PBRPHONEAREACD", "type" :"string"},
+    { "name" : "PBRPHONE", "type" :"string"},
+    { "name" : "PBRID", "type" :"int"}
+   ]
+}

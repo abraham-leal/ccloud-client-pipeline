@@ -1,0 +1,11 @@
+{
+ "namespace": "io.confluent.ps",
+ "type": "record",
+ "name": "Tbf0RxTransaction",
+ "fields": [
+    { "name" : "PARTIALFILINTNDEDQTY", "type" : "int"},
+    { "name" : "FILLQTYDISPENSED", "type" : "int"},
+    { "name" : "RXNBR", "type" : "int"},
+    { "name" : "STORENBR", "type" : "int"}
+   ]
+}

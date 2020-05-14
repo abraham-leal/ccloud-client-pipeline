@@ -1,0 +1,31 @@
+{
+ "namespace": "io.confluent.ps",
+ "type": "record",
+ "name": "ServingRecord",
+ "fields": [
+    { "name" : "PatId", "type" : "string"},
+    { "name" : "RxNumber", "type" : "string"},
+    { "name" : "StoreNumber", "type" : "int"},
+    { "name" : "DaysSupply", "type" : "int"},
+    { "name" : "PrescribedFillCount", "type" : "int"},
+    { "name" : "DispensedFillCount", "type" : "int"},
+    { "name" : "LastFillPartialFlag", "type" : "boolean"},
+    { "name" : "RemainingFillCount", "type" : "int"},
+    { "name" : "Quantity", "type" : "int"},
+    { "name" : "PartialFilledQuanity", "type" : "int"},
+    { "name" : "FillQuantityDispensed", "type" : "string"},
+    { "name" : "LastFillDate", "type" : "string"},
+    { "name" : "NextFillDate", "type" : "string"},
+    { "name" : "RxSig", "type" : "string"},
+    { "name" : "PrescriberPhone", "type" : "string"},
+    { "name" : "PrescriberName", "type" : "string"},
+    { "name" : "PrescriberId", "type" : "string"},
+    { "name" : "NonSystemCompoundInd", "type" : "string"},
+    { "name" : "Refillable", "type" : "boolean"},
+    { "name" : "HideRx", "type" : "string"},
+    { "name" : "NinetyFillFlag", "type" : "string"},
+    { "name" : "NinetyDayPrefInd", "type" : "string"},
+    { "name" : "AutoRefillInd", "type" : "string"},
+    { "name" : "AutoRefillPrefInd", "type" : "string"}
+   ]
+}
