@@ -1,0 +1,761 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Prescriber schema for MongoDB replication",
+    "description": "The prescriber schema comprises the entire JSON document.",
+    "default": {},
+    "required": [
+        "PBR_ID",
+        "PBR_LOC_ID",
+        "PBR_STATUS_CD",
+        "PBR_DEA_NBR",
+        "PBR_DEA_SUF",
+        "PBR_SPIN_NBR",
+        "PBR_LAST_NAME",
+        "PBR_FIRST_NAME",
+        "PBR_MID_INIT",
+        "PBR_SURNAME_SUFFIX",
+        "PBR_NAME_SOUNDEX",
+        "PBR_PHONE_AREA_CD",
+        "PBR_PHONE",
+        "PBR_FAX_AREA_CD",
+        "PBR_FAX",
+        "PBR_ADDR",
+        "PBR_CITY",
+        "PBR_STATE",
+        "PBR_ZIP",
+        "PBR_TYPE_CD",
+        "PBR_SPECIALTY_CD",
+        "PBR_TAX_ID",
+        "PBR_CMTS",
+        "PBR_LAST_ACTIVE_DTTM",
+        "PBR_HLTHCARE_REFORM_NBR",
+        "QUARTER1_IND",
+        "QUARTER2_IND",
+        "QUARTER3_IND",
+        "QUARTER4_IND",
+        "PBR_PRESCRIBE_IND",
+        "PBR_HUB_NBR",
+        "PBR_CLINIC_SITE",
+        "CREATE_USER_ID",
+        "CREATE_DTTM",
+        "UPDATE_USER_ID",
+        "UPDATE_DTTM",
+        "PBR_CLINIC_ID",
+        "PBR_COMPANY_CD",
+        "PBR_PHONE_CMTS",
+        "PBR_CHANGE_REQ_IND",
+        "PBR_SOURCE_IND",
+        "NDC_PBR_ID",
+        "PBR_PROVIDER_STATUS",
+        "PBR_PROF_STATUS",
+        "PBR_SEX_CD",
+        "PBR_BIRTH_DTTM",
+        "PBR_MIDDLE_NAME",
+        "PBR_ADDR2",
+        "PBR_DEA_EXPIRE_DTTM",
+        "PBR_UPIN",
+        "PBR_LICENSE_STATE",
+        "PBR_STATE_LICENSE_NBR",
+        "NDC_PBR_LOC_ID",
+        "PBR_APP_CD",
+        "PBR_NPI",
+        "PBR_GROUP_ID",
+        "PBR_LOC_GROUP_ID",
+        "REPL_BY_PBR_ID",
+        "REPL_BY_PBR_LOC_ID",
+        "PBR_LOC_NAME",
+        "PBR_PECOS_IND",
+        "PBR_DEATH_DTTM",
+        "PBR_STATE_CTRL_NBR",
+        "PBR_REFILL_AREA_CD",
+        "PBR_REFILL_PHONE",
+        "PBR_FOREIGN_LICENSE",
+        "PBR_STORE_NPI_IND",
+        "OW_UPDATE_TSTMP"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "PBR_ID": {
+            "$id": "#/properties/PBR_ID",
+            "type": "integer",
+            "title": "The PBR_ID schema",
+            "description": "Prescriber ID.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PBR_LOC_ID": {
+            "$id": "#/properties/PBR_LOC_ID",
+            "type": "integer",
+            "title": "The PBR_LOC_ID schema",
+            "description": "System generated number that uniquely identifies a location for a prescriber",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PBR_STATUS_CD": {
+            "$id": "#/properties/PBR_STATUS_CD",
+            "type": "string",
+            "title": "The PBR_STATUS_CD schema",
+            "description": "Prescriber status code.(O = Open, S = Store Closed, C = Centrally Closed, P = Pending).",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_DEA_NBR": {
+            "$id": "#/properties/PBR_DEA_NBR",
+            "type": "string",
+            "title": "The PBR_DEA_NBR schema",
+            "description": "Prescriber DEA number - required for control drugs.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_DEA_SUF": {
+            "$id": "#/properties/PBR_DEA_SUF",
+            "type": "string",
+            "title": "The PBR_DEA_SUF schema",
+            "description": "Prescriber DEA suffix.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_SPIN_NBR": {
+            "$id": "#/properties/PBR_SPIN_NBR",
+            "type": "string",
+            "title": "The PBR_SPIN_NBR schema",
+            "description": "Prescriber SPIN Number.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_LAST_NAME": {
+            "$id": "#/properties/PBR_LAST_NAME",
+            "type": "string",
+            "title": "The PBR_LAST_NAME schema",
+            "description": "Prescriber last name.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_FIRST_NAME": {
+            "$id": "#/properties/PBR_FIRST_NAME",
+            "type": "string",
+            "title": "The PBR_FIRST_NAME schema",
+            "description": "Prescriber first name -- not functionally required.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_MID_INIT": {
+            "$id": "#/properties/PBR_MID_INIT",
+            "type": "string",
+            "title": "The PBR_MID_INIT schema",
+            "description": "Prescriber middle initial.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_SURNAME_SUFFIX": {
+            "$id": "#/properties/PBR_SURNAME_SUFFIX",
+            "type": "string",
+            "title": "The PBR_SURNAME_SUFFIX schema",
+            "description": "Prescriber surname (i.e. Jr., III. etc).",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_NAME_SOUNDEX": {
+            "$id": "#/properties/PBR_NAME_SOUNDEX",
+            "type": "string",
+            "title": "The PBR_NAME_SOUNDEX schema",
+            "description": "Prescriber name soundex.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_PHONE_AREA_CD": {
+            "$id": "#/properties/PBR_PHONE_AREA_CD",
+            "type": "string",
+            "title": "The PBR_PHONE_AREA_CD schema",
+            "description": "Area code of prescriber.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_PHONE": {
+            "$id": "#/properties/PBR_PHONE",
+            "type": "string",
+            "title": "The PBR_PHONE schema",
+            "description": "Phone number of the prescriber.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_FAX_AREA_CD": {
+            "$id": "#/properties/PBR_FAX_AREA_CD",
+            "type": "string",
+            "title": "The PBR_FAX_AREA_CD schema",
+            "description": "Area code of prescriber fax number.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_FAX": {
+            "$id": "#/properties/PBR_FAX",
+            "type": "string",
+            "title": "The PBR_FAX schema",
+            "description": "Prescriber fax number.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_ADDR": {
+            "$id": "#/properties/PBR_ADDR",
+            "type": "string",
+            "title": "The PBR_ADDR schema",
+            "description": "Address of the prescriber.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_CITY": {
+            "$id": "#/properties/PBR_CITY",
+            "type": "string",
+            "title": "The PBR_CITY schema",
+            "description": "City where the prescriber is located.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_STATE": {
+            "$id": "#/properties/PBR_STATE",
+            "type": "string",
+            "title": "The PBR_STATE schema",
+            "description": "State where the prescriber is located.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_ZIP": {
+            "$id": "#/properties/PBR_ZIP",
+            "type": "string",
+            "title": "The PBR_ZIP schema",
+            "description": "Zip code of the prescriber.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_TYPE_CD": {
+            "$id": "#/properties/PBR_TYPE_CD",
+            "type": "string",
+            "title": "The PBR_TYPE_CD schema",
+            "description": "Prescriber type code (MD, DDS, NP, etc.).",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_SPECIALTY_CD": {
+            "$id": "#/properties/PBR_SPECIALTY_CD",
+            "type": "string",
+            "title": "The PBR_SPECIALTY_CD schema",
+            "description": "Prescriber specialty code.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_TAX_ID": {
+            "$id": "#/properties/PBR_TAX_ID",
+            "type": "string",
+            "title": "The PBR_TAX_ID schema",
+            "description": "Prescriber tax id.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_CMTS": {
+            "$id": "#/properties/PBR_CMTS",
+            "type": "string",
+            "title": "The PBR_CMTS schema",
+            "description": "Prescriber general comments.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_LAST_ACTIVE_DTTM": {
+            "$id": "#/properties/PBR_LAST_ACTIVE_DTTM",
+            "type": "string",
+            "title": "The PBR_LAST_ACTIVE_DTTM schema",
+            "description": "The date of the last active prescription for the prescriber.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PBR_HLTHCARE_REFORM_NBR": {
+            "$id": "#/properties/PBR_HLTHCARE_REFORM_NBR",
+            "type": "integer",
+            "title": "The PBR_HLTHCARE_REFORM_NBR schema",
+            "description": "For future use.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "QUARTER1_IND": {
+            "$id": "#/properties/QUARTER1_IND",
+            "type": "string",
+            "title": "The QUARTER1_IND schema",
+            "description": "Indicates whether a doctor has prescribed a controlled substance in quarter 1 (Y or N).",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "QUARTER2_IND": {
+            "$id": "#/properties/QUARTER2_IND",
+            "type": "string",
+            "title": "The QUARTER2_IND schema",
+            "description": "Indicates whether a doctor has prescribed a controlled substance in quarter 2 (Y or N).",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "QUARTER3_IND": {
+            "$id": "#/properties/QUARTER3_IND",
+            "type": "string",
+            "title": "The QUARTER3_IND schema",
+            "description": "Indicates whether a doctor has prescribed a controlled substance in quarter 3 (Y or N).",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "QUARTER4_IND": {
+            "$id": "#/properties/QUARTER4_IND",
+            "type": "string",
+            "title": "The QUARTER4_IND schema",
+            "description": "Indicates whether a doctor has prescribed a controlled substance in quarter 4 (Y or N).",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_PRESCRIBE_IND": {
+            "$id": "#/properties/PBR_PRESCRIBE_IND",
+            "type": "string",
+            "title": "The PBR_PRESCRIBE_IND schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_HUB_NBR": {
+            "$id": "#/properties/PBR_HUB_NBR",
+            "type": "integer",
+            "title": "The PBR_HUB_NBR schema",
+            "description": ".",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PBR_CLINIC_SITE": {
+            "$id": "#/properties/PBR_CLINIC_SITE",
+            "type": "integer",
+            "title": "The PBR_CLINIC_SITE schema",
+            "description": ".",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CREATE_USER_ID": {
+            "$id": "#/properties/CREATE_USER_ID",
+            "type": "integer",
+            "title": "The CREATE_USER_ID schema",
+            "description": "ID of person/batch job that created record.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CREATE_DTTM": {
+            "$id": "#/properties/CREATE_DTTM",
+            "type": "string",
+            "title": "The CREATE_DTTM schema",
+            "description": "Date and time record was inserted.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "UPDATE_USER_ID": {
+            "$id": "#/properties/UPDATE_USER_ID",
+            "type": "integer",
+            "title": "The UPDATE_USER_ID schema",
+            "description": "ID of last person/batch job to update record.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "UPDATE_DTTM": {
+            "$id": "#/properties/UPDATE_DTTM",
+            "type": "string",
+            "title": "The UPDATE_DTTM schema",
+            "description": "Date and time record was last updated.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PBR_CLINIC_ID": {
+            "$id": "#/properties/PBR_CLINIC_ID",
+            "type": "string",
+            "title": "The PBR_CLINIC_ID schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_COMPANY_CD": {
+            "$id": "#/properties/PBR_COMPANY_CD",
+            "type": "string",
+            "title": "The PBR_COMPANY_CD schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_PHONE_CMTS": {
+            "$id": "#/properties/PBR_PHONE_CMTS",
+            "type": "string",
+            "title": "The PBR_PHONE_CMTS schema",
+            "description": "Prescriber location comments.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_CHANGE_REQ_IND": {
+            "$id": "#/properties/PBR_CHANGE_REQ_IND",
+            "type": "string",
+            "title": "The PBR_CHANGE_REQ_IND schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_SOURCE_IND": {
+            "$id": "#/properties/PBR_SOURCE_IND",
+            "type": "string",
+            "title": "The PBR_SOURCE_IND schema",
+            "description": "Whether prescriber was registered at store, or was provided by NDC. Possible values: \"N\" for NDC, \"T\" for temporarily registered at store, \"M\" for prescribers matched by NDC, NULL for old prescribers entered at store. New values possible in the future..",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PBR_ID": {
+            "$id": "#/properties/NDC_PBR_ID",
+            "type": "integer",
+            "title": "The NDC_PBR_ID schema",
+            "description": "NDC prescriber ID store-registered prescriber was matched to.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PBR_PROVIDER_STATUS": {
+            "$id": "#/properties/PBR_PROVIDER_STATUS",
+            "type": "string",
+            "title": "The PBR_PROVIDER_STATUS schema",
+            "description": "D for Deceased, R for Retired.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_PROF_STATUS": {
+            "$id": "#/properties/PBR_PROF_STATUS",
+            "type": "string",
+            "title": "The PBR_PROF_STATUS schema",
+            "description": "License Status(A=Active,I-Inactive,U=Unknown).",
+            "default": "",
+            "examples": [
+                "A"
+            ]
+        },
+        "PBR_SEX_CD": {
+            "$id": "#/properties/PBR_SEX_CD",
+            "type": "string",
+            "title": "The PBR_SEX_CD schema",
+            "description": "Sex code.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_BIRTH_DTTM": {
+            "$id": "#/properties/PBR_BIRTH_DTTM",
+            "type": "string",
+            "title": "The PBR_BIRTH_DTTM schema",
+            "description": "Birthday.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PBR_MIDDLE_NAME": {
+            "$id": "#/properties/PBR_MIDDLE_NAME",
+            "type": "string",
+            "title": "The PBR_MIDDLE_NAME schema",
+            "description": "full middle name.",
+            "default": "",
+            "examples": [
+                "Jack"
+            ]
+        },
+        "PBR_ADDR2": {
+            "$id": "#/properties/PBR_ADDR2",
+            "type": "string",
+            "title": "The PBR_ADDR2 schema",
+            "description": "second address line (ex. Suite#, PO Box, etc).",
+            "default": "",
+            "examples": [
+                "PO Box Z234632"
+            ]
+        },
+        "PBR_DEA_EXPIRE_DTTM": {
+            "$id": "#/properties/PBR_DEA_EXPIRE_DTTM",
+            "type": "string",
+            "title": "The PBR_DEA_EXPIRE_DTTM schema",
+            "description": "Expiration of DEA.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PBR_UPIN": {
+            "$id": "#/properties/PBR_UPIN",
+            "type": "string",
+            "title": "The PBR_UPIN schema",
+            "description": "Medicare unique identifier.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_LICENSE_STATE": {
+            "$id": "#/properties/PBR_LICENSE_STATE",
+            "type": "string",
+            "title": "The PBR_LICENSE_STATE schema",
+            "description": "State prescriber was licensed in.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_STATE_LICENSE_NBR": {
+            "$id": "#/properties/PBR_STATE_LICENSE_NBR",
+            "type": "string",
+            "title": "The PBR_STATE_LICENSE_NBR schema",
+            "description": "Prescriber license number.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PBR_LOC_ID": {
+            "$id": "#/properties/NDC_PBR_LOC_ID",
+            "type": "integer",
+            "title": "The NDC_PBR_LOC_ID schema",
+            "description": "NDC prescriber location ID that the store-registered prescriber was matched to.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PBR_APP_CD": {
+            "$id": "#/properties/PBR_APP_CD",
+            "type": "string",
+            "title": "The PBR_APP_CD schema",
+            "description": "Code to determine if prescriber was registered by IC+ or by PatientLogix..",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_NPI": {
+            "$id": "#/properties/PBR_NPI",
+            "type": "integer",
+            "title": "The PBR_NPI schema",
+            "description": ".",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PBR_GROUP_ID": {
+            "$id": "#/properties/PBR_GROUP_ID",
+            "type": "string",
+            "title": "The PBR_GROUP_ID schema",
+            "description": "NPI stands for National Provider Identifier. Starting May 23, 2007 all health care entities submitting HIPAA standard transactions will be required to use the NPI  number to identify providers. In order to comply, windows within Intercom Plus will require modifications to allow pharmacy staff to search using Prescriber NPI number.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_LOC_GROUP_ID": {
+            "$id": "#/properties/PBR_LOC_GROUP_ID",
+            "type": "string",
+            "title": "The PBR_LOC_GROUP_ID schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REPL_BY_PBR_ID": {
+            "$id": "#/properties/REPL_BY_PBR_ID",
+            "type": "integer",
+            "title": "The REPL_BY_PBR_ID schema",
+            "description": ".",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "REPL_BY_PBR_LOC_ID": {
+            "$id": "#/properties/REPL_BY_PBR_LOC_ID",
+            "type": "integer",
+            "title": "The REPL_BY_PBR_LOC_ID schema",
+            "description": ".",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PBR_LOC_NAME": {
+            "$id": "#/properties/PBR_LOC_NAME",
+            "type": "string",
+            "title": "The PBR_LOC_NAME schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_PECOS_IND": {
+            "$id": "#/properties/PBR_PECOS_IND",
+            "type": "string",
+            "title": "The PBR_PECOS_IND schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_DEATH_DTTM": {
+            "$id": "#/properties/PBR_DEATH_DTTM",
+            "type": "string",
+            "title": "The PBR_DEATH_DTTM schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PBR_STATE_CTRL_NBR": {
+            "$id": "#/properties/PBR_STATE_CTRL_NBR",
+            "type": "string",
+            "title": "The PBR_STATE_CTRL_NBR schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_REFILL_AREA_CD": {
+            "$id": "#/properties/PBR_REFILL_AREA_CD",
+            "type": "string",
+            "title": "The PBR_REFILL_AREA_CD schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_REFILL_PHONE": {
+            "$id": "#/properties/PBR_REFILL_PHONE",
+            "type": "string",
+            "title": "The PBR_REFILL_PHONE schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_FOREIGN_LICENSE": {
+            "$id": "#/properties/PBR_FOREIGN_LICENSE",
+            "type": "string",
+            "title": "The PBR_FOREIGN_LICENSE schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_STORE_NPI_IND": {
+            "$id": "#/properties/PBR_STORE_NPI_IND",
+            "type": "string",
+            "title": "The PBR_STORE_NPI_IND schema",
+            "description": ".",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "OW_UPDATE_TSTMP": {
+            "$id": "#/properties/OW_UPDATE_TSTMP",
+            "type": "string",
+            "title": "The OW_UPDATE_TSTMP schema",
+            "description": "Date and Timestamp of update published by OW, is of format YYYY/MM/DD HH24:MI:SS.FF3.",
+            "default": "",
+            "examples": [
+                "YYYY/MM/DD HH24:MI:SS.FF3"
+            ]
+        }
+    }
+}

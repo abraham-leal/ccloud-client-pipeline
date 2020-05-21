@@ -1,0 +1,2367 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "TBF0_DRUG schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "required": [
+        "DRUG_ID",
+        "NDC_MFG",
+        "NDC_PROD",
+        "NDC_PKG",
+        "SIMS_UPC",
+        "REPACK_NBR",
+        "NDC_FORM_CD",
+        "NDC_PREV_MFG",
+        "NDC_PREV_PROD",
+        "NDC_PREV_PKG",
+        "PREV_REPACK_NBR",
+        "NDC_PREV_FORM_CD",
+        "ID_FORM_CD",
+        "NDC_UPC_HRI",
+        "DUR_NDC",
+        "PREV_NDC_UPC_HRI",
+        "PREV_ID_FORM_CD",
+        "DRUG_CLASS",
+        "DRUG_ORANGE_BOOK_RATING",
+        "DRUG_NAME_CD",
+        "GPPC",
+        "GEN_TYP_CD",
+        "GEN_ID_NO",
+        "THERA_CLASS",
+        "LIM_STABIL",
+        "PACK_DESCR",
+        "RX_OTC_CD",
+        "MAINT_DRUG_IND",
+        "ROUTE_OF_ADMIN_CD",
+        "DRUG_GENERIC_CD",
+        "DRUG_TYPE_CD",
+        "DRUG_SINGLE_COMB_CD",
+        "DRUG_STORAGE_COND_CD",
+        "A_LAST_CHANGE_DTTM",
+        "A_PROTECT_IND",
+        "PRODUCT_NAME",
+        "PRODUCT_NAME_SUFFIX",
+        "PRODUCT_NAME_EXT",
+        "PRODUCT_MDDB_ABBR",
+        "E_LAST_CHANGE_DTTM",
+        "E_PROTECT_IND",
+        "GPI",
+        "GPI_NAME",
+        "G_LAST_CHANGE_DTTM",
+        "G_PROTECT_IND",
+        "MFG_NAME",
+        "MFG_NAME_ABBR",
+        "MFG_MDDB_ABBR",
+        "MFG_NAME_SUFFIX",
+        "J_LAST_CHANGE_DTTM",
+        "J_PROTECT_IND",
+        "DRUG_STRENGTH",
+        "DRUG_STRENGTH_UOM",
+        "DRUG_DOSAGE_FORM_CD",
+        "PACKAGE_SIZE",
+        "PACKAGE_SIZE_UOM",
+        "PACKAGE_QTY",
+        "RX_TO_OTC_DTTM",
+        "L_LAST_CHANGE_DTTM",
+        "L_PROTECT_IND",
+        "AWP_DTTM",
+        "DRUG_COUNTING_CELL_ID",
+        "AWP_UNIT_PRICE",
+        "R_LAST_CHANGE_DTTM",
+        "R_PROTECT_IND",
+        "HCFA_DTTM",
+        "HCFA_UNIT_LIMIT",
+        "T_LAST_CHANGE_DTTM",
+        "T_PROTECT_IND",
+        "PRODUCT_NAME_ABBR",
+        "DRUG_STATUS_CD",
+        "DRUG_DISC_DTTM",
+        "MFP_NBR",
+        "WIC_NBR",
+        "DRUG_PPI_IND",
+        "DRUG_FICHE_IND",
+        "WORKSHEET_ITEM_IND",
+        "DRUG_MIN_DISP_QTY",
+        "DEFAULT_SIG",
+        "DEFAULT_DAYS_SUPPLY",
+        "EXPIRATION_DAYS",
+        "DRUG_CLASS_EXCEPT_IND",
+        "OPS_STUDY_DEPT_NBR",
+        "DRUG_WAREHOUSE_IND",
+        "PRICING_PROTECT_IND",
+        "PR_DACO_IND",
+        "PRICING_OVERRIDE_DRUG",
+        "PRICING_TYPE",
+        "AAC_UNIT_PRICE",
+        "WAC_UNIT_PRICE",
+        "PRORATED_QUANTITY",
+        "PRICING_QUANTITY",
+        "DRUG_REORDER_FACTOR",
+        "DRUG_SHAPE_CD",
+        "DRUG_COLOR_1_CD",
+        "DRUG_COLOR_2_CD",
+        "DRUG_SIDE_1",
+        "DRUG_SIDE_2",
+        "BILLING_NDC",
+        "DRUG_COMMENT_CD",
+        "DEFAULT_SMART_SIG",
+        "DRUG_LOCATION_CD",
+        "DRUG_MULTIHIT_DISP_IND",
+        "SUBSTITUTION_DRUG_ID",
+        "DRUG_VOLUME",
+        "PRECOUNT_IND",
+        "PRECOUNT_QTY_1",
+        "PRECOUNT_QTY_2",
+        "DUR_KDC_NBR",
+        "UD_UU_PKG_CD",
+        "CREATE_USER_ID",
+        "CREATE_DTTM",
+        "UPDATE_USER_ID",
+        "UPDATE_DTTM",
+        "AUDIT_SENT_LOCAL_IND",
+        "AUDIT_DTTM",
+        "AUDIT_IMAGE_CD",
+        "AUDIT_ACTION_CD",
+        "DRUG_PROMPT_NBR",
+        "LBL_CMT_CD",
+        "SUBSTITUTION_PROD_TYPE",
+        "RECON_WATER_QTY",
+        "DRUG_SPEC_CMT_CD",
+        "FAX_PBR_CMT_CD",
+        "PROMISE_SUB_DRUG_ID",
+        "SPECIALTY_DRUG_IND",
+        "CASH_DISC_QTY",
+        "PIECE_WEIGHT",
+        "STOCK_BOTTLE_BARCODE",
+        "DOSES_PER_PKG",
+        "PCT_TOT_DISC_CARD",
+        "PET_MED_IND",
+        "LTD_DIST_CD",
+        "COMPLICATED_SUPPLIES_IND",
+        "SPECIALTY_REVIEW_IND",
+        "CLINICAL_VALUE_IND",
+        "REQUIRED_SUPPLIES_IND",
+        "HCP_DRUG_MLTHT_DISP_IND",
+        "MIX_IND",
+        "DISC_SCHD_ID",
+        "DRUG_IMAGE_FILE_NAME",
+        "TOP_DRUG_IND",
+        "QUALITY_ALERT_MESSAGE",
+        "QUALITY_ALERT_KEYWORDS",
+        "QUALITY_ALERT_RULE_IND",
+        "QUALITY_ALERT_SCREEN_IND",
+        "CASH_DISC_QTY2",
+        "CASH_DISC_QTY3",
+        "TIP_IND",
+        "REF_DRUG_ID",
+        "HCPC",
+        "PREF_MFR_IND",
+        "MED_GUIDE_FILENAME",
+        "MED_GUIDE_IND",
+        "ITEM_CLASS",
+        "ITEM_GROUP",
+        "ITEM_FORMULARY_IND",
+        "ITEM_CATEGORY",
+        "ITEM_LOB",
+        "ITEM_CONV_FACTOR",
+        "ITEM_LIST_PRICE_SALE",
+        "ITEM_RETAIL_PRICE",
+        "ITEM_PUM",
+        "ITEM_SUB_GROUP",
+        "ITEM_SUB_CATEGORY",
+        "ITEM_SUM",
+        "PRIMARY_VENDOR_ITEM_COST",
+        "PRIMARY_VENDOR_ITEM_NBR",
+        "SECNDRY_VENDOR_ITEM_COST",
+        "SECNDRY_VENDOR_ITEM_NBR",
+        "TERTRY_VENDOR_ITEM_COST",
+        "TERTRY_VENDOR_ITEM_NBR",
+        "SPECIFIC_GRAVITY",
+        "CONCENTRATION_NBR",
+        "CONCENTRATION_UNITS",
+        "LIPIDS_IND",
+        "AMINO_ACID_IND",
+        "POOLABLE_IND",
+        "TRACE_ELEMENT_IND",
+        "ELECTROLYTE_IND",
+        "CONTAINER_MATERIAL_CD",
+        "CONTAINER_MAX_CAPACITY",
+        "VEHICLE_IND",
+        "VEHICLE",
+        "COCKTAIL_IND",
+        "PRIMARY_VENDOR_NBR",
+        "SECONDARY_VENDOR_NBR",
+        "TERTIARY_VENDOR_NBR",
+        "BASE_IND",
+        "ITEM_TYPE",
+        "CONC_DEXTROSE_IND",
+        "CONTAINER_IND",
+        "CONTAINER_TYPE",
+        "PRIMARY_VENDOR_NAME",
+        "SECONDARY_VENDOR_NAME",
+        "TERTIARY_VENDOR_NAME",
+        "PLX_DRUG_IND",
+        "ITEM_SIZE",
+        "ITEM_SIZE_UNITS",
+        "ITEM_LONG_DESC",
+        "ITEM_SHORT_DESC",
+        "ITEM_AWP",
+        "BILLING_MULTIPLIER",
+        "TRACK_INVENTORY_IND",
+        "DISEASE_STATE_IND",
+        "DRUG_MIN_PRICE",
+        "DRUG_INFERENCE_CD",
+        "EXCL_DRUG_AUTOMATION_IND",
+        "EXCL_TBLTP_COUNT_IND",
+        "REQUIRE_TBLTP_CLEAN",
+        "THERA_CLASS_EXTD",
+        "M_LAST_CHANGE_DTTM",
+        "M_LAST_CHANGE_DTTM_TC",
+        "HAZARD_LEVEL_CD"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "DRUG_ID": {
+            "$id": "#/properties/DRUG_ID",
+            "type": "integer",
+            "title": "The DRUG_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "NDC_MFG": {
+            "$id": "#/properties/NDC_MFG",
+            "type": "string",
+            "title": "The NDC_MFG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PROD": {
+            "$id": "#/properties/NDC_PROD",
+            "type": "string",
+            "title": "The NDC_PROD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PKG": {
+            "$id": "#/properties/NDC_PKG",
+            "type": "string",
+            "title": "The NDC_PKG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SIMS_UPC": {
+            "$id": "#/properties/SIMS_UPC",
+            "type": "string",
+            "title": "The SIMS_UPC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REPACK_NBR": {
+            "$id": "#/properties/REPACK_NBR",
+            "type": "string",
+            "title": "The REPACK_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_FORM_CD": {
+            "$id": "#/properties/NDC_FORM_CD",
+            "type": "integer",
+            "title": "The NDC_FORM_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "NDC_PREV_MFG": {
+            "$id": "#/properties/NDC_PREV_MFG",
+            "type": "string",
+            "title": "The NDC_PREV_MFG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PREV_PROD": {
+            "$id": "#/properties/NDC_PREV_PROD",
+            "type": "string",
+            "title": "The NDC_PREV_PROD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PREV_PKG": {
+            "$id": "#/properties/NDC_PREV_PKG",
+            "type": "string",
+            "title": "The NDC_PREV_PKG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PREV_REPACK_NBR": {
+            "$id": "#/properties/PREV_REPACK_NBR",
+            "type": "string",
+            "title": "The PREV_REPACK_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PREV_FORM_CD": {
+            "$id": "#/properties/NDC_PREV_FORM_CD",
+            "type": "integer",
+            "title": "The NDC_PREV_FORM_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ID_FORM_CD": {
+            "$id": "#/properties/ID_FORM_CD",
+            "type": "integer",
+            "title": "The ID_FORM_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "NDC_UPC_HRI": {
+            "$id": "#/properties/NDC_UPC_HRI",
+            "type": "string",
+            "title": "The NDC_UPC_HRI schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_NDC": {
+            "$id": "#/properties/DUR_NDC",
+            "type": "string",
+            "title": "The DUR_NDC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PREV_NDC_UPC_HRI": {
+            "$id": "#/properties/PREV_NDC_UPC_HRI",
+            "type": "string",
+            "title": "The PREV_NDC_UPC_HRI schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PREV_ID_FORM_CD": {
+            "$id": "#/properties/PREV_ID_FORM_CD",
+            "type": "integer",
+            "title": "The PREV_ID_FORM_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_CLASS": {
+            "$id": "#/properties/DRUG_CLASS",
+            "type": "string",
+            "title": "The DRUG_CLASS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_ORANGE_BOOK_RATING": {
+            "$id": "#/properties/DRUG_ORANGE_BOOK_RATING",
+            "type": "string",
+            "title": "The DRUG_ORANGE_BOOK_RATING schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_NAME_CD": {
+            "$id": "#/properties/DRUG_NAME_CD",
+            "type": "string",
+            "title": "The DRUG_NAME_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GPPC": {
+            "$id": "#/properties/GPPC",
+            "type": "string",
+            "title": "The GPPC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GEN_TYP_CD": {
+            "$id": "#/properties/GEN_TYP_CD",
+            "type": "string",
+            "title": "The GEN_TYP_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GEN_ID_NO": {
+            "$id": "#/properties/GEN_ID_NO",
+            "type": "integer",
+            "title": "The GEN_ID_NO schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "THERA_CLASS": {
+            "$id": "#/properties/THERA_CLASS",
+            "type": "integer",
+            "title": "The THERA_CLASS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "LIM_STABIL": {
+            "$id": "#/properties/LIM_STABIL",
+            "type": "string",
+            "title": "The LIM_STABIL schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PACK_DESCR": {
+            "$id": "#/properties/PACK_DESCR",
+            "type": "string",
+            "title": "The PACK_DESCR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_OTC_CD": {
+            "$id": "#/properties/RX_OTC_CD",
+            "type": "string",
+            "title": "The RX_OTC_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MAINT_DRUG_IND": {
+            "$id": "#/properties/MAINT_DRUG_IND",
+            "type": "string",
+            "title": "The MAINT_DRUG_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ROUTE_OF_ADMIN_CD": {
+            "$id": "#/properties/ROUTE_OF_ADMIN_CD",
+            "type": "string",
+            "title": "The ROUTE_OF_ADMIN_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_GENERIC_CD": {
+            "$id": "#/properties/DRUG_GENERIC_CD",
+            "type": "string",
+            "title": "The DRUG_GENERIC_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_TYPE_CD": {
+            "$id": "#/properties/DRUG_TYPE_CD",
+            "type": "string",
+            "title": "The DRUG_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_SINGLE_COMB_CD": {
+            "$id": "#/properties/DRUG_SINGLE_COMB_CD",
+            "type": "string",
+            "title": "The DRUG_SINGLE_COMB_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_STORAGE_COND_CD": {
+            "$id": "#/properties/DRUG_STORAGE_COND_CD",
+            "type": "string",
+            "title": "The DRUG_STORAGE_COND_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "A_LAST_CHANGE_DTTM": {
+            "$id": "#/properties/A_LAST_CHANGE_DTTM",
+            "type": "string",
+            "title": "The A_LAST_CHANGE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "A_PROTECT_IND": {
+            "$id": "#/properties/A_PROTECT_IND",
+            "type": "string",
+            "title": "The A_PROTECT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRODUCT_NAME": {
+            "$id": "#/properties/PRODUCT_NAME",
+            "type": "string",
+            "title": "The PRODUCT_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRODUCT_NAME_SUFFIX": {
+            "$id": "#/properties/PRODUCT_NAME_SUFFIX",
+            "type": "string",
+            "title": "The PRODUCT_NAME_SUFFIX schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRODUCT_NAME_EXT": {
+            "$id": "#/properties/PRODUCT_NAME_EXT",
+            "type": "string",
+            "title": "The PRODUCT_NAME_EXT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRODUCT_MDDB_ABBR": {
+            "$id": "#/properties/PRODUCT_MDDB_ABBR",
+            "type": "string",
+            "title": "The PRODUCT_MDDB_ABBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "E_LAST_CHANGE_DTTM": {
+            "$id": "#/properties/E_LAST_CHANGE_DTTM",
+            "type": "string",
+            "title": "The E_LAST_CHANGE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "E_PROTECT_IND": {
+            "$id": "#/properties/E_PROTECT_IND",
+            "type": "string",
+            "title": "The E_PROTECT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GPI": {
+            "$id": "#/properties/GPI",
+            "type": "string",
+            "title": "The GPI schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GPI_NAME": {
+            "$id": "#/properties/GPI_NAME",
+            "type": "string",
+            "title": "The GPI_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "G_LAST_CHANGE_DTTM": {
+            "$id": "#/properties/G_LAST_CHANGE_DTTM",
+            "type": "string",
+            "title": "The G_LAST_CHANGE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "G_PROTECT_IND": {
+            "$id": "#/properties/G_PROTECT_IND",
+            "type": "string",
+            "title": "The G_PROTECT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MFG_NAME": {
+            "$id": "#/properties/MFG_NAME",
+            "type": "string",
+            "title": "The MFG_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MFG_NAME_ABBR": {
+            "$id": "#/properties/MFG_NAME_ABBR",
+            "type": "string",
+            "title": "The MFG_NAME_ABBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MFG_MDDB_ABBR": {
+            "$id": "#/properties/MFG_MDDB_ABBR",
+            "type": "string",
+            "title": "The MFG_MDDB_ABBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MFG_NAME_SUFFIX": {
+            "$id": "#/properties/MFG_NAME_SUFFIX",
+            "type": "string",
+            "title": "The MFG_NAME_SUFFIX schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "J_LAST_CHANGE_DTTM": {
+            "$id": "#/properties/J_LAST_CHANGE_DTTM",
+            "type": "string",
+            "title": "The J_LAST_CHANGE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "J_PROTECT_IND": {
+            "$id": "#/properties/J_PROTECT_IND",
+            "type": "string",
+            "title": "The J_PROTECT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_STRENGTH": {
+            "$id": "#/properties/DRUG_STRENGTH",
+            "type": "integer",
+            "title": "The DRUG_STRENGTH schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_STRENGTH_UOM": {
+            "$id": "#/properties/DRUG_STRENGTH_UOM",
+            "type": "string",
+            "title": "The DRUG_STRENGTH_UOM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_DOSAGE_FORM_CD": {
+            "$id": "#/properties/DRUG_DOSAGE_FORM_CD",
+            "type": "string",
+            "title": "The DRUG_DOSAGE_FORM_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PACKAGE_SIZE": {
+            "$id": "#/properties/PACKAGE_SIZE",
+            "type": "integer",
+            "title": "The PACKAGE_SIZE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PACKAGE_SIZE_UOM": {
+            "$id": "#/properties/PACKAGE_SIZE_UOM",
+            "type": "string",
+            "title": "The PACKAGE_SIZE_UOM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PACKAGE_QTY": {
+            "$id": "#/properties/PACKAGE_QTY",
+            "type": "integer",
+            "title": "The PACKAGE_QTY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "RX_TO_OTC_DTTM": {
+            "$id": "#/properties/RX_TO_OTC_DTTM",
+            "type": "string",
+            "title": "The RX_TO_OTC_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "L_LAST_CHANGE_DTTM": {
+            "$id": "#/properties/L_LAST_CHANGE_DTTM",
+            "type": "string",
+            "title": "The L_LAST_CHANGE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "L_PROTECT_IND": {
+            "$id": "#/properties/L_PROTECT_IND",
+            "type": "string",
+            "title": "The L_PROTECT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "AWP_DTTM": {
+            "$id": "#/properties/AWP_DTTM",
+            "type": "string",
+            "title": "The AWP_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "DRUG_COUNTING_CELL_ID": {
+            "$id": "#/properties/DRUG_COUNTING_CELL_ID",
+            "type": "integer",
+            "title": "The DRUG_COUNTING_CELL_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "AWP_UNIT_PRICE": {
+            "$id": "#/properties/AWP_UNIT_PRICE",
+            "type": "integer",
+            "title": "The AWP_UNIT_PRICE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "R_LAST_CHANGE_DTTM": {
+            "$id": "#/properties/R_LAST_CHANGE_DTTM",
+            "type": "string",
+            "title": "The R_LAST_CHANGE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "R_PROTECT_IND": {
+            "$id": "#/properties/R_PROTECT_IND",
+            "type": "string",
+            "title": "The R_PROTECT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "HCFA_DTTM": {
+            "$id": "#/properties/HCFA_DTTM",
+            "type": "string",
+            "title": "The HCFA_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "HCFA_UNIT_LIMIT": {
+            "$id": "#/properties/HCFA_UNIT_LIMIT",
+            "type": "integer",
+            "title": "The HCFA_UNIT_LIMIT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "T_LAST_CHANGE_DTTM": {
+            "$id": "#/properties/T_LAST_CHANGE_DTTM",
+            "type": "string",
+            "title": "The T_LAST_CHANGE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "T_PROTECT_IND": {
+            "$id": "#/properties/T_PROTECT_IND",
+            "type": "string",
+            "title": "The T_PROTECT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRODUCT_NAME_ABBR": {
+            "$id": "#/properties/PRODUCT_NAME_ABBR",
+            "type": "string",
+            "title": "The PRODUCT_NAME_ABBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_STATUS_CD": {
+            "$id": "#/properties/DRUG_STATUS_CD",
+            "type": "string",
+            "title": "The DRUG_STATUS_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_DISC_DTTM": {
+            "$id": "#/properties/DRUG_DISC_DTTM",
+            "type": "string",
+            "title": "The DRUG_DISC_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "MFP_NBR": {
+            "$id": "#/properties/MFP_NBR",
+            "type": "string",
+            "title": "The MFP_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WIC_NBR": {
+            "$id": "#/properties/WIC_NBR",
+            "type": "integer",
+            "title": "The WIC_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_PPI_IND": {
+            "$id": "#/properties/DRUG_PPI_IND",
+            "type": "string",
+            "title": "The DRUG_PPI_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_FICHE_IND": {
+            "$id": "#/properties/DRUG_FICHE_IND",
+            "type": "string",
+            "title": "The DRUG_FICHE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WORKSHEET_ITEM_IND": {
+            "$id": "#/properties/WORKSHEET_ITEM_IND",
+            "type": "string",
+            "title": "The WORKSHEET_ITEM_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_MIN_DISP_QTY": {
+            "$id": "#/properties/DRUG_MIN_DISP_QTY",
+            "type": "integer",
+            "title": "The DRUG_MIN_DISP_QTY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DEFAULT_SIG": {
+            "$id": "#/properties/DEFAULT_SIG",
+            "type": "string",
+            "title": "The DEFAULT_SIG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DEFAULT_DAYS_SUPPLY": {
+            "$id": "#/properties/DEFAULT_DAYS_SUPPLY",
+            "type": "integer",
+            "title": "The DEFAULT_DAYS_SUPPLY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "EXPIRATION_DAYS": {
+            "$id": "#/properties/EXPIRATION_DAYS",
+            "type": "integer",
+            "title": "The EXPIRATION_DAYS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_CLASS_EXCEPT_IND": {
+            "$id": "#/properties/DRUG_CLASS_EXCEPT_IND",
+            "type": "string",
+            "title": "The DRUG_CLASS_EXCEPT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "OPS_STUDY_DEPT_NBR": {
+            "$id": "#/properties/OPS_STUDY_DEPT_NBR",
+            "type": "integer",
+            "title": "The OPS_STUDY_DEPT_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_WAREHOUSE_IND": {
+            "$id": "#/properties/DRUG_WAREHOUSE_IND",
+            "type": "string",
+            "title": "The DRUG_WAREHOUSE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRICING_PROTECT_IND": {
+            "$id": "#/properties/PRICING_PROTECT_IND",
+            "type": "string",
+            "title": "The PRICING_PROTECT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PR_DACO_IND": {
+            "$id": "#/properties/PR_DACO_IND",
+            "type": "string",
+            "title": "The PR_DACO_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRICING_OVERRIDE_DRUG": {
+            "$id": "#/properties/PRICING_OVERRIDE_DRUG",
+            "type": "integer",
+            "title": "The PRICING_OVERRIDE_DRUG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRICING_TYPE": {
+            "$id": "#/properties/PRICING_TYPE",
+            "type": "integer",
+            "title": "The PRICING_TYPE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "AAC_UNIT_PRICE": {
+            "$id": "#/properties/AAC_UNIT_PRICE",
+            "type": "integer",
+            "title": "The AAC_UNIT_PRICE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "WAC_UNIT_PRICE": {
+            "$id": "#/properties/WAC_UNIT_PRICE",
+            "type": "integer",
+            "title": "The WAC_UNIT_PRICE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRORATED_QUANTITY": {
+            "$id": "#/properties/PRORATED_QUANTITY",
+            "type": "integer",
+            "title": "The PRORATED_QUANTITY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRICING_QUANTITY": {
+            "$id": "#/properties/PRICING_QUANTITY",
+            "type": "integer",
+            "title": "The PRICING_QUANTITY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_REORDER_FACTOR": {
+            "$id": "#/properties/DRUG_REORDER_FACTOR",
+            "type": "integer",
+            "title": "The DRUG_REORDER_FACTOR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_SHAPE_CD": {
+            "$id": "#/properties/DRUG_SHAPE_CD",
+            "type": "string",
+            "title": "The DRUG_SHAPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_COLOR_1_CD": {
+            "$id": "#/properties/DRUG_COLOR_1_CD",
+            "type": "string",
+            "title": "The DRUG_COLOR_1_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_COLOR_2_CD": {
+            "$id": "#/properties/DRUG_COLOR_2_CD",
+            "type": "string",
+            "title": "The DRUG_COLOR_2_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_SIDE_1": {
+            "$id": "#/properties/DRUG_SIDE_1",
+            "type": "string",
+            "title": "The DRUG_SIDE_1 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_SIDE_2": {
+            "$id": "#/properties/DRUG_SIDE_2",
+            "type": "string",
+            "title": "The DRUG_SIDE_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BILLING_NDC": {
+            "$id": "#/properties/BILLING_NDC",
+            "type": "string",
+            "title": "The BILLING_NDC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_COMMENT_CD": {
+            "$id": "#/properties/DRUG_COMMENT_CD",
+            "type": "string",
+            "title": "The DRUG_COMMENT_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DEFAULT_SMART_SIG": {
+            "$id": "#/properties/DEFAULT_SMART_SIG",
+            "type": "string",
+            "title": "The DEFAULT_SMART_SIG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_LOCATION_CD": {
+            "$id": "#/properties/DRUG_LOCATION_CD",
+            "type": "string",
+            "title": "The DRUG_LOCATION_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_MULTIHIT_DISP_IND": {
+            "$id": "#/properties/DRUG_MULTIHIT_DISP_IND",
+            "type": "string",
+            "title": "The DRUG_MULTIHIT_DISP_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SUBSTITUTION_DRUG_ID": {
+            "$id": "#/properties/SUBSTITUTION_DRUG_ID",
+            "type": "integer",
+            "title": "The SUBSTITUTION_DRUG_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_VOLUME": {
+            "$id": "#/properties/DRUG_VOLUME",
+            "type": "integer",
+            "title": "The DRUG_VOLUME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRECOUNT_IND": {
+            "$id": "#/properties/PRECOUNT_IND",
+            "type": "string",
+            "title": "The PRECOUNT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRECOUNT_QTY_1": {
+            "$id": "#/properties/PRECOUNT_QTY_1",
+            "type": "integer",
+            "title": "The PRECOUNT_QTY_1 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRECOUNT_QTY_2": {
+            "$id": "#/properties/PRECOUNT_QTY_2",
+            "type": "integer",
+            "title": "The PRECOUNT_QTY_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DUR_KDC_NBR": {
+            "$id": "#/properties/DUR_KDC_NBR",
+            "type": "string",
+            "title": "The DUR_KDC_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "UD_UU_PKG_CD": {
+            "$id": "#/properties/UD_UU_PKG_CD",
+            "type": "string",
+            "title": "The UD_UU_PKG_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CREATE_USER_ID": {
+            "$id": "#/properties/CREATE_USER_ID",
+            "type": "integer",
+            "title": "The CREATE_USER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CREATE_DTTM": {
+            "$id": "#/properties/CREATE_DTTM",
+            "type": "string",
+            "title": "The CREATE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "UPDATE_USER_ID": {
+            "$id": "#/properties/UPDATE_USER_ID",
+            "type": "integer",
+            "title": "The UPDATE_USER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "UPDATE_DTTM": {
+            "$id": "#/properties/UPDATE_DTTM",
+            "type": "string",
+            "title": "The UPDATE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "AUDIT_SENT_LOCAL_IND": {
+            "$id": "#/properties/AUDIT_SENT_LOCAL_IND",
+            "type": "string",
+            "title": "The AUDIT_SENT_LOCAL_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "AUDIT_DTTM": {
+            "$id": "#/properties/AUDIT_DTTM",
+            "type": "string",
+            "title": "The AUDIT_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "AUDIT_IMAGE_CD": {
+            "$id": "#/properties/AUDIT_IMAGE_CD",
+            "type": "string",
+            "title": "The AUDIT_IMAGE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "AUDIT_ACTION_CD": {
+            "$id": "#/properties/AUDIT_ACTION_CD",
+            "type": "string",
+            "title": "The AUDIT_ACTION_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_PROMPT_NBR": {
+            "$id": "#/properties/DRUG_PROMPT_NBR",
+            "type": "integer",
+            "title": "The DRUG_PROMPT_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "LBL_CMT_CD": {
+            "$id": "#/properties/LBL_CMT_CD",
+            "type": "string",
+            "title": "The LBL_CMT_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SUBSTITUTION_PROD_TYPE": {
+            "$id": "#/properties/SUBSTITUTION_PROD_TYPE",
+            "type": "string",
+            "title": "The SUBSTITUTION_PROD_TYPE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RECON_WATER_QTY": {
+            "$id": "#/properties/RECON_WATER_QTY",
+            "type": "integer",
+            "title": "The RECON_WATER_QTY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_SPEC_CMT_CD": {
+            "$id": "#/properties/DRUG_SPEC_CMT_CD",
+            "type": "string",
+            "title": "The DRUG_SPEC_CMT_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FAX_PBR_CMT_CD": {
+            "$id": "#/properties/FAX_PBR_CMT_CD",
+            "type": "string",
+            "title": "The FAX_PBR_CMT_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PROMISE_SUB_DRUG_ID": {
+            "$id": "#/properties/PROMISE_SUB_DRUG_ID",
+            "type": "integer",
+            "title": "The PROMISE_SUB_DRUG_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "SPECIALTY_DRUG_IND": {
+            "$id": "#/properties/SPECIALTY_DRUG_IND",
+            "type": "string",
+            "title": "The SPECIALTY_DRUG_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CASH_DISC_QTY": {
+            "$id": "#/properties/CASH_DISC_QTY",
+            "type": "integer",
+            "title": "The CASH_DISC_QTY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PIECE_WEIGHT": {
+            "$id": "#/properties/PIECE_WEIGHT",
+            "type": "integer",
+            "title": "The PIECE_WEIGHT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "STOCK_BOTTLE_BARCODE": {
+            "$id": "#/properties/STOCK_BOTTLE_BARCODE",
+            "type": "string",
+            "title": "The STOCK_BOTTLE_BARCODE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DOSES_PER_PKG": {
+            "$id": "#/properties/DOSES_PER_PKG",
+            "type": "integer",
+            "title": "The DOSES_PER_PKG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PCT_TOT_DISC_CARD": {
+            "$id": "#/properties/PCT_TOT_DISC_CARD",
+            "type": "integer",
+            "title": "The PCT_TOT_DISC_CARD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PET_MED_IND": {
+            "$id": "#/properties/PET_MED_IND",
+            "type": "string",
+            "title": "The PET_MED_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "LTD_DIST_CD": {
+            "$id": "#/properties/LTD_DIST_CD",
+            "type": "string",
+            "title": "The LTD_DIST_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COMPLICATED_SUPPLIES_IND": {
+            "$id": "#/properties/COMPLICATED_SUPPLIES_IND",
+            "type": "string",
+            "title": "The COMPLICATED_SUPPLIES_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SPECIALTY_REVIEW_IND": {
+            "$id": "#/properties/SPECIALTY_REVIEW_IND",
+            "type": "string",
+            "title": "The SPECIALTY_REVIEW_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CLINICAL_VALUE_IND": {
+            "$id": "#/properties/CLINICAL_VALUE_IND",
+            "type": "string",
+            "title": "The CLINICAL_VALUE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REQUIRED_SUPPLIES_IND": {
+            "$id": "#/properties/REQUIRED_SUPPLIES_IND",
+            "type": "string",
+            "title": "The REQUIRED_SUPPLIES_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "HCP_DRUG_MLTHT_DISP_IND": {
+            "$id": "#/properties/HCP_DRUG_MLTHT_DISP_IND",
+            "type": "string",
+            "title": "The HCP_DRUG_MLTHT_DISP_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MIX_IND": {
+            "$id": "#/properties/MIX_IND",
+            "type": "string",
+            "title": "The MIX_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DISC_SCHD_ID": {
+            "$id": "#/properties/DISC_SCHD_ID",
+            "type": "integer",
+            "title": "The DISC_SCHD_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_IMAGE_FILE_NAME": {
+            "$id": "#/properties/DRUG_IMAGE_FILE_NAME",
+            "type": "string",
+            "title": "The DRUG_IMAGE_FILE_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TOP_DRUG_IND": {
+            "$id": "#/properties/TOP_DRUG_IND",
+            "type": "string",
+            "title": "The TOP_DRUG_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "QUALITY_ALERT_MESSAGE": {
+            "$id": "#/properties/QUALITY_ALERT_MESSAGE",
+            "type": "string",
+            "title": "The QUALITY_ALERT_MESSAGE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "QUALITY_ALERT_KEYWORDS": {
+            "$id": "#/properties/QUALITY_ALERT_KEYWORDS",
+            "type": "string",
+            "title": "The QUALITY_ALERT_KEYWORDS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "QUALITY_ALERT_RULE_IND": {
+            "$id": "#/properties/QUALITY_ALERT_RULE_IND",
+            "type": "string",
+            "title": "The QUALITY_ALERT_RULE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "QUALITY_ALERT_SCREEN_IND": {
+            "$id": "#/properties/QUALITY_ALERT_SCREEN_IND",
+            "type": "string",
+            "title": "The QUALITY_ALERT_SCREEN_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CASH_DISC_QTY2": {
+            "$id": "#/properties/CASH_DISC_QTY2",
+            "type": "integer",
+            "title": "The CASH_DISC_QTY2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CASH_DISC_QTY3": {
+            "$id": "#/properties/CASH_DISC_QTY3",
+            "type": "integer",
+            "title": "The CASH_DISC_QTY3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "TIP_IND": {
+            "$id": "#/properties/TIP_IND",
+            "type": "string",
+            "title": "The TIP_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REF_DRUG_ID": {
+            "$id": "#/properties/REF_DRUG_ID",
+            "type": "integer",
+            "title": "The REF_DRUG_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "HCPC": {
+            "$id": "#/properties/HCPC",
+            "type": "string",
+            "title": "The HCPC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PREF_MFR_IND": {
+            "$id": "#/properties/PREF_MFR_IND",
+            "type": "string",
+            "title": "The PREF_MFR_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MED_GUIDE_FILENAME": {
+            "$id": "#/properties/MED_GUIDE_FILENAME",
+            "type": "string",
+            "title": "The MED_GUIDE_FILENAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MED_GUIDE_IND": {
+            "$id": "#/properties/MED_GUIDE_IND",
+            "type": "string",
+            "title": "The MED_GUIDE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ITEM_CLASS": {
+            "$id": "#/properties/ITEM_CLASS",
+            "type": "integer",
+            "title": "The ITEM_CLASS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_GROUP": {
+            "$id": "#/properties/ITEM_GROUP",
+            "type": "integer",
+            "title": "The ITEM_GROUP schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_FORMULARY_IND": {
+            "$id": "#/properties/ITEM_FORMULARY_IND",
+            "type": "string",
+            "title": "The ITEM_FORMULARY_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ITEM_CATEGORY": {
+            "$id": "#/properties/ITEM_CATEGORY",
+            "type": "integer",
+            "title": "The ITEM_CATEGORY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_LOB": {
+            "$id": "#/properties/ITEM_LOB",
+            "type": "integer",
+            "title": "The ITEM_LOB schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_CONV_FACTOR": {
+            "$id": "#/properties/ITEM_CONV_FACTOR",
+            "type": "integer",
+            "title": "The ITEM_CONV_FACTOR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_LIST_PRICE_SALE": {
+            "$id": "#/properties/ITEM_LIST_PRICE_SALE",
+            "type": "integer",
+            "title": "The ITEM_LIST_PRICE_SALE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_RETAIL_PRICE": {
+            "$id": "#/properties/ITEM_RETAIL_PRICE",
+            "type": "integer",
+            "title": "The ITEM_RETAIL_PRICE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_PUM": {
+            "$id": "#/properties/ITEM_PUM",
+            "type": "integer",
+            "title": "The ITEM_PUM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_SUB_GROUP": {
+            "$id": "#/properties/ITEM_SUB_GROUP",
+            "type": "integer",
+            "title": "The ITEM_SUB_GROUP schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_SUB_CATEGORY": {
+            "$id": "#/properties/ITEM_SUB_CATEGORY",
+            "type": "integer",
+            "title": "The ITEM_SUB_CATEGORY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_SUM": {
+            "$id": "#/properties/ITEM_SUM",
+            "type": "integer",
+            "title": "The ITEM_SUM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRIMARY_VENDOR_ITEM_COST": {
+            "$id": "#/properties/PRIMARY_VENDOR_ITEM_COST",
+            "type": "integer",
+            "title": "The PRIMARY_VENDOR_ITEM_COST schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRIMARY_VENDOR_ITEM_NBR": {
+            "$id": "#/properties/PRIMARY_VENDOR_ITEM_NBR",
+            "type": "string",
+            "title": "The PRIMARY_VENDOR_ITEM_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SECNDRY_VENDOR_ITEM_COST": {
+            "$id": "#/properties/SECNDRY_VENDOR_ITEM_COST",
+            "type": "integer",
+            "title": "The SECNDRY_VENDOR_ITEM_COST schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "SECNDRY_VENDOR_ITEM_NBR": {
+            "$id": "#/properties/SECNDRY_VENDOR_ITEM_NBR",
+            "type": "string",
+            "title": "The SECNDRY_VENDOR_ITEM_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TERTRY_VENDOR_ITEM_COST": {
+            "$id": "#/properties/TERTRY_VENDOR_ITEM_COST",
+            "type": "integer",
+            "title": "The TERTRY_VENDOR_ITEM_COST schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "TERTRY_VENDOR_ITEM_NBR": {
+            "$id": "#/properties/TERTRY_VENDOR_ITEM_NBR",
+            "type": "string",
+            "title": "The TERTRY_VENDOR_ITEM_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SPECIFIC_GRAVITY": {
+            "$id": "#/properties/SPECIFIC_GRAVITY",
+            "type": "integer",
+            "title": "The SPECIFIC_GRAVITY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CONCENTRATION_NBR": {
+            "$id": "#/properties/CONCENTRATION_NBR",
+            "type": "integer",
+            "title": "The CONCENTRATION_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CONCENTRATION_UNITS": {
+            "$id": "#/properties/CONCENTRATION_UNITS",
+            "type": "integer",
+            "title": "The CONCENTRATION_UNITS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "LIPIDS_IND": {
+            "$id": "#/properties/LIPIDS_IND",
+            "type": "string",
+            "title": "The LIPIDS_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "AMINO_ACID_IND": {
+            "$id": "#/properties/AMINO_ACID_IND",
+            "type": "string",
+            "title": "The AMINO_ACID_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "POOLABLE_IND": {
+            "$id": "#/properties/POOLABLE_IND",
+            "type": "string",
+            "title": "The POOLABLE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TRACE_ELEMENT_IND": {
+            "$id": "#/properties/TRACE_ELEMENT_IND",
+            "type": "string",
+            "title": "The TRACE_ELEMENT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ELECTROLYTE_IND": {
+            "$id": "#/properties/ELECTROLYTE_IND",
+            "type": "string",
+            "title": "The ELECTROLYTE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CONTAINER_MATERIAL_CD": {
+            "$id": "#/properties/CONTAINER_MATERIAL_CD",
+            "type": "integer",
+            "title": "The CONTAINER_MATERIAL_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CONTAINER_MAX_CAPACITY": {
+            "$id": "#/properties/CONTAINER_MAX_CAPACITY",
+            "type": "integer",
+            "title": "The CONTAINER_MAX_CAPACITY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "VEHICLE_IND": {
+            "$id": "#/properties/VEHICLE_IND",
+            "type": "string",
+            "title": "The VEHICLE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "VEHICLE": {
+            "$id": "#/properties/VEHICLE",
+            "type": "integer",
+            "title": "The VEHICLE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COCKTAIL_IND": {
+            "$id": "#/properties/COCKTAIL_IND",
+            "type": "string",
+            "title": "The COCKTAIL_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRIMARY_VENDOR_NBR": {
+            "$id": "#/properties/PRIMARY_VENDOR_NBR",
+            "type": "string",
+            "title": "The PRIMARY_VENDOR_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SECONDARY_VENDOR_NBR": {
+            "$id": "#/properties/SECONDARY_VENDOR_NBR",
+            "type": "string",
+            "title": "The SECONDARY_VENDOR_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TERTIARY_VENDOR_NBR": {
+            "$id": "#/properties/TERTIARY_VENDOR_NBR",
+            "type": "string",
+            "title": "The TERTIARY_VENDOR_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BASE_IND": {
+            "$id": "#/properties/BASE_IND",
+            "type": "string",
+            "title": "The BASE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ITEM_TYPE": {
+            "$id": "#/properties/ITEM_TYPE",
+            "type": "integer",
+            "title": "The ITEM_TYPE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CONC_DEXTROSE_IND": {
+            "$id": "#/properties/CONC_DEXTROSE_IND",
+            "type": "string",
+            "title": "The CONC_DEXTROSE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CONTAINER_IND": {
+            "$id": "#/properties/CONTAINER_IND",
+            "type": "string",
+            "title": "The CONTAINER_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CONTAINER_TYPE": {
+            "$id": "#/properties/CONTAINER_TYPE",
+            "type": "integer",
+            "title": "The CONTAINER_TYPE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRIMARY_VENDOR_NAME": {
+            "$id": "#/properties/PRIMARY_VENDOR_NAME",
+            "type": "string",
+            "title": "The PRIMARY_VENDOR_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SECONDARY_VENDOR_NAME": {
+            "$id": "#/properties/SECONDARY_VENDOR_NAME",
+            "type": "string",
+            "title": "The SECONDARY_VENDOR_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TERTIARY_VENDOR_NAME": {
+            "$id": "#/properties/TERTIARY_VENDOR_NAME",
+            "type": "string",
+            "title": "The TERTIARY_VENDOR_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLX_DRUG_IND": {
+            "$id": "#/properties/PLX_DRUG_IND",
+            "type": "string",
+            "title": "The PLX_DRUG_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ITEM_SIZE": {
+            "$id": "#/properties/ITEM_SIZE",
+            "type": "integer",
+            "title": "The ITEM_SIZE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_SIZE_UNITS": {
+            "$id": "#/properties/ITEM_SIZE_UNITS",
+            "type": "integer",
+            "title": "The ITEM_SIZE_UNITS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ITEM_LONG_DESC": {
+            "$id": "#/properties/ITEM_LONG_DESC",
+            "type": "string",
+            "title": "The ITEM_LONG_DESC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ITEM_SHORT_DESC": {
+            "$id": "#/properties/ITEM_SHORT_DESC",
+            "type": "string",
+            "title": "The ITEM_SHORT_DESC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ITEM_AWP": {
+            "$id": "#/properties/ITEM_AWP",
+            "type": "integer",
+            "title": "The ITEM_AWP schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "BILLING_MULTIPLIER": {
+            "$id": "#/properties/BILLING_MULTIPLIER",
+            "type": "integer",
+            "title": "The BILLING_MULTIPLIER schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "TRACK_INVENTORY_IND": {
+            "$id": "#/properties/TRACK_INVENTORY_IND",
+            "type": "string",
+            "title": "The TRACK_INVENTORY_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DISEASE_STATE_IND": {
+            "$id": "#/properties/DISEASE_STATE_IND",
+            "type": "string",
+            "title": "The DISEASE_STATE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_MIN_PRICE": {
+            "$id": "#/properties/DRUG_MIN_PRICE",
+            "type": "integer",
+            "title": "The DRUG_MIN_PRICE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_INFERENCE_CD": {
+            "$id": "#/properties/DRUG_INFERENCE_CD",
+            "type": "string",
+            "title": "The DRUG_INFERENCE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "EXCL_DRUG_AUTOMATION_IND": {
+            "$id": "#/properties/EXCL_DRUG_AUTOMATION_IND",
+            "type": "string",
+            "title": "The EXCL_DRUG_AUTOMATION_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "EXCL_TBLTP_COUNT_IND": {
+            "$id": "#/properties/EXCL_TBLTP_COUNT_IND",
+            "type": "string",
+            "title": "The EXCL_TBLTP_COUNT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REQUIRE_TBLTP_CLEAN": {
+            "$id": "#/properties/REQUIRE_TBLTP_CLEAN",
+            "type": "string",
+            "title": "The REQUIRE_TBLTP_CLEAN schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "THERA_CLASS_EXTD": {
+            "$id": "#/properties/THERA_CLASS_EXTD",
+            "type": "string",
+            "title": "The THERA_CLASS_EXTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "M_LAST_CHANGE_DTTM": {
+            "$id": "#/properties/M_LAST_CHANGE_DTTM",
+            "type": "string",
+            "title": "The M_LAST_CHANGE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "M_LAST_CHANGE_DTTM_TC": {
+            "$id": "#/properties/M_LAST_CHANGE_DTTM_TC",
+            "type": "string",
+            "title": "The M_LAST_CHANGE_DTTM_TC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "HAZARD_LEVEL_CD": {
+            "$id": "#/properties/HAZARD_LEVEL_CD",
+            "type": "string",
+            "title": "The HAZARD_LEVEL_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        }
+    }
+}

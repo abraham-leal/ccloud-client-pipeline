@@ -184,6 +184,7 @@
                                 <include>rx.avsc</include>
                                 <include>rxt.avsc</include>
                                 <include>serving.avsc</include>
+                                <include>simpleAvro.avsc</include>
                             </includes>
                             <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
                         </configuration>

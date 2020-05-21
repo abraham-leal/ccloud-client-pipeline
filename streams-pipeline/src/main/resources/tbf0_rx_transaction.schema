@@ -1,0 +1,5392 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "required": [
+        "STORE_NBR",
+        "RX_NBR",
+        "FILL_NBR",
+        "FILL_PARTIAL_NBR",
+        "THRD_PTY_BILLING_QTY",
+        "COPAY_GT_RX_IND",
+        "REJECT_COUNT",
+        "DL_REJECT_CD_01",
+        "DL_REJECT_CD_02",
+        "DL_REJECT_CD_03",
+        "DL_REJECT_CD_04",
+        "DL_REJECT_CD_05",
+        "DL_TO_TAPE_IND",
+        "DL_DEL_TO_TAPE_IND",
+        "FILL_ADJUDICATION_CD",
+        "FILL_DEL_ADJUDICATION_CD",
+        "REFILLS_REMAINING",
+        "DRUG_CLASS",
+        "DRUG_NAME",
+        "DRUG_ID",
+        "DRUG_PACKAGE_SIZE",
+        "DRUG_TYPE_CD",
+        "GENERAL_MFG_NAME",
+        "DRUG_REORDER_FACTOR",
+        "REPACK_NBR",
+        "NDC_MFG",
+        "NDC_PKG",
+        "NDC_PROD",
+        "PACKAGE_SIZE_UOM",
+        "WIC_NBR",
+        "FILL_AWP_COST_AMT",
+        "FILL_DAYS_SUPPLY",
+        "FILL_ENTERED_DTTM",
+        "FILL_LABEL_PRICE_AMT",
+        "FILL_PRICE_OVERRIDE_AMT",
+        "FILL_QTY_DISPENSED",
+        "FILL_RETAIL_PRICE_AMT",
+        "FILL_WAC_COST_AMT",
+        "CLAIM_REFERENCE_NBR",
+        "PAY_CD",
+        "PLAN_RETURND_COPAY_AMT",
+        "PLAN_TOTAL_PAID_AMT",
+        "PLAN_RETURND_COST_AMT",
+        "PLAN_RETURND_FEE_AMT",
+        "PLAN_RETURND_TAX_AMT",
+        "PLAN_SUBMTD_COPAY_AMT",
+        "PLAN_SUBMTD_COST_AMT",
+        "PLAN_SUBMTD_FEE_AMT",
+        "PLAN_SUBMTD_TAX_AMT",
+        "PLAN_GROSS_DUE_AMT",
+        "PLAN_INCENTIVE_PAID_AMT",
+        "PRIOR_AUTH_CD",
+        "PRIOR_AUTH_NBR",
+        "GENERAL_RECIPIENT_NBR",
+        "PAT_PLAN_PLCY_HLDR_REL",
+        "PERSON_CD",
+        "PAT_BIRTH_DTTM",
+        "PAT_STREET_ADDR",
+        "PAT_CITY",
+        "PAT_STATE",
+        "PAT_FIRST_NAME",
+        "PAT_MID_INIT",
+        "PAT_LAST_NAME",
+        "PAT_ZIP",
+        "PAT_PRIM_AREA_CD",
+        "PAT_PRIM_PHONE",
+        "PAT_SEX_CD",
+        "PAT_HOH_ID",
+        "PAT_SURNAME_SUFFIX",
+        "PBR_ID",
+        "FILL_NBR_DISPENSED",
+        "FILL_NBR_PRESCRIBED",
+        "PAT_ID",
+        "RX_COMMENT",
+        "RX_ORIGINAL_QTY",
+        "RX_SIG",
+        "RX_WRITTEN_DTTM",
+        "BIN_NBR",
+        "LINK_TYPE_CD",
+        "PLAN_BILL_METHOD_CD",
+        "PLAN_GROUP_NBR",
+        "PLAN_TYPE_CD",
+        "PLAN_ID",
+        "DRUG_WAREHOUSE_IND",
+        "FILL_STATUS_CD",
+        "WC_INJURY_DTTM",
+        "GENERAL_PBR_NBR",
+        "GENERAL_DRUG_NBR",
+        "GENERAL_PHRM_NBR",
+        "BILLING_NDC",
+        "BILL_FORM_TYPE_CD",
+        "OPS_STUDY_DEPT_NBR",
+        "SIMS_UPC",
+        "DL_PROC_MSG",
+        "DL_DEL_PROC_MSG",
+        "DL_ADDITIONAL_MSG",
+        "FILL_ENTERED_USER_ID",
+        "FILL_VERIFIED_USER_ID",
+        "FILL_VERIFIED_DTTM",
+        "DRUG_NON_SYSTEM_CD",
+        "PBR_LOC_ID",
+        "PAT_ALGY_HLTH_TYPE_CD",
+        "PAT_ALGY_HLTH_CD_INQ_IND",
+        "PROC_LOCAL_DTTM",
+        "PROC_DEL_LOCAL_DTTM",
+        "TIMEOUT_LOCAL_DTTM",
+        "TIMEOUT_DEL_LOCAL_DTTM",
+        "FILL_EST_PICK_UP_DTTM",
+        "PAT_PICKUP_ID",
+        "FILL_LAST_ENTERED_DTTM",
+        "FILL_PREPAID_IND",
+        "FILL_PRICE_VARIANCE_CD",
+        "FILL_SOURCE_CD",
+        "FILL_PRINT_DTTM",
+        "FILL_SOLD_DTTM",
+        "FILL_DELETED_DTTM",
+        "CALL_LIST_PRINT_IND",
+        "FILL_PICKUP_CD",
+        "FILL_DISCOUNT_CD",
+        "FILL_SAVINGS_AMT",
+        "LABEL_COMMENTS",
+        "PRINT_IND",
+        "FILL_PAY_METHOD_CD",
+        "FILL_DISCOUNT_AMT",
+        "FILL_SOLD_AMT",
+        "FILL_PRORATED_PRICE_IND",
+        "FILL_TYPE_CD",
+        "IC_SCRIPT_NBR_PREFIX",
+        "ORDERED_DRUG_ID",
+        "RX_CLOSE_LOG_DIR_CD",
+        "RX_DENIAL_OVERRIDE_CD",
+        "ELIGIBILITY_OVERRIDE_CD",
+        "DIAGNOSIS_CD",
+        "DIRECT_LINK_CD",
+        "PAT_ACC_DED_AMT",
+        "PAT_REM_DED_AMT",
+        "PAT_REM_BEN_AMT",
+        "PAT_DED_APPLIED_AMT",
+        "DL_DEL_CD",
+        "DL_DEL_TYPE_CD",
+        "TAX_EXEMPT_PLAN_IND",
+        "SIGNATURE_REQUIRED_IND",
+        "REIMBURS_LOSS_AMT",
+        "DUR_INTERVENTION_CD",
+        "DUR_CONFLICT_CD",
+        "DUR_OUTCOME_CD",
+        "RX_REFILLS_BY_DTTM",
+        "SOLD_LOCAL_DTTM",
+        "RX_COPY_COMMENTS",
+        "RX_PRINT_DRUG_CD",
+        "DRUG_SUB_CD",
+        "REFILLS_REMAIN_WHEN_ENT",
+        "RX_ORIGINAL_FILL_DTTM",
+        "RX_DAW_IND",
+        "RX_EXP_DTTM",
+        "PAT_SNAP_CAP_PREF",
+        "REBILLING_DTTM",
+        "AUTO_VERIFIED_IND",
+        "SYS_STATUS_WHEN_ENT",
+        "CREATE_USER_ID",
+        "CREATE_DTTM",
+        "UPDATE_USER_ID",
+        "UPDATE_DTTM",
+        "PAT_LANG_PREF_CD",
+        "CALLER_NAME",
+        "XFER_FROM_RPH_LIC_NBR",
+        "RX_PRINT_SAVINGS_IND",
+        "COST_PLUS_FEE_CD",
+        "PARTIAL_FILL_CD",
+        "PARTIAL_FIL_INTNDED_QTY",
+        "TRIPLICATE_SERIAL_NBR",
+        "FILL_ADJUDICATION_DTTM",
+        "GENERIC_SUBSTITUTED_IND",
+        "ACCEPT_CONSULT_IND",
+        "BASIS_OF_FEE_CALC",
+        "BASIS_OF_COPAY_CALC",
+        "BASIS_OF_FLAT_TAX_CALC",
+        "BASIS_OF_PCT_TAX_CALC",
+        "BASIS_OF_REIMB_DETERM",
+        "NCPDP_VERSION",
+        "PLAN_RETURND_TAX_TYPE_CD",
+        "PLAN_TAX_EXEMPT_IND",
+        "PLAN_PCT_TAX_RATE_PAID",
+        "PLAN_PCT_TAX_BASIS_PAID",
+        "PLAN_OTHER_AMT_PAID_TYPE",
+        "PLAN_OTHER_AMT_PAID",
+        "AMT_ATTRIBUTED_TO_TAX",
+        "PLAN_INCENT_AMT_SUBMTD",
+        "PLAN_PCT_TAX_RATE_SUBMTD",
+        "PLAN_PCT_TAX_BAS_SUBMTD",
+        "PLAN_SUBMTD_TAX_TYPE_CD",
+        "BASIS_OF_COST_DETERM",
+        "APPROVED_MSG_CD",
+        "ORIGIN_CD",
+        "DAYS_SUPPLY_INTENDED",
+        "DUR_INTERVENTION_CD_1",
+        "DUR_CONFLICT_CD_1",
+        "DUR_OUTCOME_CD_1",
+        "DUR_EFFORT_LEVEL_1",
+        "DUR_INTERVENTION_CD_2",
+        "DUR_CONFLICT_CD_2",
+        "DUR_OUTCOME_CD_2",
+        "DUR_EFFORT_LEVEL_2",
+        "DUR_INTERVENTION_CD_3",
+        "DUR_CONFLICT_CD_3",
+        "DUR_OUTCOME_CD_3",
+        "DUR_EFFORT_LEVEL_3",
+        "PLAN_OTHER_AMT_SUBM_TYPE",
+        "PLAN_OTHER_AMT_SUBMTD",
+        "ASSOCIATE_RX_NBR",
+        "ASSOCIATE_FILL_DTTM",
+        "HELP_DESK_PHONE",
+        "PREF_PROD_COUNT",
+        "PARTIAL_FILL_VERSION_CD",
+        "FILL_CC_AUTH_REF",
+        "LVL_OF_SVC_CD",
+        "COB_REJECT_COUNT",
+        "COB_DL_REJECT_CD_01",
+        "COB_DL_REJECT_CD_02",
+        "COB_DL_REJECT_CD_03",
+        "COB_DL_REJECT_CD_04",
+        "COB_DL_REJECT_CD_05",
+        "COB_DL_TO_TAPE_IND",
+        "COB_DL_DEL_TO_TAPE_IND",
+        "COB_FILL_ADJUDICATION_CD",
+        "COB_FILL_DEL_ADJ_CD",
+        "COB_CLAIM_REF_NBR",
+        "COB_PLAN_RTRND_COPAY_AMT",
+        "COB_PLAN_TOTAL_PAID_AMT",
+        "COB_PLAN_RTRND_COST_AMT",
+        "COB_PLAN_RTRND_FEE_AMT",
+        "COB_PLAN_RTRND_TAX_AMT",
+        "COB_PLAN_SBMTD_COPAY_AMT",
+        "COB_PLAN_SBMTD_COST_AMT",
+        "COB_PLAN_SBMTD_FEE_AMT",
+        "COB_PLAN_SBMTD_TAX_AMT",
+        "COB_PLAN_GROSS_DUE_AMT",
+        "COB_PLAN_INCNTV_PAID_AMT",
+        "COB_GEN_RECIPIENT_NBR",
+        "COB_PT_PLN_PLCY_HLDR_REL",
+        "COB_PERSON_CD",
+        "COB_BIN_NBR",
+        "COB_LINK_TYPE_CD",
+        "COB_PLAN_BILL_METHOD_CD",
+        "COB_PLAN_GROUP_NBR",
+        "COB_PLAN_TYPE_CD",
+        "COB_PLAN_ID",
+        "COB_GENERAL_PBR_NBR",
+        "COB_GENERAL_DRUG_NBR",
+        "COB_GENERAL_PHRM_NBR",
+        "COB_DL_PROC_MSG",
+        "COB_DL_DEL_PROC_MSG",
+        "COB_DL_ADDITIONAL_MSG",
+        "COB_PROC_LOCAL_DTTM",
+        "COB_PROC_DEL_LOCAL_DTTM",
+        "COB_DIRECT_LINK_CD",
+        "COB_PAT_ACC_DED_AMT",
+        "COB_PAT_REM_DED_AMT",
+        "COB_PAT_REM_BEN_AMT",
+        "COB_PAT_DED_APPLIED_AMT",
+        "COB_DL_DEL_CD",
+        "COB_DL_DEL_TYPE_CD",
+        "COB_TAX_EXEMPT_PLAN_IND",
+        "COB_FILL_ADJ_DTTM",
+        "COB_BASIS_OF_FEE_CALC",
+        "COB_BASIS_OF_COPAY_CALC",
+        "COB_BASIS_OF_FLT_TX_CALC",
+        "COB_BASIS_OF_PCT_TX_CALC",
+        "COB_BASIS_OF_REIMB_DETRM",
+        "COB_NCPDP_VERSION",
+        "COB_PLN_RTRND_TX_TYPE_CD",
+        "COB_PLAN_TAX_EXEMPT_IND",
+        "COB_PLN_PCT_TX_RATE_PD",
+        "COB_PLN_PCT_TX_BASIS_PD",
+        "COB_AMT_ATTRIB_TO_TAX",
+        "COB_PLN_INCNT_AMT_SBMTD",
+        "COB_PLN_PCT_TX_RT_SBMTD",
+        "COB_PLN_PCT_TX_BAS_SBMTD",
+        "COB_PLN_SBMTD_TX_TYPE_CD",
+        "COB_APPROVED_MSG_CD",
+        "COB_ASSOC_RX_NBR",
+        "COB_ASSOC_FILL_DTTM",
+        "PAT_COB_IND",
+        "COB_TMOUT_LCL_DTTM",
+        "COB_TMOUT_DEL_LCL_DTTM",
+        "PROC_CTRL_NBR",
+        "COB_PLN_OTHR_AMT_PD_TYPE",
+        "COB_PLN_OTHR_AMT_PD",
+        "SOMA_MODE_IND",
+        "MANUAL_CLAIM_IND",
+        "DIAGNOSIS_CD_QUALIFIER",
+        "CASH_DISC_SAV_AMT",
+        "PAT_LOC_CD",
+        "GENERAL_RPH_NBR",
+        "GENERAL_RPH_NBR_QLFR",
+        "WC_CARRIER_ID",
+        "WC_EMPLOYER_NAME",
+        "WC_EMPLOYER_AREA_CD",
+        "WC_EMPLOYER_PHONE",
+        "WC_EMPLOYER_ADDR",
+        "WC_EMPLOYER_CITY",
+        "WC_EMPLOYER_STATE",
+        "WC_EMPLOYER_ZIP",
+        "WC_EMPLOYER_CONTACT",
+        "WC_CLAIM_REF_NBR",
+        "WC_BILLING_INJURY_DTTM",
+        "TOT_AMT_PAID_IND",
+        "RX_OVERRIDE_IND",
+        "ROUTING_STORE_NBR",
+        "ORIG_RX_NBR",
+        "ROUTING_STORE_TECH_INITS",
+        "ROUTING_STORE_RPH_INITS",
+        "SPC_PAT_PHONE_AREA_CD",
+        "SPC_PAT_PHONE_NBR",
+        "SPC_PAT_CONTACT_DTTM",
+        "FILL_DATA_REV_ID",
+        "FILL_DATA_REV_DTTM",
+        "SOURCING_IND",
+        "FILLING_USER_ID",
+        "FILLING_DTTM",
+        "OVERRIDE_USER_ID",
+        "OVERRIDE_DTTM",
+        "OTHER_COVERAGE_CD",
+        "COB_OTHER_COVERAGE_CD",
+        "THRD_PTY_GRP_RULE",
+        "DPS_NBR",
+        "MAJ_MED_PLAN_ID",
+        "DIAGNOSIS_CD_2",
+        "DIAGNOSIS_CD_3",
+        "DIAGNOSIS_CD_4",
+        "MAJ_MED_PRIOR_AUTH_NBR",
+        "DOCUMENT_ID",
+        "COB_DOCUMENT_ID",
+        "SIGNATURE_ID",
+        "SIGNATURE_CAPTURED_IND",
+        "PROF_SVCS_FEE_SBMTD",
+        "PROF_SVCS_FEE_RTRND",
+        "TIP_RSN_FOR_SVC_CD",
+        "TIP_PROF_SVC_CD",
+        "TIP_RSLT_OF_SVC_CD",
+        "TIP_LVL_OF_EFFORT",
+        "PLAN_RTRND_CPY_COINS_AMT",
+        "ENTERED_STORE_NBR",
+        "REVIEWED_STORE_NBR",
+        "PLAN_RTRND_COINS_AMT",
+        "NON_RX_OTC_SOURCE_IND",
+        "DUR_STATUS_CD",
+        "COB_PLAN_DUR_STATUS_CD",
+        "PLAN_DUR_STATUS_CD",
+        "DUR_CHK_IND",
+        "COB_MAJOR_MED_PLAN_ID",
+        "DATA_REV_SPEC_ID",
+        "DATA_REV_SPEC_DTTM",
+        "DATA_REV_SPEC_STORE_NBR",
+        "FILL_RPH_OF_RECORD_ID",
+        "AVOID_DR_PROCESS_IND",
+        "DIAGNOSIS_CD_5",
+        "PLACE_OF_SERVICE",
+        "RX_DENIAL_OVERRIDE_CD_2",
+        "RX_DENIAL_OVERRIDE_CD_3",
+        "INTERMEDIARY_AUTH_ID",
+        "DELAY_REASON_CD",
+        "PBR_ID_QLFR_SUBMTD",
+        "RPH_ID_QLFR_SUBMTD",
+        "MEDIGAP_ID",
+        "PLAN_RETURND_GRP_NBR",
+        "PLAN_ID_RETURND",
+        "GEN_RECIP_NBR_RETURND",
+        "PAT_BIRTH_DATE_RETURND",
+        "NTWK_REIMB_ID_RETURND",
+        "PROC_FEE_AMT",
+        "PRVD_NTWK_AMT",
+        "PRD_BRND_DRUG_AMT",
+        "NPREF_PRD_FORM_AMT",
+        "NPREF_BRND_PRD_AMT",
+        "COV_GAP_AMT",
+        "PLAN_FUND_ASSIST_AMT",
+        "INGRD_COST_CONTRACT_AMT",
+        "DISP_FEE_CONTRACT_AMT",
+        "PLAN_SALES_TAX_AMT",
+        "PAT_SALES_TAX_AMT",
+        "OTHER_PAYER_RECOGNZD_AMT",
+        "BEN_STG_DED_AMT",
+        "BEN_STG_INIT_COV_AMT",
+        "BEN_STG_COV_GAP_AMT",
+        "BEN_STG_CAT_AMT",
+        "SPEND_ACCT_REM_AMT",
+        "EST_GEN_SAVE_AMT",
+        "EXCEED_MAX_BEN_AMT",
+        "PLAN_RETURND_COINS_AMT",
+        "APPROVED_MSG_CD_2",
+        "COB_PRD_BRND_DRUG_AMT",
+        "COB_NPREF_PRD_FORM_AMT",
+        "COB_NPREF_BRND_PRD_AMT",
+        "COB_PLAN_FUND_ASSIST_AMT",
+        "COB_SPEND_ACCT_REM_AMT",
+        "COB_EST_GEN_SAVE_AMT",
+        "COB_EXCEED_MAX_BEN_AMT",
+        "COB_APPROVED_MSG_CD_2",
+        "DIAGNOSIS_CD_QUALIFIER_2",
+        "DIAGNOSIS_CD_QUALIFIER_3",
+        "DIAGNOSIS_CD_QUALIFIER_4",
+        "DIAGNOSIS_CD_QUALIFIER_5",
+        "CELGENE_MD_AUTH_NBR",
+        "CELGENE_CONF_NBR",
+        "PAT_PICKUP_ID_QLFR",
+        "PAT_PICKUP_GOV_AUTH_ID",
+        "PAT_PICKUP_REL_CD",
+        "PLAN_OTHER_AMT_PAID_TYP2",
+        "PLAN_OTHER_AMT_PAID_TYP3",
+        "PLAN_OTHER_AMT_PAID_2",
+        "PLAN_OTHER_AMT_PAID_3",
+        "COB_OTHR_PAYER_REC_AMT",
+        "COB_INGRD_CST_CTRCT_AMT",
+        "COB_DISP_FEE_CTRCT_AMT",
+        "COB_PLN_INCNT_AMT_SUBMTD",
+        "COB_INTERMEDIARY_AUTH_ID",
+        "COB_DELAY_REASON_CD",
+        "COB_PLACE_OF_SERVICE",
+        "COB_RX_DENIAL_OVRIDE_CD2",
+        "COB_RX_DENIAL_OVRIDE_CD3",
+        "COB_DIAGNOSIS_CD_2",
+        "COB_DIAGNOSIS_CD_3",
+        "COB_DIAGNOSIS_CD_4",
+        "COB_DIAGNOSIS_CD_5",
+        "COB_DIAGNOSIS_CD_QLFR_2",
+        "COB_DIAGNOSIS_CD_QLFR_3",
+        "COB_DIAGNOSIS_CD_QLFR_4",
+        "COB_DIAGNOSIS_CD_QLFR_5",
+        "COB_DIAGNOSIS_CD",
+        "COB_DIAGNOSIS_CD_QLFR",
+        "COB_RX_DENIAL_OVRIDE_CD",
+        "AUTO_CASHOUT_ATTEMPT",
+        "FILL_90DAY_PREF_IND",
+        "FILL_90DAY_PREF_STAT_CD",
+        "PRODUCT_IMAGE_ID",
+        "PROD_REV_REJ_RSN_CD",
+        "PROD_REV_REJ_COMMENT",
+        "PICKUP_ID",
+        "PICKUP_FIRST_NAME",
+        "PICKUP_LAST_NAME",
+        "PICKUP_ID_STATE",
+        "PICKUP_ID_COUNTRY",
+        "PICKUP_ID_QLFR",
+        "PICKUP_REL_CD",
+        "QTY_REMAINING",
+        "MED_PARTD_NOTICE_IND",
+        "DISPENSED_NDC",
+        "COUPON_DRUG_ID",
+        "COB_COUPON_DRUG_ID",
+        "CUSTOM_PAYMENT_ORDER_IND",
+        "COUPON_IND",
+        "COB_COUPON_IND",
+        "MED_PARTD_PRINT_DTTM",
+        "DL_ADDL_MSG_QLFR",
+        "COB_DL_ADDL_MSG_QLFR",
+        "SP_MSG_SEND_IND",
+        "APPROVED_MSG_CD_3",
+        "APPROVED_MSG_CD_4",
+        "APPROVED_MSG_CD_5",
+        "COB_APPROVED_MSG_CD_3",
+        "COB_APPROVED_MSG_CD_4",
+        "COB_APPROVED_MSG_CD_5",
+        "BEN_STG_QUALIFIER_1",
+        "BEN_STG_QUALIFIER_2",
+        "BEN_STG_QUALIFIER_3",
+        "BEN_STG_QUALIFIER_4",
+        "BEN_STG_AMOUNT_1",
+        "BEN_STG_AMOUNT_2",
+        "BEN_STG_AMOUNT_3",
+        "BEN_STG_AMOUNT_4",
+        "OVERSTOCK_IND",
+        "DB_COB_PROC_CTRL_NBR",
+        "SOURCE_SYSTEM_NAME",
+        "SOURCE_SYS_TRANS_ID",
+        "DELIVERY_IND",
+        "DELIVERY_COMMENTS",
+        "ORG_ENTERED_DTTM",
+        "PBR_BLOCK_TYPE",
+        "PBR_BLOCK_INT_MSG",
+        "PBR_BLOCK_EXT_MSG",
+        "FILL_MAND_CONSULT_IND",
+        "POC_DOCUMENT_ID",
+        "POC_COB_DOCUMENT_ID",
+        "WO_CORRELATION_ID",
+        "WO_RX_COUNT",
+        "SHORT_FILL_IND",
+        "FILLING_STORE_NBR",
+        "FILL_VERIFIED_STORE_NBR"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "STORE_NBR": {
+            "$id": "#/properties/STORE_NBR",
+            "type": "integer",
+            "title": "The STORE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "RX_NBR": {
+            "$id": "#/properties/RX_NBR",
+            "type": "integer",
+            "title": "The RX_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_NBR": {
+            "$id": "#/properties/FILL_NBR",
+            "type": "integer",
+            "title": "The FILL_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_PARTIAL_NBR": {
+            "$id": "#/properties/FILL_PARTIAL_NBR",
+            "type": "integer",
+            "title": "The FILL_PARTIAL_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "THRD_PTY_BILLING_QTY": {
+            "$id": "#/properties/THRD_PTY_BILLING_QTY",
+            "type": "integer",
+            "title": "The THRD_PTY_BILLING_QTY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COPAY_GT_RX_IND": {
+            "$id": "#/properties/COPAY_GT_RX_IND",
+            "type": "string",
+            "title": "The COPAY_GT_RX_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REJECT_COUNT": {
+            "$id": "#/properties/REJECT_COUNT",
+            "type": "integer",
+            "title": "The REJECT_COUNT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DL_REJECT_CD_01": {
+            "$id": "#/properties/DL_REJECT_CD_01",
+            "type": "string",
+            "title": "The DL_REJECT_CD_01 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_REJECT_CD_02": {
+            "$id": "#/properties/DL_REJECT_CD_02",
+            "type": "string",
+            "title": "The DL_REJECT_CD_02 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_REJECT_CD_03": {
+            "$id": "#/properties/DL_REJECT_CD_03",
+            "type": "string",
+            "title": "The DL_REJECT_CD_03 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_REJECT_CD_04": {
+            "$id": "#/properties/DL_REJECT_CD_04",
+            "type": "string",
+            "title": "The DL_REJECT_CD_04 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_REJECT_CD_05": {
+            "$id": "#/properties/DL_REJECT_CD_05",
+            "type": "string",
+            "title": "The DL_REJECT_CD_05 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_TO_TAPE_IND": {
+            "$id": "#/properties/DL_TO_TAPE_IND",
+            "type": "string",
+            "title": "The DL_TO_TAPE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_DEL_TO_TAPE_IND": {
+            "$id": "#/properties/DL_DEL_TO_TAPE_IND",
+            "type": "string",
+            "title": "The DL_DEL_TO_TAPE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_ADJUDICATION_CD": {
+            "$id": "#/properties/FILL_ADJUDICATION_CD",
+            "type": "string",
+            "title": "The FILL_ADJUDICATION_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_DEL_ADJUDICATION_CD": {
+            "$id": "#/properties/FILL_DEL_ADJUDICATION_CD",
+            "type": "string",
+            "title": "The FILL_DEL_ADJUDICATION_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REFILLS_REMAINING": {
+            "$id": "#/properties/REFILLS_REMAINING",
+            "type": "integer",
+            "title": "The REFILLS_REMAINING schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_CLASS": {
+            "$id": "#/properties/DRUG_CLASS",
+            "type": "string",
+            "title": "The DRUG_CLASS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_NAME": {
+            "$id": "#/properties/DRUG_NAME",
+            "type": "string",
+            "title": "The DRUG_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_ID": {
+            "$id": "#/properties/DRUG_ID",
+            "type": "integer",
+            "title": "The DRUG_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_PACKAGE_SIZE": {
+            "$id": "#/properties/DRUG_PACKAGE_SIZE",
+            "type": "integer",
+            "title": "The DRUG_PACKAGE_SIZE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DRUG_TYPE_CD": {
+            "$id": "#/properties/DRUG_TYPE_CD",
+            "type": "string",
+            "title": "The DRUG_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GENERAL_MFG_NAME": {
+            "$id": "#/properties/GENERAL_MFG_NAME",
+            "type": "string",
+            "title": "The GENERAL_MFG_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_REORDER_FACTOR": {
+            "$id": "#/properties/DRUG_REORDER_FACTOR",
+            "type": "integer",
+            "title": "The DRUG_REORDER_FACTOR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "REPACK_NBR": {
+            "$id": "#/properties/REPACK_NBR",
+            "type": "string",
+            "title": "The REPACK_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_MFG": {
+            "$id": "#/properties/NDC_MFG",
+            "type": "string",
+            "title": "The NDC_MFG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PKG": {
+            "$id": "#/properties/NDC_PKG",
+            "type": "string",
+            "title": "The NDC_PKG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NDC_PROD": {
+            "$id": "#/properties/NDC_PROD",
+            "type": "string",
+            "title": "The NDC_PROD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PACKAGE_SIZE_UOM": {
+            "$id": "#/properties/PACKAGE_SIZE_UOM",
+            "type": "string",
+            "title": "The PACKAGE_SIZE_UOM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WIC_NBR": {
+            "$id": "#/properties/WIC_NBR",
+            "type": "integer",
+            "title": "The WIC_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_AWP_COST_AMT": {
+            "$id": "#/properties/FILL_AWP_COST_AMT",
+            "type": "integer",
+            "title": "The FILL_AWP_COST_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_DAYS_SUPPLY": {
+            "$id": "#/properties/FILL_DAYS_SUPPLY",
+            "type": "integer",
+            "title": "The FILL_DAYS_SUPPLY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_ENTERED_DTTM": {
+            "$id": "#/properties/FILL_ENTERED_DTTM",
+            "type": "string",
+            "title": "The FILL_ENTERED_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "FILL_LABEL_PRICE_AMT": {
+            "$id": "#/properties/FILL_LABEL_PRICE_AMT",
+            "type": "integer",
+            "title": "The FILL_LABEL_PRICE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_PRICE_OVERRIDE_AMT": {
+            "$id": "#/properties/FILL_PRICE_OVERRIDE_AMT",
+            "type": "integer",
+            "title": "The FILL_PRICE_OVERRIDE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_QTY_DISPENSED": {
+            "$id": "#/properties/FILL_QTY_DISPENSED",
+            "type": "integer",
+            "title": "The FILL_QTY_DISPENSED schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_RETAIL_PRICE_AMT": {
+            "$id": "#/properties/FILL_RETAIL_PRICE_AMT",
+            "type": "integer",
+            "title": "The FILL_RETAIL_PRICE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_WAC_COST_AMT": {
+            "$id": "#/properties/FILL_WAC_COST_AMT",
+            "type": "integer",
+            "title": "The FILL_WAC_COST_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CLAIM_REFERENCE_NBR": {
+            "$id": "#/properties/CLAIM_REFERENCE_NBR",
+            "type": "string",
+            "title": "The CLAIM_REFERENCE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAY_CD": {
+            "$id": "#/properties/PAY_CD",
+            "type": "string",
+            "title": "The PAY_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_RETURND_COPAY_AMT": {
+            "$id": "#/properties/PLAN_RETURND_COPAY_AMT",
+            "type": "integer",
+            "title": "The PLAN_RETURND_COPAY_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_TOTAL_PAID_AMT": {
+            "$id": "#/properties/PLAN_TOTAL_PAID_AMT",
+            "type": "integer",
+            "title": "The PLAN_TOTAL_PAID_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_RETURND_COST_AMT": {
+            "$id": "#/properties/PLAN_RETURND_COST_AMT",
+            "type": "integer",
+            "title": "The PLAN_RETURND_COST_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_RETURND_FEE_AMT": {
+            "$id": "#/properties/PLAN_RETURND_FEE_AMT",
+            "type": "integer",
+            "title": "The PLAN_RETURND_FEE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_RETURND_TAX_AMT": {
+            "$id": "#/properties/PLAN_RETURND_TAX_AMT",
+            "type": "integer",
+            "title": "The PLAN_RETURND_TAX_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_SUBMTD_COPAY_AMT": {
+            "$id": "#/properties/PLAN_SUBMTD_COPAY_AMT",
+            "type": "integer",
+            "title": "The PLAN_SUBMTD_COPAY_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_SUBMTD_COST_AMT": {
+            "$id": "#/properties/PLAN_SUBMTD_COST_AMT",
+            "type": "integer",
+            "title": "The PLAN_SUBMTD_COST_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_SUBMTD_FEE_AMT": {
+            "$id": "#/properties/PLAN_SUBMTD_FEE_AMT",
+            "type": "integer",
+            "title": "The PLAN_SUBMTD_FEE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_SUBMTD_TAX_AMT": {
+            "$id": "#/properties/PLAN_SUBMTD_TAX_AMT",
+            "type": "integer",
+            "title": "The PLAN_SUBMTD_TAX_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_GROSS_DUE_AMT": {
+            "$id": "#/properties/PLAN_GROSS_DUE_AMT",
+            "type": "integer",
+            "title": "The PLAN_GROSS_DUE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_INCENTIVE_PAID_AMT": {
+            "$id": "#/properties/PLAN_INCENTIVE_PAID_AMT",
+            "type": "integer",
+            "title": "The PLAN_INCENTIVE_PAID_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRIOR_AUTH_CD": {
+            "$id": "#/properties/PRIOR_AUTH_CD",
+            "type": "string",
+            "title": "The PRIOR_AUTH_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRIOR_AUTH_NBR": {
+            "$id": "#/properties/PRIOR_AUTH_NBR",
+            "type": "string",
+            "title": "The PRIOR_AUTH_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GENERAL_RECIPIENT_NBR": {
+            "$id": "#/properties/GENERAL_RECIPIENT_NBR",
+            "type": "string",
+            "title": "The GENERAL_RECIPIENT_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_PLAN_PLCY_HLDR_REL": {
+            "$id": "#/properties/PAT_PLAN_PLCY_HLDR_REL",
+            "type": "string",
+            "title": "The PAT_PLAN_PLCY_HLDR_REL schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PERSON_CD": {
+            "$id": "#/properties/PERSON_CD",
+            "type": "string",
+            "title": "The PERSON_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_BIRTH_DTTM": {
+            "$id": "#/properties/PAT_BIRTH_DTTM",
+            "type": "string",
+            "title": "The PAT_BIRTH_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PAT_STREET_ADDR": {
+            "$id": "#/properties/PAT_STREET_ADDR",
+            "type": "string",
+            "title": "The PAT_STREET_ADDR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_CITY": {
+            "$id": "#/properties/PAT_CITY",
+            "type": "string",
+            "title": "The PAT_CITY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_STATE": {
+            "$id": "#/properties/PAT_STATE",
+            "type": "string",
+            "title": "The PAT_STATE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_FIRST_NAME": {
+            "$id": "#/properties/PAT_FIRST_NAME",
+            "type": "string",
+            "title": "The PAT_FIRST_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_MID_INIT": {
+            "$id": "#/properties/PAT_MID_INIT",
+            "type": "string",
+            "title": "The PAT_MID_INIT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_LAST_NAME": {
+            "$id": "#/properties/PAT_LAST_NAME",
+            "type": "string",
+            "title": "The PAT_LAST_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_ZIP": {
+            "$id": "#/properties/PAT_ZIP",
+            "type": "string",
+            "title": "The PAT_ZIP schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_PRIM_AREA_CD": {
+            "$id": "#/properties/PAT_PRIM_AREA_CD",
+            "type": "string",
+            "title": "The PAT_PRIM_AREA_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_PRIM_PHONE": {
+            "$id": "#/properties/PAT_PRIM_PHONE",
+            "type": "string",
+            "title": "The PAT_PRIM_PHONE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_SEX_CD": {
+            "$id": "#/properties/PAT_SEX_CD",
+            "type": "string",
+            "title": "The PAT_SEX_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_HOH_ID": {
+            "$id": "#/properties/PAT_HOH_ID",
+            "type": "integer",
+            "title": "The PAT_HOH_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PAT_SURNAME_SUFFIX": {
+            "$id": "#/properties/PAT_SURNAME_SUFFIX",
+            "type": "string",
+            "title": "The PAT_SURNAME_SUFFIX schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_ID": {
+            "$id": "#/properties/PBR_ID",
+            "type": "integer",
+            "title": "The PBR_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_NBR_DISPENSED": {
+            "$id": "#/properties/FILL_NBR_DISPENSED",
+            "type": "integer",
+            "title": "The FILL_NBR_DISPENSED schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_NBR_PRESCRIBED": {
+            "$id": "#/properties/FILL_NBR_PRESCRIBED",
+            "type": "integer",
+            "title": "The FILL_NBR_PRESCRIBED schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PAT_ID": {
+            "$id": "#/properties/PAT_ID",
+            "type": "integer",
+            "title": "The PAT_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "RX_COMMENT": {
+            "$id": "#/properties/RX_COMMENT",
+            "type": "string",
+            "title": "The RX_COMMENT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_ORIGINAL_QTY": {
+            "$id": "#/properties/RX_ORIGINAL_QTY",
+            "type": "integer",
+            "title": "The RX_ORIGINAL_QTY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "RX_SIG": {
+            "$id": "#/properties/RX_SIG",
+            "type": "string",
+            "title": "The RX_SIG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_WRITTEN_DTTM": {
+            "$id": "#/properties/RX_WRITTEN_DTTM",
+            "type": "string",
+            "title": "The RX_WRITTEN_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "BIN_NBR": {
+            "$id": "#/properties/BIN_NBR",
+            "type": "string",
+            "title": "The BIN_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "LINK_TYPE_CD": {
+            "$id": "#/properties/LINK_TYPE_CD",
+            "type": "string",
+            "title": "The LINK_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_BILL_METHOD_CD": {
+            "$id": "#/properties/PLAN_BILL_METHOD_CD",
+            "type": "string",
+            "title": "The PLAN_BILL_METHOD_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_GROUP_NBR": {
+            "$id": "#/properties/PLAN_GROUP_NBR",
+            "type": "string",
+            "title": "The PLAN_GROUP_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_TYPE_CD": {
+            "$id": "#/properties/PLAN_TYPE_CD",
+            "type": "string",
+            "title": "The PLAN_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_ID": {
+            "$id": "#/properties/PLAN_ID",
+            "type": "string",
+            "title": "The PLAN_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_WAREHOUSE_IND": {
+            "$id": "#/properties/DRUG_WAREHOUSE_IND",
+            "type": "string",
+            "title": "The DRUG_WAREHOUSE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_STATUS_CD": {
+            "$id": "#/properties/FILL_STATUS_CD",
+            "type": "string",
+            "title": "The FILL_STATUS_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_INJURY_DTTM": {
+            "$id": "#/properties/WC_INJURY_DTTM",
+            "type": "string",
+            "title": "The WC_INJURY_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "GENERAL_PBR_NBR": {
+            "$id": "#/properties/GENERAL_PBR_NBR",
+            "type": "string",
+            "title": "The GENERAL_PBR_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GENERAL_DRUG_NBR": {
+            "$id": "#/properties/GENERAL_DRUG_NBR",
+            "type": "string",
+            "title": "The GENERAL_DRUG_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GENERAL_PHRM_NBR": {
+            "$id": "#/properties/GENERAL_PHRM_NBR",
+            "type": "string",
+            "title": "The GENERAL_PHRM_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BILLING_NDC": {
+            "$id": "#/properties/BILLING_NDC",
+            "type": "string",
+            "title": "The BILLING_NDC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BILL_FORM_TYPE_CD": {
+            "$id": "#/properties/BILL_FORM_TYPE_CD",
+            "type": "string",
+            "title": "The BILL_FORM_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "OPS_STUDY_DEPT_NBR": {
+            "$id": "#/properties/OPS_STUDY_DEPT_NBR",
+            "type": "integer",
+            "title": "The OPS_STUDY_DEPT_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "SIMS_UPC": {
+            "$id": "#/properties/SIMS_UPC",
+            "type": "string",
+            "title": "The SIMS_UPC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_PROC_MSG": {
+            "$id": "#/properties/DL_PROC_MSG",
+            "type": "string",
+            "title": "The DL_PROC_MSG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_DEL_PROC_MSG": {
+            "$id": "#/properties/DL_DEL_PROC_MSG",
+            "type": "string",
+            "title": "The DL_DEL_PROC_MSG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_ADDITIONAL_MSG": {
+            "$id": "#/properties/DL_ADDITIONAL_MSG",
+            "type": "string",
+            "title": "The DL_ADDITIONAL_MSG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_ENTERED_USER_ID": {
+            "$id": "#/properties/FILL_ENTERED_USER_ID",
+            "type": "integer",
+            "title": "The FILL_ENTERED_USER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_VERIFIED_USER_ID": {
+            "$id": "#/properties/FILL_VERIFIED_USER_ID",
+            "type": "integer",
+            "title": "The FILL_VERIFIED_USER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_VERIFIED_DTTM": {
+            "$id": "#/properties/FILL_VERIFIED_DTTM",
+            "type": "string",
+            "title": "The FILL_VERIFIED_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "DRUG_NON_SYSTEM_CD": {
+            "$id": "#/properties/DRUG_NON_SYSTEM_CD",
+            "type": "string",
+            "title": "The DRUG_NON_SYSTEM_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_LOC_ID": {
+            "$id": "#/properties/PBR_LOC_ID",
+            "type": "integer",
+            "title": "The PBR_LOC_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PAT_ALGY_HLTH_TYPE_CD": {
+            "$id": "#/properties/PAT_ALGY_HLTH_TYPE_CD",
+            "type": "string",
+            "title": "The PAT_ALGY_HLTH_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_ALGY_HLTH_CD_INQ_IND": {
+            "$id": "#/properties/PAT_ALGY_HLTH_CD_INQ_IND",
+            "type": "string",
+            "title": "The PAT_ALGY_HLTH_CD_INQ_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PROC_LOCAL_DTTM": {
+            "$id": "#/properties/PROC_LOCAL_DTTM",
+            "type": "string",
+            "title": "The PROC_LOCAL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PROC_DEL_LOCAL_DTTM": {
+            "$id": "#/properties/PROC_DEL_LOCAL_DTTM",
+            "type": "string",
+            "title": "The PROC_DEL_LOCAL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "TIMEOUT_LOCAL_DTTM": {
+            "$id": "#/properties/TIMEOUT_LOCAL_DTTM",
+            "type": "string",
+            "title": "The TIMEOUT_LOCAL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "TIMEOUT_DEL_LOCAL_DTTM": {
+            "$id": "#/properties/TIMEOUT_DEL_LOCAL_DTTM",
+            "type": "string",
+            "title": "The TIMEOUT_DEL_LOCAL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "FILL_EST_PICK_UP_DTTM": {
+            "$id": "#/properties/FILL_EST_PICK_UP_DTTM",
+            "type": "string",
+            "title": "The FILL_EST_PICK_UP_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PAT_PICKUP_ID": {
+            "$id": "#/properties/PAT_PICKUP_ID",
+            "type": "string",
+            "title": "The PAT_PICKUP_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_LAST_ENTERED_DTTM": {
+            "$id": "#/properties/FILL_LAST_ENTERED_DTTM",
+            "type": "string",
+            "title": "The FILL_LAST_ENTERED_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "FILL_PREPAID_IND": {
+            "$id": "#/properties/FILL_PREPAID_IND",
+            "type": "string",
+            "title": "The FILL_PREPAID_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_PRICE_VARIANCE_CD": {
+            "$id": "#/properties/FILL_PRICE_VARIANCE_CD",
+            "type": "string",
+            "title": "The FILL_PRICE_VARIANCE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_SOURCE_CD": {
+            "$id": "#/properties/FILL_SOURCE_CD",
+            "type": "string",
+            "title": "The FILL_SOURCE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_PRINT_DTTM": {
+            "$id": "#/properties/FILL_PRINT_DTTM",
+            "type": "string",
+            "title": "The FILL_PRINT_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "FILL_SOLD_DTTM": {
+            "$id": "#/properties/FILL_SOLD_DTTM",
+            "type": "string",
+            "title": "The FILL_SOLD_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "FILL_DELETED_DTTM": {
+            "$id": "#/properties/FILL_DELETED_DTTM",
+            "type": "string",
+            "title": "The FILL_DELETED_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "CALL_LIST_PRINT_IND": {
+            "$id": "#/properties/CALL_LIST_PRINT_IND",
+            "type": "string",
+            "title": "The CALL_LIST_PRINT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_PICKUP_CD": {
+            "$id": "#/properties/FILL_PICKUP_CD",
+            "type": "string",
+            "title": "The FILL_PICKUP_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_DISCOUNT_CD": {
+            "$id": "#/properties/FILL_DISCOUNT_CD",
+            "type": "string",
+            "title": "The FILL_DISCOUNT_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_SAVINGS_AMT": {
+            "$id": "#/properties/FILL_SAVINGS_AMT",
+            "type": "integer",
+            "title": "The FILL_SAVINGS_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "LABEL_COMMENTS": {
+            "$id": "#/properties/LABEL_COMMENTS",
+            "type": "string",
+            "title": "The LABEL_COMMENTS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRINT_IND": {
+            "$id": "#/properties/PRINT_IND",
+            "type": "string",
+            "title": "The PRINT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_PAY_METHOD_CD": {
+            "$id": "#/properties/FILL_PAY_METHOD_CD",
+            "type": "string",
+            "title": "The FILL_PAY_METHOD_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_DISCOUNT_AMT": {
+            "$id": "#/properties/FILL_DISCOUNT_AMT",
+            "type": "integer",
+            "title": "The FILL_DISCOUNT_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_SOLD_AMT": {
+            "$id": "#/properties/FILL_SOLD_AMT",
+            "type": "integer",
+            "title": "The FILL_SOLD_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_PRORATED_PRICE_IND": {
+            "$id": "#/properties/FILL_PRORATED_PRICE_IND",
+            "type": "string",
+            "title": "The FILL_PRORATED_PRICE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_TYPE_CD": {
+            "$id": "#/properties/FILL_TYPE_CD",
+            "type": "string",
+            "title": "The FILL_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "IC_SCRIPT_NBR_PREFIX": {
+            "$id": "#/properties/IC_SCRIPT_NBR_PREFIX",
+            "type": "string",
+            "title": "The IC_SCRIPT_NBR_PREFIX schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ORDERED_DRUG_ID": {
+            "$id": "#/properties/ORDERED_DRUG_ID",
+            "type": "integer",
+            "title": "The ORDERED_DRUG_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "RX_CLOSE_LOG_DIR_CD": {
+            "$id": "#/properties/RX_CLOSE_LOG_DIR_CD",
+            "type": "string",
+            "title": "The RX_CLOSE_LOG_DIR_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_DENIAL_OVERRIDE_CD": {
+            "$id": "#/properties/RX_DENIAL_OVERRIDE_CD",
+            "type": "string",
+            "title": "The RX_DENIAL_OVERRIDE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ELIGIBILITY_OVERRIDE_CD": {
+            "$id": "#/properties/ELIGIBILITY_OVERRIDE_CD",
+            "type": "string",
+            "title": "The ELIGIBILITY_OVERRIDE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD": {
+            "$id": "#/properties/DIAGNOSIS_CD",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIRECT_LINK_CD": {
+            "$id": "#/properties/DIRECT_LINK_CD",
+            "type": "string",
+            "title": "The DIRECT_LINK_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_ACC_DED_AMT": {
+            "$id": "#/properties/PAT_ACC_DED_AMT",
+            "type": "integer",
+            "title": "The PAT_ACC_DED_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PAT_REM_DED_AMT": {
+            "$id": "#/properties/PAT_REM_DED_AMT",
+            "type": "integer",
+            "title": "The PAT_REM_DED_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PAT_REM_BEN_AMT": {
+            "$id": "#/properties/PAT_REM_BEN_AMT",
+            "type": "integer",
+            "title": "The PAT_REM_BEN_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PAT_DED_APPLIED_AMT": {
+            "$id": "#/properties/PAT_DED_APPLIED_AMT",
+            "type": "integer",
+            "title": "The PAT_DED_APPLIED_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DL_DEL_CD": {
+            "$id": "#/properties/DL_DEL_CD",
+            "type": "string",
+            "title": "The DL_DEL_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DL_DEL_TYPE_CD": {
+            "$id": "#/properties/DL_DEL_TYPE_CD",
+            "type": "string",
+            "title": "The DL_DEL_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TAX_EXEMPT_PLAN_IND": {
+            "$id": "#/properties/TAX_EXEMPT_PLAN_IND",
+            "type": "string",
+            "title": "The TAX_EXEMPT_PLAN_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SIGNATURE_REQUIRED_IND": {
+            "$id": "#/properties/SIGNATURE_REQUIRED_IND",
+            "type": "string",
+            "title": "The SIGNATURE_REQUIRED_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REIMBURS_LOSS_AMT": {
+            "$id": "#/properties/REIMBURS_LOSS_AMT",
+            "type": "integer",
+            "title": "The REIMBURS_LOSS_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DUR_INTERVENTION_CD": {
+            "$id": "#/properties/DUR_INTERVENTION_CD",
+            "type": "string",
+            "title": "The DUR_INTERVENTION_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_CONFLICT_CD": {
+            "$id": "#/properties/DUR_CONFLICT_CD",
+            "type": "string",
+            "title": "The DUR_CONFLICT_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_OUTCOME_CD": {
+            "$id": "#/properties/DUR_OUTCOME_CD",
+            "type": "string",
+            "title": "The DUR_OUTCOME_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_REFILLS_BY_DTTM": {
+            "$id": "#/properties/RX_REFILLS_BY_DTTM",
+            "type": "string",
+            "title": "The RX_REFILLS_BY_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "SOLD_LOCAL_DTTM": {
+            "$id": "#/properties/SOLD_LOCAL_DTTM",
+            "type": "string",
+            "title": "The SOLD_LOCAL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "RX_COPY_COMMENTS": {
+            "$id": "#/properties/RX_COPY_COMMENTS",
+            "type": "string",
+            "title": "The RX_COPY_COMMENTS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_PRINT_DRUG_CD": {
+            "$id": "#/properties/RX_PRINT_DRUG_CD",
+            "type": "string",
+            "title": "The RX_PRINT_DRUG_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DRUG_SUB_CD": {
+            "$id": "#/properties/DRUG_SUB_CD",
+            "type": "string",
+            "title": "The DRUG_SUB_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REFILLS_REMAIN_WHEN_ENT": {
+            "$id": "#/properties/REFILLS_REMAIN_WHEN_ENT",
+            "type": "string",
+            "title": "The REFILLS_REMAIN_WHEN_ENT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_ORIGINAL_FILL_DTTM": {
+            "$id": "#/properties/RX_ORIGINAL_FILL_DTTM",
+            "type": "string",
+            "title": "The RX_ORIGINAL_FILL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "RX_DAW_IND": {
+            "$id": "#/properties/RX_DAW_IND",
+            "type": "string",
+            "title": "The RX_DAW_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_EXP_DTTM": {
+            "$id": "#/properties/RX_EXP_DTTM",
+            "type": "string",
+            "title": "The RX_EXP_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PAT_SNAP_CAP_PREF": {
+            "$id": "#/properties/PAT_SNAP_CAP_PREF",
+            "type": "string",
+            "title": "The PAT_SNAP_CAP_PREF schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "REBILLING_DTTM": {
+            "$id": "#/properties/REBILLING_DTTM",
+            "type": "string",
+            "title": "The REBILLING_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "AUTO_VERIFIED_IND": {
+            "$id": "#/properties/AUTO_VERIFIED_IND",
+            "type": "string",
+            "title": "The AUTO_VERIFIED_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SYS_STATUS_WHEN_ENT": {
+            "$id": "#/properties/SYS_STATUS_WHEN_ENT",
+            "type": "integer",
+            "title": "The SYS_STATUS_WHEN_ENT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CREATE_USER_ID": {
+            "$id": "#/properties/CREATE_USER_ID",
+            "type": "integer",
+            "title": "The CREATE_USER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CREATE_DTTM": {
+            "$id": "#/properties/CREATE_DTTM",
+            "type": "string",
+            "title": "The CREATE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "UPDATE_USER_ID": {
+            "$id": "#/properties/UPDATE_USER_ID",
+            "type": "integer",
+            "title": "The UPDATE_USER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "UPDATE_DTTM": {
+            "$id": "#/properties/UPDATE_DTTM",
+            "type": "string",
+            "title": "The UPDATE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PAT_LANG_PREF_CD": {
+            "$id": "#/properties/PAT_LANG_PREF_CD",
+            "type": "string",
+            "title": "The PAT_LANG_PREF_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CALLER_NAME": {
+            "$id": "#/properties/CALLER_NAME",
+            "type": "string",
+            "title": "The CALLER_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "XFER_FROM_RPH_LIC_NBR": {
+            "$id": "#/properties/XFER_FROM_RPH_LIC_NBR",
+            "type": "string",
+            "title": "The XFER_FROM_RPH_LIC_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_PRINT_SAVINGS_IND": {
+            "$id": "#/properties/RX_PRINT_SAVINGS_IND",
+            "type": "string",
+            "title": "The RX_PRINT_SAVINGS_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COST_PLUS_FEE_CD": {
+            "$id": "#/properties/COST_PLUS_FEE_CD",
+            "type": "string",
+            "title": "The COST_PLUS_FEE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PARTIAL_FILL_CD": {
+            "$id": "#/properties/PARTIAL_FILL_CD",
+            "type": "string",
+            "title": "The PARTIAL_FILL_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PARTIAL_FIL_INTNDED_QTY": {
+            "$id": "#/properties/PARTIAL_FIL_INTNDED_QTY",
+            "type": "integer",
+            "title": "The PARTIAL_FIL_INTNDED_QTY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "TRIPLICATE_SERIAL_NBR": {
+            "$id": "#/properties/TRIPLICATE_SERIAL_NBR",
+            "type": "string",
+            "title": "The TRIPLICATE_SERIAL_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_ADJUDICATION_DTTM": {
+            "$id": "#/properties/FILL_ADJUDICATION_DTTM",
+            "type": "string",
+            "title": "The FILL_ADJUDICATION_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "GENERIC_SUBSTITUTED_IND": {
+            "$id": "#/properties/GENERIC_SUBSTITUTED_IND",
+            "type": "string",
+            "title": "The GENERIC_SUBSTITUTED_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ACCEPT_CONSULT_IND": {
+            "$id": "#/properties/ACCEPT_CONSULT_IND",
+            "type": "string",
+            "title": "The ACCEPT_CONSULT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BASIS_OF_FEE_CALC": {
+            "$id": "#/properties/BASIS_OF_FEE_CALC",
+            "type": "string",
+            "title": "The BASIS_OF_FEE_CALC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BASIS_OF_COPAY_CALC": {
+            "$id": "#/properties/BASIS_OF_COPAY_CALC",
+            "type": "string",
+            "title": "The BASIS_OF_COPAY_CALC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BASIS_OF_FLAT_TAX_CALC": {
+            "$id": "#/properties/BASIS_OF_FLAT_TAX_CALC",
+            "type": "string",
+            "title": "The BASIS_OF_FLAT_TAX_CALC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BASIS_OF_PCT_TAX_CALC": {
+            "$id": "#/properties/BASIS_OF_PCT_TAX_CALC",
+            "type": "string",
+            "title": "The BASIS_OF_PCT_TAX_CALC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BASIS_OF_REIMB_DETERM": {
+            "$id": "#/properties/BASIS_OF_REIMB_DETERM",
+            "type": "string",
+            "title": "The BASIS_OF_REIMB_DETERM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "NCPDP_VERSION": {
+            "$id": "#/properties/NCPDP_VERSION",
+            "type": "string",
+            "title": "The NCPDP_VERSION schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_RETURND_TAX_TYPE_CD": {
+            "$id": "#/properties/PLAN_RETURND_TAX_TYPE_CD",
+            "type": "string",
+            "title": "The PLAN_RETURND_TAX_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_TAX_EXEMPT_IND": {
+            "$id": "#/properties/PLAN_TAX_EXEMPT_IND",
+            "type": "string",
+            "title": "The PLAN_TAX_EXEMPT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_PCT_TAX_RATE_PAID": {
+            "$id": "#/properties/PLAN_PCT_TAX_RATE_PAID",
+            "type": "integer",
+            "title": "The PLAN_PCT_TAX_RATE_PAID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_PCT_TAX_BASIS_PAID": {
+            "$id": "#/properties/PLAN_PCT_TAX_BASIS_PAID",
+            "type": "string",
+            "title": "The PLAN_PCT_TAX_BASIS_PAID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_OTHER_AMT_PAID_TYPE": {
+            "$id": "#/properties/PLAN_OTHER_AMT_PAID_TYPE",
+            "type": "string",
+            "title": "The PLAN_OTHER_AMT_PAID_TYPE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_OTHER_AMT_PAID": {
+            "$id": "#/properties/PLAN_OTHER_AMT_PAID",
+            "type": "integer",
+            "title": "The PLAN_OTHER_AMT_PAID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "AMT_ATTRIBUTED_TO_TAX": {
+            "$id": "#/properties/AMT_ATTRIBUTED_TO_TAX",
+            "type": "integer",
+            "title": "The AMT_ATTRIBUTED_TO_TAX schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_INCENT_AMT_SUBMTD": {
+            "$id": "#/properties/PLAN_INCENT_AMT_SUBMTD",
+            "type": "integer",
+            "title": "The PLAN_INCENT_AMT_SUBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_PCT_TAX_RATE_SUBMTD": {
+            "$id": "#/properties/PLAN_PCT_TAX_RATE_SUBMTD",
+            "type": "integer",
+            "title": "The PLAN_PCT_TAX_RATE_SUBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_PCT_TAX_BAS_SUBMTD": {
+            "$id": "#/properties/PLAN_PCT_TAX_BAS_SUBMTD",
+            "type": "string",
+            "title": "The PLAN_PCT_TAX_BAS_SUBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_SUBMTD_TAX_TYPE_CD": {
+            "$id": "#/properties/PLAN_SUBMTD_TAX_TYPE_CD",
+            "type": "string",
+            "title": "The PLAN_SUBMTD_TAX_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BASIS_OF_COST_DETERM": {
+            "$id": "#/properties/BASIS_OF_COST_DETERM",
+            "type": "string",
+            "title": "The BASIS_OF_COST_DETERM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "APPROVED_MSG_CD": {
+            "$id": "#/properties/APPROVED_MSG_CD",
+            "type": "string",
+            "title": "The APPROVED_MSG_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ORIGIN_CD": {
+            "$id": "#/properties/ORIGIN_CD",
+            "type": "string",
+            "title": "The ORIGIN_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DAYS_SUPPLY_INTENDED": {
+            "$id": "#/properties/DAYS_SUPPLY_INTENDED",
+            "type": "integer",
+            "title": "The DAYS_SUPPLY_INTENDED schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DUR_INTERVENTION_CD_1": {
+            "$id": "#/properties/DUR_INTERVENTION_CD_1",
+            "type": "string",
+            "title": "The DUR_INTERVENTION_CD_1 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_CONFLICT_CD_1": {
+            "$id": "#/properties/DUR_CONFLICT_CD_1",
+            "type": "string",
+            "title": "The DUR_CONFLICT_CD_1 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_OUTCOME_CD_1": {
+            "$id": "#/properties/DUR_OUTCOME_CD_1",
+            "type": "string",
+            "title": "The DUR_OUTCOME_CD_1 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_EFFORT_LEVEL_1": {
+            "$id": "#/properties/DUR_EFFORT_LEVEL_1",
+            "type": "integer",
+            "title": "The DUR_EFFORT_LEVEL_1 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DUR_INTERVENTION_CD_2": {
+            "$id": "#/properties/DUR_INTERVENTION_CD_2",
+            "type": "string",
+            "title": "The DUR_INTERVENTION_CD_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_CONFLICT_CD_2": {
+            "$id": "#/properties/DUR_CONFLICT_CD_2",
+            "type": "string",
+            "title": "The DUR_CONFLICT_CD_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_OUTCOME_CD_2": {
+            "$id": "#/properties/DUR_OUTCOME_CD_2",
+            "type": "string",
+            "title": "The DUR_OUTCOME_CD_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_EFFORT_LEVEL_2": {
+            "$id": "#/properties/DUR_EFFORT_LEVEL_2",
+            "type": "integer",
+            "title": "The DUR_EFFORT_LEVEL_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DUR_INTERVENTION_CD_3": {
+            "$id": "#/properties/DUR_INTERVENTION_CD_3",
+            "type": "string",
+            "title": "The DUR_INTERVENTION_CD_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_CONFLICT_CD_3": {
+            "$id": "#/properties/DUR_CONFLICT_CD_3",
+            "type": "string",
+            "title": "The DUR_CONFLICT_CD_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_OUTCOME_CD_3": {
+            "$id": "#/properties/DUR_OUTCOME_CD_3",
+            "type": "string",
+            "title": "The DUR_OUTCOME_CD_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_EFFORT_LEVEL_3": {
+            "$id": "#/properties/DUR_EFFORT_LEVEL_3",
+            "type": "integer",
+            "title": "The DUR_EFFORT_LEVEL_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_OTHER_AMT_SUBM_TYPE": {
+            "$id": "#/properties/PLAN_OTHER_AMT_SUBM_TYPE",
+            "type": "string",
+            "title": "The PLAN_OTHER_AMT_SUBM_TYPE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_OTHER_AMT_SUBMTD": {
+            "$id": "#/properties/PLAN_OTHER_AMT_SUBMTD",
+            "type": "integer",
+            "title": "The PLAN_OTHER_AMT_SUBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ASSOCIATE_RX_NBR": {
+            "$id": "#/properties/ASSOCIATE_RX_NBR",
+            "type": "integer",
+            "title": "The ASSOCIATE_RX_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ASSOCIATE_FILL_DTTM": {
+            "$id": "#/properties/ASSOCIATE_FILL_DTTM",
+            "type": "string",
+            "title": "The ASSOCIATE_FILL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "HELP_DESK_PHONE": {
+            "$id": "#/properties/HELP_DESK_PHONE",
+            "type": "string",
+            "title": "The HELP_DESK_PHONE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PREF_PROD_COUNT": {
+            "$id": "#/properties/PREF_PROD_COUNT",
+            "type": "integer",
+            "title": "The PREF_PROD_COUNT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PARTIAL_FILL_VERSION_CD": {
+            "$id": "#/properties/PARTIAL_FILL_VERSION_CD",
+            "type": "string",
+            "title": "The PARTIAL_FILL_VERSION_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_CC_AUTH_REF": {
+            "$id": "#/properties/FILL_CC_AUTH_REF",
+            "type": "string",
+            "title": "The FILL_CC_AUTH_REF schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "LVL_OF_SVC_CD": {
+            "$id": "#/properties/LVL_OF_SVC_CD",
+            "type": "string",
+            "title": "The LVL_OF_SVC_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_REJECT_COUNT": {
+            "$id": "#/properties/COB_REJECT_COUNT",
+            "type": "integer",
+            "title": "The COB_REJECT_COUNT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_DL_REJECT_CD_01": {
+            "$id": "#/properties/COB_DL_REJECT_CD_01",
+            "type": "string",
+            "title": "The COB_DL_REJECT_CD_01 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_REJECT_CD_02": {
+            "$id": "#/properties/COB_DL_REJECT_CD_02",
+            "type": "string",
+            "title": "The COB_DL_REJECT_CD_02 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_REJECT_CD_03": {
+            "$id": "#/properties/COB_DL_REJECT_CD_03",
+            "type": "string",
+            "title": "The COB_DL_REJECT_CD_03 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_REJECT_CD_04": {
+            "$id": "#/properties/COB_DL_REJECT_CD_04",
+            "type": "string",
+            "title": "The COB_DL_REJECT_CD_04 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_REJECT_CD_05": {
+            "$id": "#/properties/COB_DL_REJECT_CD_05",
+            "type": "string",
+            "title": "The COB_DL_REJECT_CD_05 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_TO_TAPE_IND": {
+            "$id": "#/properties/COB_DL_TO_TAPE_IND",
+            "type": "string",
+            "title": "The COB_DL_TO_TAPE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_DEL_TO_TAPE_IND": {
+            "$id": "#/properties/COB_DL_DEL_TO_TAPE_IND",
+            "type": "string",
+            "title": "The COB_DL_DEL_TO_TAPE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_FILL_ADJUDICATION_CD": {
+            "$id": "#/properties/COB_FILL_ADJUDICATION_CD",
+            "type": "string",
+            "title": "The COB_FILL_ADJUDICATION_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_FILL_DEL_ADJ_CD": {
+            "$id": "#/properties/COB_FILL_DEL_ADJ_CD",
+            "type": "string",
+            "title": "The COB_FILL_DEL_ADJ_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_CLAIM_REF_NBR": {
+            "$id": "#/properties/COB_CLAIM_REF_NBR",
+            "type": "string",
+            "title": "The COB_CLAIM_REF_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLAN_RTRND_COPAY_AMT": {
+            "$id": "#/properties/COB_PLAN_RTRND_COPAY_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_RTRND_COPAY_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_TOTAL_PAID_AMT": {
+            "$id": "#/properties/COB_PLAN_TOTAL_PAID_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_TOTAL_PAID_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_RTRND_COST_AMT": {
+            "$id": "#/properties/COB_PLAN_RTRND_COST_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_RTRND_COST_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_RTRND_FEE_AMT": {
+            "$id": "#/properties/COB_PLAN_RTRND_FEE_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_RTRND_FEE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_RTRND_TAX_AMT": {
+            "$id": "#/properties/COB_PLAN_RTRND_TAX_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_RTRND_TAX_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_SBMTD_COPAY_AMT": {
+            "$id": "#/properties/COB_PLAN_SBMTD_COPAY_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_SBMTD_COPAY_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_SBMTD_COST_AMT": {
+            "$id": "#/properties/COB_PLAN_SBMTD_COST_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_SBMTD_COST_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_SBMTD_FEE_AMT": {
+            "$id": "#/properties/COB_PLAN_SBMTD_FEE_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_SBMTD_FEE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_SBMTD_TAX_AMT": {
+            "$id": "#/properties/COB_PLAN_SBMTD_TAX_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_SBMTD_TAX_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_GROSS_DUE_AMT": {
+            "$id": "#/properties/COB_PLAN_GROSS_DUE_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_GROSS_DUE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_INCNTV_PAID_AMT": {
+            "$id": "#/properties/COB_PLAN_INCNTV_PAID_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_INCNTV_PAID_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_GEN_RECIPIENT_NBR": {
+            "$id": "#/properties/COB_GEN_RECIPIENT_NBR",
+            "type": "string",
+            "title": "The COB_GEN_RECIPIENT_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PT_PLN_PLCY_HLDR_REL": {
+            "$id": "#/properties/COB_PT_PLN_PLCY_HLDR_REL",
+            "type": "string",
+            "title": "The COB_PT_PLN_PLCY_HLDR_REL schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PERSON_CD": {
+            "$id": "#/properties/COB_PERSON_CD",
+            "type": "string",
+            "title": "The COB_PERSON_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_BIN_NBR": {
+            "$id": "#/properties/COB_BIN_NBR",
+            "type": "string",
+            "title": "The COB_BIN_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_LINK_TYPE_CD": {
+            "$id": "#/properties/COB_LINK_TYPE_CD",
+            "type": "string",
+            "title": "The COB_LINK_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLAN_BILL_METHOD_CD": {
+            "$id": "#/properties/COB_PLAN_BILL_METHOD_CD",
+            "type": "string",
+            "title": "The COB_PLAN_BILL_METHOD_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLAN_GROUP_NBR": {
+            "$id": "#/properties/COB_PLAN_GROUP_NBR",
+            "type": "string",
+            "title": "The COB_PLAN_GROUP_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLAN_TYPE_CD": {
+            "$id": "#/properties/COB_PLAN_TYPE_CD",
+            "type": "string",
+            "title": "The COB_PLAN_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLAN_ID": {
+            "$id": "#/properties/COB_PLAN_ID",
+            "type": "string",
+            "title": "The COB_PLAN_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_GENERAL_PBR_NBR": {
+            "$id": "#/properties/COB_GENERAL_PBR_NBR",
+            "type": "string",
+            "title": "The COB_GENERAL_PBR_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_GENERAL_DRUG_NBR": {
+            "$id": "#/properties/COB_GENERAL_DRUG_NBR",
+            "type": "string",
+            "title": "The COB_GENERAL_DRUG_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_GENERAL_PHRM_NBR": {
+            "$id": "#/properties/COB_GENERAL_PHRM_NBR",
+            "type": "string",
+            "title": "The COB_GENERAL_PHRM_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_PROC_MSG": {
+            "$id": "#/properties/COB_DL_PROC_MSG",
+            "type": "string",
+            "title": "The COB_DL_PROC_MSG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_DEL_PROC_MSG": {
+            "$id": "#/properties/COB_DL_DEL_PROC_MSG",
+            "type": "string",
+            "title": "The COB_DL_DEL_PROC_MSG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_ADDITIONAL_MSG": {
+            "$id": "#/properties/COB_DL_ADDITIONAL_MSG",
+            "type": "string",
+            "title": "The COB_DL_ADDITIONAL_MSG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PROC_LOCAL_DTTM": {
+            "$id": "#/properties/COB_PROC_LOCAL_DTTM",
+            "type": "string",
+            "title": "The COB_PROC_LOCAL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "COB_PROC_DEL_LOCAL_DTTM": {
+            "$id": "#/properties/COB_PROC_DEL_LOCAL_DTTM",
+            "type": "string",
+            "title": "The COB_PROC_DEL_LOCAL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "COB_DIRECT_LINK_CD": {
+            "$id": "#/properties/COB_DIRECT_LINK_CD",
+            "type": "string",
+            "title": "The COB_DIRECT_LINK_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PAT_ACC_DED_AMT": {
+            "$id": "#/properties/COB_PAT_ACC_DED_AMT",
+            "type": "integer",
+            "title": "The COB_PAT_ACC_DED_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PAT_REM_DED_AMT": {
+            "$id": "#/properties/COB_PAT_REM_DED_AMT",
+            "type": "integer",
+            "title": "The COB_PAT_REM_DED_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PAT_REM_BEN_AMT": {
+            "$id": "#/properties/COB_PAT_REM_BEN_AMT",
+            "type": "integer",
+            "title": "The COB_PAT_REM_BEN_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PAT_DED_APPLIED_AMT": {
+            "$id": "#/properties/COB_PAT_DED_APPLIED_AMT",
+            "type": "integer",
+            "title": "The COB_PAT_DED_APPLIED_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_DL_DEL_CD": {
+            "$id": "#/properties/COB_DL_DEL_CD",
+            "type": "string",
+            "title": "The COB_DL_DEL_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_DEL_TYPE_CD": {
+            "$id": "#/properties/COB_DL_DEL_TYPE_CD",
+            "type": "string",
+            "title": "The COB_DL_DEL_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_TAX_EXEMPT_PLAN_IND": {
+            "$id": "#/properties/COB_TAX_EXEMPT_PLAN_IND",
+            "type": "string",
+            "title": "The COB_TAX_EXEMPT_PLAN_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_FILL_ADJ_DTTM": {
+            "$id": "#/properties/COB_FILL_ADJ_DTTM",
+            "type": "string",
+            "title": "The COB_FILL_ADJ_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "COB_BASIS_OF_FEE_CALC": {
+            "$id": "#/properties/COB_BASIS_OF_FEE_CALC",
+            "type": "string",
+            "title": "The COB_BASIS_OF_FEE_CALC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_BASIS_OF_COPAY_CALC": {
+            "$id": "#/properties/COB_BASIS_OF_COPAY_CALC",
+            "type": "string",
+            "title": "The COB_BASIS_OF_COPAY_CALC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_BASIS_OF_FLT_TX_CALC": {
+            "$id": "#/properties/COB_BASIS_OF_FLT_TX_CALC",
+            "type": "string",
+            "title": "The COB_BASIS_OF_FLT_TX_CALC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_BASIS_OF_PCT_TX_CALC": {
+            "$id": "#/properties/COB_BASIS_OF_PCT_TX_CALC",
+            "type": "string",
+            "title": "The COB_BASIS_OF_PCT_TX_CALC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_BASIS_OF_REIMB_DETRM": {
+            "$id": "#/properties/COB_BASIS_OF_REIMB_DETRM",
+            "type": "string",
+            "title": "The COB_BASIS_OF_REIMB_DETRM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_NCPDP_VERSION": {
+            "$id": "#/properties/COB_NCPDP_VERSION",
+            "type": "string",
+            "title": "The COB_NCPDP_VERSION schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLN_RTRND_TX_TYPE_CD": {
+            "$id": "#/properties/COB_PLN_RTRND_TX_TYPE_CD",
+            "type": "string",
+            "title": "The COB_PLN_RTRND_TX_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLAN_TAX_EXEMPT_IND": {
+            "$id": "#/properties/COB_PLAN_TAX_EXEMPT_IND",
+            "type": "string",
+            "title": "The COB_PLAN_TAX_EXEMPT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLN_PCT_TX_RATE_PD": {
+            "$id": "#/properties/COB_PLN_PCT_TX_RATE_PD",
+            "type": "integer",
+            "title": "The COB_PLN_PCT_TX_RATE_PD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLN_PCT_TX_BASIS_PD": {
+            "$id": "#/properties/COB_PLN_PCT_TX_BASIS_PD",
+            "type": "string",
+            "title": "The COB_PLN_PCT_TX_BASIS_PD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_AMT_ATTRIB_TO_TAX": {
+            "$id": "#/properties/COB_AMT_ATTRIB_TO_TAX",
+            "type": "integer",
+            "title": "The COB_AMT_ATTRIB_TO_TAX schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLN_INCNT_AMT_SBMTD": {
+            "$id": "#/properties/COB_PLN_INCNT_AMT_SBMTD",
+            "type": "integer",
+            "title": "The COB_PLN_INCNT_AMT_SBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLN_PCT_TX_RT_SBMTD": {
+            "$id": "#/properties/COB_PLN_PCT_TX_RT_SBMTD",
+            "type": "integer",
+            "title": "The COB_PLN_PCT_TX_RT_SBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLN_PCT_TX_BAS_SBMTD": {
+            "$id": "#/properties/COB_PLN_PCT_TX_BAS_SBMTD",
+            "type": "string",
+            "title": "The COB_PLN_PCT_TX_BAS_SBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLN_SBMTD_TX_TYPE_CD": {
+            "$id": "#/properties/COB_PLN_SBMTD_TX_TYPE_CD",
+            "type": "string",
+            "title": "The COB_PLN_SBMTD_TX_TYPE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_APPROVED_MSG_CD": {
+            "$id": "#/properties/COB_APPROVED_MSG_CD",
+            "type": "string",
+            "title": "The COB_APPROVED_MSG_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_ASSOC_RX_NBR": {
+            "$id": "#/properties/COB_ASSOC_RX_NBR",
+            "type": "integer",
+            "title": "The COB_ASSOC_RX_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_ASSOC_FILL_DTTM": {
+            "$id": "#/properties/COB_ASSOC_FILL_DTTM",
+            "type": "string",
+            "title": "The COB_ASSOC_FILL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PAT_COB_IND": {
+            "$id": "#/properties/PAT_COB_IND",
+            "type": "string",
+            "title": "The PAT_COB_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_TMOUT_LCL_DTTM": {
+            "$id": "#/properties/COB_TMOUT_LCL_DTTM",
+            "type": "string",
+            "title": "The COB_TMOUT_LCL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "COB_TMOUT_DEL_LCL_DTTM": {
+            "$id": "#/properties/COB_TMOUT_DEL_LCL_DTTM",
+            "type": "string",
+            "title": "The COB_TMOUT_DEL_LCL_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PROC_CTRL_NBR": {
+            "$id": "#/properties/PROC_CTRL_NBR",
+            "type": "string",
+            "title": "The PROC_CTRL_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLN_OTHR_AMT_PD_TYPE": {
+            "$id": "#/properties/COB_PLN_OTHR_AMT_PD_TYPE",
+            "type": "string",
+            "title": "The COB_PLN_OTHR_AMT_PD_TYPE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLN_OTHR_AMT_PD": {
+            "$id": "#/properties/COB_PLN_OTHR_AMT_PD",
+            "type": "integer",
+            "title": "The COB_PLN_OTHR_AMT_PD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "SOMA_MODE_IND": {
+            "$id": "#/properties/SOMA_MODE_IND",
+            "type": "string",
+            "title": "The SOMA_MODE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MANUAL_CLAIM_IND": {
+            "$id": "#/properties/MANUAL_CLAIM_IND",
+            "type": "string",
+            "title": "The MANUAL_CLAIM_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_QUALIFIER": {
+            "$id": "#/properties/DIAGNOSIS_CD_QUALIFIER",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_QUALIFIER schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CASH_DISC_SAV_AMT": {
+            "$id": "#/properties/CASH_DISC_SAV_AMT",
+            "type": "integer",
+            "title": "The CASH_DISC_SAV_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PAT_LOC_CD": {
+            "$id": "#/properties/PAT_LOC_CD",
+            "type": "integer",
+            "title": "The PAT_LOC_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "GENERAL_RPH_NBR": {
+            "$id": "#/properties/GENERAL_RPH_NBR",
+            "type": "string",
+            "title": "The GENERAL_RPH_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GENERAL_RPH_NBR_QLFR": {
+            "$id": "#/properties/GENERAL_RPH_NBR_QLFR",
+            "type": "string",
+            "title": "The GENERAL_RPH_NBR_QLFR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_CARRIER_ID": {
+            "$id": "#/properties/WC_CARRIER_ID",
+            "type": "string",
+            "title": "The WC_CARRIER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_EMPLOYER_NAME": {
+            "$id": "#/properties/WC_EMPLOYER_NAME",
+            "type": "string",
+            "title": "The WC_EMPLOYER_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_EMPLOYER_AREA_CD": {
+            "$id": "#/properties/WC_EMPLOYER_AREA_CD",
+            "type": "string",
+            "title": "The WC_EMPLOYER_AREA_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_EMPLOYER_PHONE": {
+            "$id": "#/properties/WC_EMPLOYER_PHONE",
+            "type": "string",
+            "title": "The WC_EMPLOYER_PHONE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_EMPLOYER_ADDR": {
+            "$id": "#/properties/WC_EMPLOYER_ADDR",
+            "type": "string",
+            "title": "The WC_EMPLOYER_ADDR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_EMPLOYER_CITY": {
+            "$id": "#/properties/WC_EMPLOYER_CITY",
+            "type": "string",
+            "title": "The WC_EMPLOYER_CITY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_EMPLOYER_STATE": {
+            "$id": "#/properties/WC_EMPLOYER_STATE",
+            "type": "string",
+            "title": "The WC_EMPLOYER_STATE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_EMPLOYER_ZIP": {
+            "$id": "#/properties/WC_EMPLOYER_ZIP",
+            "type": "string",
+            "title": "The WC_EMPLOYER_ZIP schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_EMPLOYER_CONTACT": {
+            "$id": "#/properties/WC_EMPLOYER_CONTACT",
+            "type": "string",
+            "title": "The WC_EMPLOYER_CONTACT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_CLAIM_REF_NBR": {
+            "$id": "#/properties/WC_CLAIM_REF_NBR",
+            "type": "string",
+            "title": "The WC_CLAIM_REF_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WC_BILLING_INJURY_DTTM": {
+            "$id": "#/properties/WC_BILLING_INJURY_DTTM",
+            "type": "string",
+            "title": "The WC_BILLING_INJURY_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "TOT_AMT_PAID_IND": {
+            "$id": "#/properties/TOT_AMT_PAID_IND",
+            "type": "string",
+            "title": "The TOT_AMT_PAID_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_OVERRIDE_IND": {
+            "$id": "#/properties/RX_OVERRIDE_IND",
+            "type": "string",
+            "title": "The RX_OVERRIDE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ROUTING_STORE_NBR": {
+            "$id": "#/properties/ROUTING_STORE_NBR",
+            "type": "integer",
+            "title": "The ROUTING_STORE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ORIG_RX_NBR": {
+            "$id": "#/properties/ORIG_RX_NBR",
+            "type": "integer",
+            "title": "The ORIG_RX_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ROUTING_STORE_TECH_INITS": {
+            "$id": "#/properties/ROUTING_STORE_TECH_INITS",
+            "type": "string",
+            "title": "The ROUTING_STORE_TECH_INITS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ROUTING_STORE_RPH_INITS": {
+            "$id": "#/properties/ROUTING_STORE_RPH_INITS",
+            "type": "string",
+            "title": "The ROUTING_STORE_RPH_INITS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SPC_PAT_PHONE_AREA_CD": {
+            "$id": "#/properties/SPC_PAT_PHONE_AREA_CD",
+            "type": "string",
+            "title": "The SPC_PAT_PHONE_AREA_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SPC_PAT_PHONE_NBR": {
+            "$id": "#/properties/SPC_PAT_PHONE_NBR",
+            "type": "string",
+            "title": "The SPC_PAT_PHONE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SPC_PAT_CONTACT_DTTM": {
+            "$id": "#/properties/SPC_PAT_CONTACT_DTTM",
+            "type": "string",
+            "title": "The SPC_PAT_CONTACT_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "FILL_DATA_REV_ID": {
+            "$id": "#/properties/FILL_DATA_REV_ID",
+            "type": "integer",
+            "title": "The FILL_DATA_REV_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_DATA_REV_DTTM": {
+            "$id": "#/properties/FILL_DATA_REV_DTTM",
+            "type": "string",
+            "title": "The FILL_DATA_REV_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "SOURCING_IND": {
+            "$id": "#/properties/SOURCING_IND",
+            "type": "string",
+            "title": "The SOURCING_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILLING_USER_ID": {
+            "$id": "#/properties/FILLING_USER_ID",
+            "type": "integer",
+            "title": "The FILLING_USER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILLING_DTTM": {
+            "$id": "#/properties/FILLING_DTTM",
+            "type": "string",
+            "title": "The FILLING_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "OVERRIDE_USER_ID": {
+            "$id": "#/properties/OVERRIDE_USER_ID",
+            "type": "integer",
+            "title": "The OVERRIDE_USER_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "OVERRIDE_DTTM": {
+            "$id": "#/properties/OVERRIDE_DTTM",
+            "type": "string",
+            "title": "The OVERRIDE_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "OTHER_COVERAGE_CD": {
+            "$id": "#/properties/OTHER_COVERAGE_CD",
+            "type": "integer",
+            "title": "The OTHER_COVERAGE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_OTHER_COVERAGE_CD": {
+            "$id": "#/properties/COB_OTHER_COVERAGE_CD",
+            "type": "integer",
+            "title": "The COB_OTHER_COVERAGE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "THRD_PTY_GRP_RULE": {
+            "$id": "#/properties/THRD_PTY_GRP_RULE",
+            "type": "string",
+            "title": "The THRD_PTY_GRP_RULE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DPS_NBR": {
+            "$id": "#/properties/DPS_NBR",
+            "type": "string",
+            "title": "The DPS_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MAJ_MED_PLAN_ID": {
+            "$id": "#/properties/MAJ_MED_PLAN_ID",
+            "type": "string",
+            "title": "The MAJ_MED_PLAN_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_2": {
+            "$id": "#/properties/DIAGNOSIS_CD_2",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_3": {
+            "$id": "#/properties/DIAGNOSIS_CD_3",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_4": {
+            "$id": "#/properties/DIAGNOSIS_CD_4",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_4 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MAJ_MED_PRIOR_AUTH_NBR": {
+            "$id": "#/properties/MAJ_MED_PRIOR_AUTH_NBR",
+            "type": "string",
+            "title": "The MAJ_MED_PRIOR_AUTH_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DOCUMENT_ID": {
+            "$id": "#/properties/DOCUMENT_ID",
+            "type": "integer",
+            "title": "The DOCUMENT_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_DOCUMENT_ID": {
+            "$id": "#/properties/COB_DOCUMENT_ID",
+            "type": "integer",
+            "title": "The COB_DOCUMENT_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "SIGNATURE_ID": {
+            "$id": "#/properties/SIGNATURE_ID",
+            "type": "string",
+            "title": "The SIGNATURE_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SIGNATURE_CAPTURED_IND": {
+            "$id": "#/properties/SIGNATURE_CAPTURED_IND",
+            "type": "string",
+            "title": "The SIGNATURE_CAPTURED_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PROF_SVCS_FEE_SBMTD": {
+            "$id": "#/properties/PROF_SVCS_FEE_SBMTD",
+            "type": "integer",
+            "title": "The PROF_SVCS_FEE_SBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PROF_SVCS_FEE_RTRND": {
+            "$id": "#/properties/PROF_SVCS_FEE_RTRND",
+            "type": "integer",
+            "title": "The PROF_SVCS_FEE_RTRND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "TIP_RSN_FOR_SVC_CD": {
+            "$id": "#/properties/TIP_RSN_FOR_SVC_CD",
+            "type": "string",
+            "title": "The TIP_RSN_FOR_SVC_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TIP_PROF_SVC_CD": {
+            "$id": "#/properties/TIP_PROF_SVC_CD",
+            "type": "string",
+            "title": "The TIP_PROF_SVC_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TIP_RSLT_OF_SVC_CD": {
+            "$id": "#/properties/TIP_RSLT_OF_SVC_CD",
+            "type": "string",
+            "title": "The TIP_RSLT_OF_SVC_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "TIP_LVL_OF_EFFORT": {
+            "$id": "#/properties/TIP_LVL_OF_EFFORT",
+            "type": "integer",
+            "title": "The TIP_LVL_OF_EFFORT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_RTRND_CPY_COINS_AMT": {
+            "$id": "#/properties/PLAN_RTRND_CPY_COINS_AMT",
+            "type": "integer",
+            "title": "The PLAN_RTRND_CPY_COINS_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "ENTERED_STORE_NBR": {
+            "$id": "#/properties/ENTERED_STORE_NBR",
+            "type": "integer",
+            "title": "The ENTERED_STORE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "REVIEWED_STORE_NBR": {
+            "$id": "#/properties/REVIEWED_STORE_NBR",
+            "type": "integer",
+            "title": "The REVIEWED_STORE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_RTRND_COINS_AMT": {
+            "$id": "#/properties/PLAN_RTRND_COINS_AMT",
+            "type": "integer",
+            "title": "The PLAN_RTRND_COINS_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "NON_RX_OTC_SOURCE_IND": {
+            "$id": "#/properties/NON_RX_OTC_SOURCE_IND",
+            "type": "string",
+            "title": "The NON_RX_OTC_SOURCE_IND schema",
+            "description": "Indicates if the transaction is coming from WebSDL for non prescription OTC claim",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_STATUS_CD": {
+            "$id": "#/properties/DUR_STATUS_CD",
+            "type": "string",
+            "title": "The DUR_STATUS_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PLAN_DUR_STATUS_CD": {
+            "$id": "#/properties/COB_PLAN_DUR_STATUS_CD",
+            "type": "string",
+            "title": "The COB_PLAN_DUR_STATUS_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_DUR_STATUS_CD": {
+            "$id": "#/properties/PLAN_DUR_STATUS_CD",
+            "type": "string",
+            "title": "The PLAN_DUR_STATUS_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DUR_CHK_IND": {
+            "$id": "#/properties/DUR_CHK_IND",
+            "type": "string",
+            "title": "The DUR_CHK_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_MAJOR_MED_PLAN_ID": {
+            "$id": "#/properties/COB_MAJOR_MED_PLAN_ID",
+            "type": "string",
+            "title": "The COB_MAJOR_MED_PLAN_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DATA_REV_SPEC_ID": {
+            "$id": "#/properties/DATA_REV_SPEC_ID",
+            "type": "integer",
+            "title": "The DATA_REV_SPEC_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DATA_REV_SPEC_DTTM": {
+            "$id": "#/properties/DATA_REV_SPEC_DTTM",
+            "type": "string",
+            "title": "The DATA_REV_SPEC_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "DATA_REV_SPEC_STORE_NBR": {
+            "$id": "#/properties/DATA_REV_SPEC_STORE_NBR",
+            "type": "integer",
+            "title": "The DATA_REV_SPEC_STORE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_RPH_OF_RECORD_ID": {
+            "$id": "#/properties/FILL_RPH_OF_RECORD_ID",
+            "type": "integer",
+            "title": "The FILL_RPH_OF_RECORD_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "AVOID_DR_PROCESS_IND": {
+            "$id": "#/properties/AVOID_DR_PROCESS_IND",
+            "type": "string",
+            "title": "The AVOID_DR_PROCESS_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_5": {
+            "$id": "#/properties/DIAGNOSIS_CD_5",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_5 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLACE_OF_SERVICE": {
+            "$id": "#/properties/PLACE_OF_SERVICE",
+            "type": "integer",
+            "title": "The PLACE_OF_SERVICE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "RX_DENIAL_OVERRIDE_CD_2": {
+            "$id": "#/properties/RX_DENIAL_OVERRIDE_CD_2",
+            "type": "string",
+            "title": "The RX_DENIAL_OVERRIDE_CD_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RX_DENIAL_OVERRIDE_CD_3": {
+            "$id": "#/properties/RX_DENIAL_OVERRIDE_CD_3",
+            "type": "string",
+            "title": "The RX_DENIAL_OVERRIDE_CD_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "INTERMEDIARY_AUTH_ID": {
+            "$id": "#/properties/INTERMEDIARY_AUTH_ID",
+            "type": "string",
+            "title": "The INTERMEDIARY_AUTH_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DELAY_REASON_CD": {
+            "$id": "#/properties/DELAY_REASON_CD",
+            "type": "integer",
+            "title": "The DELAY_REASON_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PBR_ID_QLFR_SUBMTD": {
+            "$id": "#/properties/PBR_ID_QLFR_SUBMTD",
+            "type": "string",
+            "title": "The PBR_ID_QLFR_SUBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "RPH_ID_QLFR_SUBMTD": {
+            "$id": "#/properties/RPH_ID_QLFR_SUBMTD",
+            "type": "string",
+            "title": "The RPH_ID_QLFR_SUBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MEDIGAP_ID": {
+            "$id": "#/properties/MEDIGAP_ID",
+            "type": "string",
+            "title": "The MEDIGAP_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_RETURND_GRP_NBR": {
+            "$id": "#/properties/PLAN_RETURND_GRP_NBR",
+            "type": "string",
+            "title": "The PLAN_RETURND_GRP_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_ID_RETURND": {
+            "$id": "#/properties/PLAN_ID_RETURND",
+            "type": "string",
+            "title": "The PLAN_ID_RETURND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "GEN_RECIP_NBR_RETURND": {
+            "$id": "#/properties/GEN_RECIP_NBR_RETURND",
+            "type": "string",
+            "title": "The GEN_RECIP_NBR_RETURND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_BIRTH_DATE_RETURND": {
+            "$id": "#/properties/PAT_BIRTH_DATE_RETURND",
+            "type": "string",
+            "title": "The PAT_BIRTH_DATE_RETURND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "NTWK_REIMB_ID_RETURND": {
+            "$id": "#/properties/NTWK_REIMB_ID_RETURND",
+            "type": "string",
+            "title": "The NTWK_REIMB_ID_RETURND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PROC_FEE_AMT": {
+            "$id": "#/properties/PROC_FEE_AMT",
+            "type": "integer",
+            "title": "The PROC_FEE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRVD_NTWK_AMT": {
+            "$id": "#/properties/PRVD_NTWK_AMT",
+            "type": "integer",
+            "title": "The PRVD_NTWK_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PRD_BRND_DRUG_AMT": {
+            "$id": "#/properties/PRD_BRND_DRUG_AMT",
+            "type": "integer",
+            "title": "The PRD_BRND_DRUG_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "NPREF_PRD_FORM_AMT": {
+            "$id": "#/properties/NPREF_PRD_FORM_AMT",
+            "type": "integer",
+            "title": "The NPREF_PRD_FORM_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "NPREF_BRND_PRD_AMT": {
+            "$id": "#/properties/NPREF_BRND_PRD_AMT",
+            "type": "integer",
+            "title": "The NPREF_BRND_PRD_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COV_GAP_AMT": {
+            "$id": "#/properties/COV_GAP_AMT",
+            "type": "integer",
+            "title": "The COV_GAP_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_FUND_ASSIST_AMT": {
+            "$id": "#/properties/PLAN_FUND_ASSIST_AMT",
+            "type": "integer",
+            "title": "The PLAN_FUND_ASSIST_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "INGRD_COST_CONTRACT_AMT": {
+            "$id": "#/properties/INGRD_COST_CONTRACT_AMT",
+            "type": "integer",
+            "title": "The INGRD_COST_CONTRACT_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "DISP_FEE_CONTRACT_AMT": {
+            "$id": "#/properties/DISP_FEE_CONTRACT_AMT",
+            "type": "integer",
+            "title": "The DISP_FEE_CONTRACT_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_SALES_TAX_AMT": {
+            "$id": "#/properties/PLAN_SALES_TAX_AMT",
+            "type": "integer",
+            "title": "The PLAN_SALES_TAX_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PAT_SALES_TAX_AMT": {
+            "$id": "#/properties/PAT_SALES_TAX_AMT",
+            "type": "integer",
+            "title": "The PAT_SALES_TAX_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "OTHER_PAYER_RECOGNZD_AMT": {
+            "$id": "#/properties/OTHER_PAYER_RECOGNZD_AMT",
+            "type": "integer",
+            "title": "The OTHER_PAYER_RECOGNZD_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "BEN_STG_DED_AMT": {
+            "$id": "#/properties/BEN_STG_DED_AMT",
+            "type": "integer",
+            "title": "The BEN_STG_DED_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "BEN_STG_INIT_COV_AMT": {
+            "$id": "#/properties/BEN_STG_INIT_COV_AMT",
+            "type": "integer",
+            "title": "The BEN_STG_INIT_COV_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "BEN_STG_COV_GAP_AMT": {
+            "$id": "#/properties/BEN_STG_COV_GAP_AMT",
+            "type": "integer",
+            "title": "The BEN_STG_COV_GAP_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "BEN_STG_CAT_AMT": {
+            "$id": "#/properties/BEN_STG_CAT_AMT",
+            "type": "integer",
+            "title": "The BEN_STG_CAT_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "SPEND_ACCT_REM_AMT": {
+            "$id": "#/properties/SPEND_ACCT_REM_AMT",
+            "type": "integer",
+            "title": "The SPEND_ACCT_REM_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "EST_GEN_SAVE_AMT": {
+            "$id": "#/properties/EST_GEN_SAVE_AMT",
+            "type": "integer",
+            "title": "The EST_GEN_SAVE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "EXCEED_MAX_BEN_AMT": {
+            "$id": "#/properties/EXCEED_MAX_BEN_AMT",
+            "type": "integer",
+            "title": "The EXCEED_MAX_BEN_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_RETURND_COINS_AMT": {
+            "$id": "#/properties/PLAN_RETURND_COINS_AMT",
+            "type": "integer",
+            "title": "The PLAN_RETURND_COINS_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "APPROVED_MSG_CD_2": {
+            "$id": "#/properties/APPROVED_MSG_CD_2",
+            "type": "string",
+            "title": "The APPROVED_MSG_CD_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_PRD_BRND_DRUG_AMT": {
+            "$id": "#/properties/COB_PRD_BRND_DRUG_AMT",
+            "type": "integer",
+            "title": "The COB_PRD_BRND_DRUG_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_NPREF_PRD_FORM_AMT": {
+            "$id": "#/properties/COB_NPREF_PRD_FORM_AMT",
+            "type": "integer",
+            "title": "The COB_NPREF_PRD_FORM_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_NPREF_BRND_PRD_AMT": {
+            "$id": "#/properties/COB_NPREF_BRND_PRD_AMT",
+            "type": "integer",
+            "title": "The COB_NPREF_BRND_PRD_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLAN_FUND_ASSIST_AMT": {
+            "$id": "#/properties/COB_PLAN_FUND_ASSIST_AMT",
+            "type": "integer",
+            "title": "The COB_PLAN_FUND_ASSIST_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_SPEND_ACCT_REM_AMT": {
+            "$id": "#/properties/COB_SPEND_ACCT_REM_AMT",
+            "type": "integer",
+            "title": "The COB_SPEND_ACCT_REM_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_EST_GEN_SAVE_AMT": {
+            "$id": "#/properties/COB_EST_GEN_SAVE_AMT",
+            "type": "integer",
+            "title": "The COB_EST_GEN_SAVE_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_EXCEED_MAX_BEN_AMT": {
+            "$id": "#/properties/COB_EXCEED_MAX_BEN_AMT",
+            "type": "integer",
+            "title": "The COB_EXCEED_MAX_BEN_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_APPROVED_MSG_CD_2": {
+            "$id": "#/properties/COB_APPROVED_MSG_CD_2",
+            "type": "string",
+            "title": "The COB_APPROVED_MSG_CD_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_QUALIFIER_2": {
+            "$id": "#/properties/DIAGNOSIS_CD_QUALIFIER_2",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_QUALIFIER_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_QUALIFIER_3": {
+            "$id": "#/properties/DIAGNOSIS_CD_QUALIFIER_3",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_QUALIFIER_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_QUALIFIER_4": {
+            "$id": "#/properties/DIAGNOSIS_CD_QUALIFIER_4",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_QUALIFIER_4 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DIAGNOSIS_CD_QUALIFIER_5": {
+            "$id": "#/properties/DIAGNOSIS_CD_QUALIFIER_5",
+            "type": "string",
+            "title": "The DIAGNOSIS_CD_QUALIFIER_5 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CELGENE_MD_AUTH_NBR": {
+            "$id": "#/properties/CELGENE_MD_AUTH_NBR",
+            "type": "string",
+            "title": "The CELGENE_MD_AUTH_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "CELGENE_CONF_NBR": {
+            "$id": "#/properties/CELGENE_CONF_NBR",
+            "type": "string",
+            "title": "The CELGENE_CONF_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_PICKUP_ID_QLFR": {
+            "$id": "#/properties/PAT_PICKUP_ID_QLFR",
+            "type": "string",
+            "title": "The PAT_PICKUP_ID_QLFR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_PICKUP_GOV_AUTH_ID": {
+            "$id": "#/properties/PAT_PICKUP_GOV_AUTH_ID",
+            "type": "string",
+            "title": "The PAT_PICKUP_GOV_AUTH_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PAT_PICKUP_REL_CD": {
+            "$id": "#/properties/PAT_PICKUP_REL_CD",
+            "type": "string",
+            "title": "The PAT_PICKUP_REL_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_OTHER_AMT_PAID_TYP2": {
+            "$id": "#/properties/PLAN_OTHER_AMT_PAID_TYP2",
+            "type": "string",
+            "title": "The PLAN_OTHER_AMT_PAID_TYP2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_OTHER_AMT_PAID_TYP3": {
+            "$id": "#/properties/PLAN_OTHER_AMT_PAID_TYP3",
+            "type": "string",
+            "title": "The PLAN_OTHER_AMT_PAID_TYP3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PLAN_OTHER_AMT_PAID_2": {
+            "$id": "#/properties/PLAN_OTHER_AMT_PAID_2",
+            "type": "integer",
+            "title": "The PLAN_OTHER_AMT_PAID_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "PLAN_OTHER_AMT_PAID_3": {
+            "$id": "#/properties/PLAN_OTHER_AMT_PAID_3",
+            "type": "integer",
+            "title": "The PLAN_OTHER_AMT_PAID_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_OTHR_PAYER_REC_AMT": {
+            "$id": "#/properties/COB_OTHR_PAYER_REC_AMT",
+            "type": "integer",
+            "title": "The COB_OTHR_PAYER_REC_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_INGRD_CST_CTRCT_AMT": {
+            "$id": "#/properties/COB_INGRD_CST_CTRCT_AMT",
+            "type": "integer",
+            "title": "The COB_INGRD_CST_CTRCT_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_DISP_FEE_CTRCT_AMT": {
+            "$id": "#/properties/COB_DISP_FEE_CTRCT_AMT",
+            "type": "integer",
+            "title": "The COB_DISP_FEE_CTRCT_AMT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLN_INCNT_AMT_SUBMTD": {
+            "$id": "#/properties/COB_PLN_INCNT_AMT_SUBMTD",
+            "type": "integer",
+            "title": "The COB_PLN_INCNT_AMT_SUBMTD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_INTERMEDIARY_AUTH_ID": {
+            "$id": "#/properties/COB_INTERMEDIARY_AUTH_ID",
+            "type": "string",
+            "title": "The COB_INTERMEDIARY_AUTH_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DELAY_REASON_CD": {
+            "$id": "#/properties/COB_DELAY_REASON_CD",
+            "type": "integer",
+            "title": "The COB_DELAY_REASON_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_PLACE_OF_SERVICE": {
+            "$id": "#/properties/COB_PLACE_OF_SERVICE",
+            "type": "integer",
+            "title": "The COB_PLACE_OF_SERVICE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_RX_DENIAL_OVRIDE_CD2": {
+            "$id": "#/properties/COB_RX_DENIAL_OVRIDE_CD2",
+            "type": "string",
+            "title": "The COB_RX_DENIAL_OVRIDE_CD2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_RX_DENIAL_OVRIDE_CD3": {
+            "$id": "#/properties/COB_RX_DENIAL_OVRIDE_CD3",
+            "type": "string",
+            "title": "The COB_RX_DENIAL_OVRIDE_CD3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_2": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_2",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_3": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_3",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_4": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_4",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_4 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_5": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_5",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_5 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_QLFR_2": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_QLFR_2",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_QLFR_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_QLFR_3": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_QLFR_3",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_QLFR_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_QLFR_4": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_QLFR_4",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_QLFR_4 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_QLFR_5": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_QLFR_5",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_QLFR_5 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DIAGNOSIS_CD_QLFR": {
+            "$id": "#/properties/COB_DIAGNOSIS_CD_QLFR",
+            "type": "string",
+            "title": "The COB_DIAGNOSIS_CD_QLFR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_RX_DENIAL_OVRIDE_CD": {
+            "$id": "#/properties/COB_RX_DENIAL_OVRIDE_CD",
+            "type": "string",
+            "title": "The COB_RX_DENIAL_OVRIDE_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "AUTO_CASHOUT_ATTEMPT": {
+            "$id": "#/properties/AUTO_CASHOUT_ATTEMPT",
+            "type": "string",
+            "title": "The AUTO_CASHOUT_ATTEMPT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_90DAY_PREF_IND": {
+            "$id": "#/properties/FILL_90DAY_PREF_IND",
+            "type": "string",
+            "title": "The FILL_90DAY_PREF_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_90DAY_PREF_STAT_CD": {
+            "$id": "#/properties/FILL_90DAY_PREF_STAT_CD",
+            "type": "string",
+            "title": "The FILL_90DAY_PREF_STAT_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PRODUCT_IMAGE_ID": {
+            "$id": "#/properties/PRODUCT_IMAGE_ID",
+            "type": "string",
+            "title": "The PRODUCT_IMAGE_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PROD_REV_REJ_RSN_CD": {
+            "$id": "#/properties/PROD_REV_REJ_RSN_CD",
+            "type": "string",
+            "title": "The PROD_REV_REJ_RSN_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PROD_REV_REJ_COMMENT": {
+            "$id": "#/properties/PROD_REV_REJ_COMMENT",
+            "type": "string",
+            "title": "The PROD_REV_REJ_COMMENT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PICKUP_ID": {
+            "$id": "#/properties/PICKUP_ID",
+            "type": "string",
+            "title": "The PICKUP_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PICKUP_FIRST_NAME": {
+            "$id": "#/properties/PICKUP_FIRST_NAME",
+            "type": "string",
+            "title": "The PICKUP_FIRST_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PICKUP_LAST_NAME": {
+            "$id": "#/properties/PICKUP_LAST_NAME",
+            "type": "string",
+            "title": "The PICKUP_LAST_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PICKUP_ID_STATE": {
+            "$id": "#/properties/PICKUP_ID_STATE",
+            "type": "string",
+            "title": "The PICKUP_ID_STATE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PICKUP_ID_COUNTRY": {
+            "$id": "#/properties/PICKUP_ID_COUNTRY",
+            "type": "string",
+            "title": "The PICKUP_ID_COUNTRY schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PICKUP_ID_QLFR": {
+            "$id": "#/properties/PICKUP_ID_QLFR",
+            "type": "string",
+            "title": "The PICKUP_ID_QLFR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PICKUP_REL_CD": {
+            "$id": "#/properties/PICKUP_REL_CD",
+            "type": "string",
+            "title": "The PICKUP_REL_CD schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "QTY_REMAINING": {
+            "$id": "#/properties/QTY_REMAINING",
+            "type": "integer",
+            "title": "The QTY_REMAINING schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "MED_PARTD_NOTICE_IND": {
+            "$id": "#/properties/MED_PARTD_NOTICE_IND",
+            "type": "string",
+            "title": "The MED_PARTD_NOTICE_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DISPENSED_NDC": {
+            "$id": "#/properties/DISPENSED_NDC",
+            "type": "string",
+            "title": "The DISPENSED_NDC schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COUPON_DRUG_ID": {
+            "$id": "#/properties/COUPON_DRUG_ID",
+            "type": "integer",
+            "title": "The COUPON_DRUG_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "COB_COUPON_DRUG_ID": {
+            "$id": "#/properties/COB_COUPON_DRUG_ID",
+            "type": "integer",
+            "title": "The COB_COUPON_DRUG_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "CUSTOM_PAYMENT_ORDER_IND": {
+            "$id": "#/properties/CUSTOM_PAYMENT_ORDER_IND",
+            "type": "string",
+            "title": "The CUSTOM_PAYMENT_ORDER_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COUPON_IND": {
+            "$id": "#/properties/COUPON_IND",
+            "type": "string",
+            "title": "The COUPON_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_COUPON_IND": {
+            "$id": "#/properties/COB_COUPON_IND",
+            "type": "string",
+            "title": "The COB_COUPON_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "MED_PARTD_PRINT_DTTM": {
+            "$id": "#/properties/MED_PARTD_PRINT_DTTM",
+            "type": "string",
+            "title": "The MED_PARTD_PRINT_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "DL_ADDL_MSG_QLFR": {
+            "$id": "#/properties/DL_ADDL_MSG_QLFR",
+            "type": "string",
+            "title": "The DL_ADDL_MSG_QLFR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_DL_ADDL_MSG_QLFR": {
+            "$id": "#/properties/COB_DL_ADDL_MSG_QLFR",
+            "type": "string",
+            "title": "The COB_DL_ADDL_MSG_QLFR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SP_MSG_SEND_IND": {
+            "$id": "#/properties/SP_MSG_SEND_IND",
+            "type": "string",
+            "title": "The SP_MSG_SEND_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "APPROVED_MSG_CD_3": {
+            "$id": "#/properties/APPROVED_MSG_CD_3",
+            "type": "string",
+            "title": "The APPROVED_MSG_CD_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "APPROVED_MSG_CD_4": {
+            "$id": "#/properties/APPROVED_MSG_CD_4",
+            "type": "string",
+            "title": "The APPROVED_MSG_CD_4 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "APPROVED_MSG_CD_5": {
+            "$id": "#/properties/APPROVED_MSG_CD_5",
+            "type": "string",
+            "title": "The APPROVED_MSG_CD_5 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_APPROVED_MSG_CD_3": {
+            "$id": "#/properties/COB_APPROVED_MSG_CD_3",
+            "type": "string",
+            "title": "The COB_APPROVED_MSG_CD_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_APPROVED_MSG_CD_4": {
+            "$id": "#/properties/COB_APPROVED_MSG_CD_4",
+            "type": "string",
+            "title": "The COB_APPROVED_MSG_CD_4 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "COB_APPROVED_MSG_CD_5": {
+            "$id": "#/properties/COB_APPROVED_MSG_CD_5",
+            "type": "string",
+            "title": "The COB_APPROVED_MSG_CD_5 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BEN_STG_QUALIFIER_1": {
+            "$id": "#/properties/BEN_STG_QUALIFIER_1",
+            "type": "string",
+            "title": "The BEN_STG_QUALIFIER_1 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BEN_STG_QUALIFIER_2": {
+            "$id": "#/properties/BEN_STG_QUALIFIER_2",
+            "type": "string",
+            "title": "The BEN_STG_QUALIFIER_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BEN_STG_QUALIFIER_3": {
+            "$id": "#/properties/BEN_STG_QUALIFIER_3",
+            "type": "string",
+            "title": "The BEN_STG_QUALIFIER_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BEN_STG_QUALIFIER_4": {
+            "$id": "#/properties/BEN_STG_QUALIFIER_4",
+            "type": "string",
+            "title": "The BEN_STG_QUALIFIER_4 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "BEN_STG_AMOUNT_1": {
+            "$id": "#/properties/BEN_STG_AMOUNT_1",
+            "type": "integer",
+            "title": "The BEN_STG_AMOUNT_1 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "BEN_STG_AMOUNT_2": {
+            "$id": "#/properties/BEN_STG_AMOUNT_2",
+            "type": "integer",
+            "title": "The BEN_STG_AMOUNT_2 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "BEN_STG_AMOUNT_3": {
+            "$id": "#/properties/BEN_STG_AMOUNT_3",
+            "type": "integer",
+            "title": "The BEN_STG_AMOUNT_3 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "BEN_STG_AMOUNT_4": {
+            "$id": "#/properties/BEN_STG_AMOUNT_4",
+            "type": "integer",
+            "title": "The BEN_STG_AMOUNT_4 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "OVERSTOCK_IND": {
+            "$id": "#/properties/OVERSTOCK_IND",
+            "type": "string",
+            "title": "The OVERSTOCK_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DB_COB_PROC_CTRL_NBR": {
+            "$id": "#/properties/DB_COB_PROC_CTRL_NBR",
+            "type": "string",
+            "title": "The DB_COB_PROC_CTRL_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SOURCE_SYSTEM_NAME": {
+            "$id": "#/properties/SOURCE_SYSTEM_NAME",
+            "type": "string",
+            "title": "The SOURCE_SYSTEM_NAME schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "SOURCE_SYS_TRANS_ID": {
+            "$id": "#/properties/SOURCE_SYS_TRANS_ID",
+            "type": "string",
+            "title": "The SOURCE_SYS_TRANS_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DELIVERY_IND": {
+            "$id": "#/properties/DELIVERY_IND",
+            "type": "string",
+            "title": "The DELIVERY_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "DELIVERY_COMMENTS": {
+            "$id": "#/properties/DELIVERY_COMMENTS",
+            "type": "string",
+            "title": "The DELIVERY_COMMENTS schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "ORG_ENTERED_DTTM": {
+            "$id": "#/properties/ORG_ENTERED_DTTM",
+            "type": "string",
+            "title": "The ORG_ENTERED_DTTM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01-01-2019T00:00:00"
+            ]
+        },
+        "PBR_BLOCK_TYPE": {
+            "$id": "#/properties/PBR_BLOCK_TYPE",
+            "type": "string",
+            "title": "The PBR_BLOCK_TYPE schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_BLOCK_INT_MSG": {
+            "$id": "#/properties/PBR_BLOCK_INT_MSG",
+            "type": "string",
+            "title": "The PBR_BLOCK_INT_MSG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "PBR_BLOCK_EXT_MSG": {
+            "$id": "#/properties/PBR_BLOCK_EXT_MSG",
+            "type": "string",
+            "title": "The PBR_BLOCK_EXT_MSG schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILL_MAND_CONSULT_IND": {
+            "$id": "#/properties/FILL_MAND_CONSULT_IND",
+            "type": "string",
+            "title": "The FILL_MAND_CONSULT_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "POC_DOCUMENT_ID": {
+            "$id": "#/properties/POC_DOCUMENT_ID",
+            "type": "integer",
+            "title": "The POC_DOCUMENT_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "POC_COB_DOCUMENT_ID": {
+            "$id": "#/properties/POC_COB_DOCUMENT_ID",
+            "type": "integer",
+            "title": "The POC_COB_DOCUMENT_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "WO_CORRELATION_ID": {
+            "$id": "#/properties/WO_CORRELATION_ID",
+            "type": "string",
+            "title": "The WO_CORRELATION_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "WO_RX_COUNT": {
+            "$id": "#/properties/WO_RX_COUNT",
+            "type": "integer",
+            "title": "The WO_RX_COUNT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "SHORT_FILL_IND": {
+            "$id": "#/properties/SHORT_FILL_IND",
+            "type": "string",
+            "title": "The SHORT_FILL_IND schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "null"
+            ]
+        },
+        "FILLING_STORE_NBR": {
+            "$id": "#/properties/FILLING_STORE_NBR",
+            "type": "integer",
+            "title": "The FILLING_STORE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        },
+        "FILL_VERIFIED_STORE_NBR": {
+            "$id": "#/properties/FILL_VERIFIED_STORE_NBR",
+            "type": "integer",
+            "title": "The FILL_VERIFIED_STORE_NBR schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0.0
+            ]
+        }
+    }
+}

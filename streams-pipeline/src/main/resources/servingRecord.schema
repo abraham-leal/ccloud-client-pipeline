@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The final record to serve prescription reads",
+  "description": "To be picked up by the front end through MongoDB",
+  "default": {},
+  "required": [
+    "patId",
+    "rxNumber",
+    "storeNumber",
+    "daysSupply",
+    "prescribedFillCount",
+    "dispensedFillCount",
+    "lastFillPartialFlag",
+    "remainingFillCount",
+    "quantity",
+    "partialFilledQuanity",
+    "fillQuantityDispensed",
+    "lastFillDate",
+    "nextFillDate",
+    "rxSig",
+    "prescriberPhone",
+    "prescriberName",
+    "prescriberId",
+    "nonSystemCompoundInd",
+    "refillable",
+    "hideRx",
+    "ninetyFillFlag",
+    "ninetyDayPrefInd",
+    "autoRefillInd",
+    "autoRefillPrefInd"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "patId": {
+      "$id": "#/properties/patId",
+      "type": "string"
+    },
+    "rxNumber": {
+      "$id": "#/properties/rxNumber",
+      "type": "string"
+    },
+    "storeNumber": {
+      "$id": "#/properties/storeNumber",
+      "type": "integer"
+    },
+    "daysSupply": {
+      "$id": "#/properties/daysSupply",
+      "type": "integer"
+    },
+    "prescribedFillCount": {
+      "$id": "#/properties/prescribedFillCount",
+      "type": "integer"
+    },
+    "dispensedFillCount": {
+      "$id": "#/properties/dispensedFillCount",
+      "type": "integer"
+    },
+    "lastFillPartialFlag": {
+      "$id": "#/properties/lastFillPartialFlag",
+      "type": "boolean"
+    },
+    "remainingFillCount": {
+      "$id": "#/properties/remainingFillCount",
+      "type": "integer"
+    },
+    "quantity": {
+      "$id": "#/properties/quantity",
+      "type": "integer"
+    },
+    "partialFilledQuanity": {
+      "$id": "#/properties/partialFilledQuanity",
+      "type": "integer"
+    },
+    "fillQuantityDispensed": {
+      "$id": "#/properties/fillQuantityDispensed",
+      "type": "integer"
+    },
+    "lastFillDate": {
+      "$id": "#/properties/lastFillDate",
+      "type": "string"
+    },
+    "nextFillDate": {
+      "$id": "#/properties/nextFillDate",
+      "type": "string"
+    },
+    "rxSig": {
+      "$id": "#/properties/rxSig",
+      "type": "string"
+    },
+    "prescriberPhone": {
+      "$id": "#/properties/prescriberPhone",
+      "type": "integer"
+    },
+    "prescriberName": {
+      "$id": "#/properties/prescriberName",
+      "type": "string"
+    },
+    "prescriberId": {
+      "$id": "#/properties/prescriberId",
+      "type": "string"
+    },
+    "nonSystemCompoundInd": {
+      "$id": "#/properties/nonSystemCompoundInd",
+      "type": "string"
+    },
+    "refillable": {
+      "$id": "#/properties/refillable",
+      "type": "boolean"
+    },
+    "hideRx": {
+      "$id": "#/properties/hideRx",
+      "type": "boolean"
+    },
+    "ninetyFillFlag": {
+      "$id": "#/properties/ninetyFillFlag",
+      "type": "string"
+    },
+    "ninetyDayPrefInd": {
+      "$id": "#/properties/ninetyDayPrefInd",
+      "type": "string"
+    },
+    "autoRefillInd": {
+      "$id": "#/properties/autoRefillInd",
+      "type": "string"
+    },
+    "autoRefillPrefInd": {
+      "$id": "#/properties/autoRefillPrefInd",
+      "type": "string"
+    }
+  }
+}
