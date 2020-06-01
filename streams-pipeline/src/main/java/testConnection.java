@@ -15,7 +15,7 @@ public class testConnection {
 
     public static Properties getConfig (){
         final Properties props = new Properties();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "pkc-epwny.eastus.azure.confluent.cloud:9092");
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "<BOOTSTRAP>");
         props.put(ProducerConfig.ACKS_CONFIG, "all");
         props.put(ProducerConfig.RETRIES_CONFIG, 5);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
