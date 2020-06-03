@@ -96,11 +96,11 @@ public class completeRecordJSONAnon {
 
         //repartition prescribers
         KStream<String, Tbf0Prescriber> repartititonPres = builder.stream(ps_topic, Consumed.with(Serdes.String(), presSerde));
-        repartititonPres.selectKey((k,v) -> Integer.toString(v.getPBRID())).to("repartitionedPrescriberA");
+        repartititonPres.selectKey((k,v) -> Integer.toString(v.getPBRID())).to("repartitionedPrescriberA", Produced.with(Serdes.String(),presSerde));
 
         // Define topics to consume
         GlobalKTable<String,Tbf0Prescriber> ps_table = builder
-        .globalTable("repartitionedPrescriberA", Materialized.as("Prescriber_records"));
+        .globalTable("repartitionedPrescriberA", Materialized.with(Serdes.String(),presSerde));
         KStream<String, Tbf0RxTransaction> rx_t_stream = builder
                 .stream(rx_t_topic, Consumed.with(Serdes.String(), rxtSerde));
 
@@ -109,9 +109,9 @@ public class completeRecordJSONAnon {
 
         // Repartition to needed keys
         KTable<String,Tbf0Rx> repartitionRXStream = rx_stream
-               .selectKey((k,v) -> (String.join(Integer.toString(v.getRXNBR()),Integer.toString(v.getSTORENBR())))).toTable(Materialized.as("Rx_Begin_Store"));
+               .selectKey((k,v) -> (String.join(Integer.toString(v.getRXNBR()),Integer.toString(v.getSTORENBR())))).toTable(Materialized.with(Serdes.String(),rxSerde));
         KTable<String,Tbf0RxTransaction> repartitionRXTStream = rx_t_stream
-               .selectKey((k,v) -> (String.join(Integer.toString(v.getRXNBR()),Integer.toString(v.getSTORENBR())))).toTable(Materialized.as("RxT_Begin_Store"));
+               .selectKey((k,v) -> (String.join(Integer.toString(v.getRXNBR()),Integer.toString(v.getSTORENBR())))).toTable(Materialized.with(Serdes.String(),rxtSerde));
 
         // We will be bringing in the Prescriber Stream as a GlobalKTable instead
         //KTable<String,Tbf0Prescriber> repartitionPStream = ps_stream
@@ -126,7 +126,7 @@ public class completeRecordJSONAnon {
         // Prescribers as a GlobalKTable Joined to our record to produce a complete record
 
         KStream<String, ServingRecord> finalRecord = enrichedWithTransactionsStream.leftJoin(ps_table,
-                (k,v) -> v.getPrescriberId().toString(),
+                (k,v) -> v.getPrescriberId(),
                 getPrescriberInfo())
                 .selectKey((k,v) -> (createJSONKey(v.getRxNumber(),v.getStoreNumber())));
 
