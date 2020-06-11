@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/producer-pipeline.iml" filepath="$PROJECT_DIR$/producer-pipeline.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/streams-pipeline.iml" filepath="$PROJECT_DIR$/.idea/streams-pipeline.iml" />
     </modules>
   </component>
 </project>

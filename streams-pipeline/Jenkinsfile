@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clean') {
+            steps {
+                dir('streams-pipeline'){
+                    echo 'Cleaning...'
+                    sh 'ls'
+                    sh 'mvn clean'
+                }
+
+            }
+        }
+        stage('Test') {
+            steps {
+                dir('streams-pipeline'){
+                    echo 'Testing...'
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Package') {
+            steps {
+                dir('streams-pipeline'){
+                    echo 'Compiling...'
+                    sh 'mvn package'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                dir('streams-pipeline'){
+                    echo 'Building Docker Image...'
+                    sh 'docker build -t streams-app:v1 .'
+                }
+            }
+        }
+        stage('Register') {
+            steps {
+                dir('streams-pipeline'){
+                    echo 'Registering with Azure Container Registry...'
+                    sh 'docker push abeReg.azurecr.io'
+                }
+            }
+        }
+        stage('Final Clean') {
+            steps {
+                dir('streams-pipeline'){
+                    echo 'Cleaning...'
+                    sh 'mvn clean'
+                    sh 'ls'
+                }
+            }
+        }
+    }
+}

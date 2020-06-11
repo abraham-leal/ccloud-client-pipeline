@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Properties;
 
 
-public class completeRecordAnon {
+public class completeRecord {
 
     public final static String rx_topic = "rx_topic_a";
     public final static String rx_t_topic = "rx_transactions_topic_a";
