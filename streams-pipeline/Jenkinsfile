@@ -40,7 +40,8 @@ pipeline {
             steps {
                 dir('streams-pipeline'){
                     echo 'Registering with Azure Container Registry...'
-                    sh 'docker push streams-app:v1'
+                    sh 'docker tag streams-app:v1 abeReg.azurecr.io/streams/streams-app'
+                    sh 'docker push abeReg.azurecr.io/streams/streams-app'
                 }
             }
         }
