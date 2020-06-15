@@ -42,6 +42,7 @@ public class runHydration {
         streamsProps.put(StreamsConfig.SECURITY_PROTOCOL_CONFIG,"SASL_SSL");
         streamsProps.put(SaslConfigs.SASL_MECHANISM,"PLAIN");
         streamsProps.put(SaslConfigs.SASL_JAAS_CONFIG,JAAS_CONF);
+        streamsProps.put(StreamsConfig.STATE_DIR_CONFIG,"/data/rocks/");
         streamsProps.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG,SR_BOOTSTRAP_SERVERS);
         streamsProps.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG,SR_API_KEY+":"+SR_API_SECRET);
         streamsProps.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE,"USER_INFO");
