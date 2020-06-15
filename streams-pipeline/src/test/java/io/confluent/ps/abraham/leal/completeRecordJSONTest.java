@@ -5,7 +5,6 @@ import io.confluent.gen.ServingRecord;
 import io.confluent.gen.Tbf0Prescriber;
 import io.confluent.gen.Tbf0Rx;
 import io.confluent.gen.Tbf0RxTransaction;
-import io.confluent.kafka.schemaregistry.client.MockSchemaRegistryClient;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;
 import io.confluent.kafka.serializers.KafkaJsonDeserializerConfig;
 import io.confluent.kafka.streams.serdes.json.KafkaJsonSchemaSerde;
@@ -33,8 +32,6 @@ public class completeRecordJSONTest {
     private Tbf0Rx myRxValue = new Tbf0Rx();
     private Tbf0RxTransaction myRxtValue = new Tbf0RxTransaction();
     private Tbf0Prescriber myPresValue = new Tbf0Prescriber();
-    private TestOutputTopic<String, Tbf0Prescriber> repartitionedPrescriber;
-    private MockSchemaRegistryClient mockSchemaRegistryClient = new MockSchemaRegistryClient();
 
     @Before
     public void SetUp() {
@@ -42,7 +39,7 @@ public class completeRecordJSONTest {
 
 
         Properties props = new Properties();
-        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "CompleteRecord");
+        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "TestingRecord");
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "test:1234");
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, io.confluent.kafka.streams.serdes.json.KafkaJsonSchemaSerde.class);
@@ -64,7 +61,6 @@ public class completeRecordJSONTest {
         rx_trans = testDriver.createInputTopic("rx_trans", Serdes.String().serializer(), rxtSerde.serializer());
         prescriber = testDriver.createInputTopic("prescriber", Serdes.String().serializer(), presSerde.serializer());
         complete_record = testDriver.createOutputTopic("complete_record", Serdes.String().deserializer(), serveSerde.deserializer());
-        repartitionedPrescriber = testDriver.createOutputTopic("repartitionedPrescriber", Serdes.String().deserializer(), presSerde.deserializer());
 
         // Fill dummy records
         myRxValue.setRXNBR(900);
@@ -86,18 +82,17 @@ public class completeRecordJSONTest {
 
     @Test
     public void shouldReturnNoRecord(){
-        prescriber.pipeInput(myPresValue);
+        prescriber.pipeInput("{RX_NBR: 200, RX_STORE: 300}",myPresValue);
         assertTrue(complete_record.isEmpty());
-        assertFalse(repartitionedPrescriber.isEmpty());
-        rx_trans.pipeInput(myRxtValue);
+        rx_trans.pipeInput("{RX_NBR: 200, RX_STORE: 300}",myRxtValue);
         assertTrue(complete_record.isEmpty());
     }
 
     @Test
     public void shouldReturnComplete() {
-        prescriber.pipeInput(myPresValue);
-        rx_trans.pipeInput(myRxtValue);
-        rx.pipeInput(myRxValue);
+        prescriber.pipeInput("{RX_NBR: 200, RX_STORE: 300}",myPresValue);
+        rx_trans.pipeInput("{RX_NBR: 200, RX_STORE: 300}",myRxtValue);
+        rx.pipeInput("{RX_NBR: 200, RX_STORE: 300}",myRxValue);
         assertFalse(complete_record.isEmpty());
     }
 
