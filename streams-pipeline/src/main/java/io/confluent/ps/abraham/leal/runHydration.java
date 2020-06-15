@@ -22,16 +22,18 @@ import java.util.Map;
 import java.util.Properties;
 
 public class runHydration {
+    final static Logger logger = Logger.getRootLogger();
     final static String BOOTSTRAP_SERVERS = System.getenv("BOOTSTRAP_SERVERS");
     final static String SR_BOOTSTRAP_SERVERS = System.getenv("SR_BOOTSTRAP_SERVERS");
     final static String API_KEY = System.getenv("API_KEY");
     final static String API_SECRET = System.getenv("API_SECRET");
     final static String SR_API_KEY = System.getenv("SR_API_KEY");
     final static String SR_API_SECRET = System.getenv("SR_API_SECRET");
+    final static String JAAS_CONF = String.format("org.apache.kafka.common.security.plain.PlainLoginModule required username=\"%s\" password=\"%s\";", API_KEY,API_SECRET);
     public static Properties getConfig (){
 
         final Properties streamsProps = new Properties();
-        streamsProps.put(StreamsConfig.APPLICATION_ID_CONFIG, "CompleteRecord");
+        streamsProps.put(StreamsConfig.APPLICATION_ID_CONFIG, "getHydrated");
         streamsProps.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
         streamsProps.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         streamsProps.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, io.confluent.kafka.streams.serdes.json.KafkaJsonSchemaSerde.class);
@@ -39,10 +41,23 @@ public class runHydration {
         streamsProps.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, "3");
         streamsProps.put(StreamsConfig.SECURITY_PROTOCOL_CONFIG,"SASL_SSL");
         streamsProps.put(SaslConfigs.SASL_MECHANISM,"PLAIN");
-        streamsProps.put(SaslConfigs.SASL_JAAS_CONFIG,String.format("org.apache.kafka.common.security.plain.PlainLoginModule required username=\"%s\" password=\"%s\";", API_KEY,API_SECRET));
+        streamsProps.put(SaslConfigs.SASL_JAAS_CONFIG,JAAS_CONF);
         streamsProps.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG,SR_BOOTSTRAP_SERVERS);
         streamsProps.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG,SR_API_KEY+":"+SR_API_SECRET);
         streamsProps.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE,"USER_INFO");
+
+        try {
+            Map<String,String> sysEnvs = System.getenv();
+            for (String env : sysEnvs.keySet()){
+                if (env.startsWith("KSTREAMS_")){
+                    logger.info("Importing config: " + env);
+                    streamsProps.put(env.replaceFirst("KSTREAMS_","").replace('_','.'),sysEnvs.get(env));
+                }
+            }
+        }catch (Exception e){
+            logger.info("Could not import custom variable to the KStreams Application");
+            e.printStackTrace();
+        }
 
         return streamsProps;
     }
@@ -54,7 +69,9 @@ public class runHydration {
         final Serde<Tbf0RxTransaction> rxtSerde = new KafkaJsonSchemaSerde<>();
 
         Map<String, Object> SRConfig = new HashMap<>();
-        SRConfig.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG,"mock://mockSR");
+        SRConfig.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG,SR_BOOTSTRAP_SERVERS);
+        SRConfig.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG,SR_API_KEY+":"+SR_API_SECRET);
+        SRConfig.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE,"USER_INFO");
 
         Map<String,Object> serveSerdeConfig = new HashMap<>();
         serveSerdeConfig.putAll(SRConfig);
@@ -91,7 +108,6 @@ public class runHydration {
     }
 
     public static void main(String[] args) {
-        Logger logger = Logger.getRootLogger();
         BasicConfigurator.configure();
         logger.setLevel(Level.INFO);
 
@@ -108,8 +124,6 @@ public class runHydration {
         }catch (Exception e){
             logger.info("Unable to start Kafka Streams Application");
         }
-
-        logger.info("Shutting down Kafka Streams Application");
         Runtime.getRuntime().addShutdownHook(new Thread(app::close));
     }
 }

@@ -6,10 +6,10 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.kstream.*;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import org.json.JSONObject;
 
 public class completeRecordJSON {
 
+    final static Logger logger = Logger.getRootLogger();
     public final static String rx_topic = "rx";
     public final static String rx_t_topic = "rx_trans";
     public final static String ps_topic = "prescriber";
@@ -17,35 +17,21 @@ public class completeRecordJSON {
 
     public static StreamsBuilder getTopology (Serde<ServingRecord> serveSerde, Serde<Tbf0Prescriber> presSerde,
                                               Serde<Tbf0Rx> rxSerde, Serde<Tbf0RxTransaction> rxtSerde){
-
-        Logger logger = Logger.getRootLogger();
         BasicConfigurator.configure();
 
         final StreamsBuilder builder = new StreamsBuilder();
-        //final ValueTransformerFactory transformMe = new ValueTransformerFactory();
-
-        //repartition prescribers
-        KStream<String, Tbf0Prescriber> repartitionPres = builder.stream(ps_topic, Consumed.with(Serdes.String(), presSerde));
-        repartitionPres.selectKey((k,v) -> Integer.toString(v.getPBRID())).to("repartitionedPrescriber");
 
         // Define topics to consume
         GlobalKTable<String,Tbf0Prescriber> ps_table = builder
-                .globalTable("repartitionedPrescriberA", Materialized.as("Prescriber_records"));
-        KStream<String, Tbf0RxTransaction> rx_t_stream = builder
-                .stream(rx_t_topic, Consumed.with(Serdes.String(), rxtSerde));
-
-        KStream<String, Tbf0Rx> rx_stream = builder
-                .stream(rx_topic, Consumed.with(Serdes.String(), rxSerde));
-
-        // Repartition to needed keys
-        KTable<String,Tbf0Rx> repartitionRXStream = rx_stream
-                .selectKey((k,v) -> (String.join(Integer.toString(v.getRXNBR()),Integer.toString(v.getSTORENBR())))).toTable(Materialized.with(Serdes.String(),rxSerde));
-        KTable<String,Tbf0RxTransaction> repartitionRXTStream = rx_t_stream
-                .selectKey((k,v) -> (String.join(Integer.toString(v.getRXNBR()),Integer.toString(v.getSTORENBR())))).toTable(Materialized.with(Serdes.String(),rxtSerde));
+                .globalTable(ps_topic, Consumed.with(Serdes.String(),presSerde), Materialized.as("Prescriber_Store"));
+        KTable<String, Tbf0RxTransaction> rx_t_stream = builder
+                .table(rx_t_topic, Consumed.with(Serdes.String(), rxtSerde), Materialized.as("Transactions_Store"));
+        KTable<String, Tbf0Rx> rx_stream = builder
+                .table(rx_topic, Consumed.with(Serdes.String(), rxSerde), Materialized.as("RX_Store"));
 
         // Pull in transaction eventing
-        KTable<String,ServingRecord> enrichWithTransactions = repartitionRXStream
-                .leftJoin(repartitionRXTStream,getTransactions());
+        KTable<String,ServingRecord> enrichWithTransactions = rx_stream
+                .leftJoin(rx_t_stream,getTransactions());
 
         KStream<String,ServingRecord> enrichedWithTransactionsStream = enrichWithTransactions.toStream();
 
@@ -53,8 +39,7 @@ public class completeRecordJSON {
 
         KStream<String, ServingRecord> finalRecord = enrichedWithTransactionsStream.leftJoin(ps_table,
                 (k,v) -> v.getPrescriberId(),
-                getPrescriberInfo())
-                .selectKey((k,v) -> (createJSONKey(v.getRxNumber(),v.getStoreNumber())));
+                getPrescriberInfo());
 
         // Send data back to Kafka
         logger.info("Successfully produced a record");
@@ -64,15 +49,9 @@ public class completeRecordJSON {
 
     }
 
-    private static String createJSONKey(CharSequence key1, int key2){
-        JSONObject toReturn = new JSONObject();
-        toReturn.put("RxNum",key1);
-        toReturn.put("StoreNbr",Integer.toString(key2));
-        return toReturn.toString();
-    }
-
     private static ValueJoiner<Tbf0Rx, Tbf0RxTransaction, ServingRecord> getTransactions(){
         return (leftValue, rightValue) -> {
+            logger.debug("Joining a record");
             ServingRecord creationPoint = new ServingRecord();
             System.out.println(leftValue);
             System.out.println(rightValue);
@@ -114,7 +93,7 @@ public class completeRecordJSON {
                 creationPoint.setAutoRefillInd(String.valueOf(false));
             }
             catch (Exception e){
-                System.out.println("Could Not Parse and add to finalValue from left stream");
+                logger.debug("Could Not Parse and add to finalValue from left stream");
                 e.printStackTrace();
                 System.exit(0);
             }
@@ -133,9 +112,9 @@ public class completeRecordJSON {
                 }
             }
             catch (Exception e){
-                System.out.println("Could Not Parse and add to finalValue from left stream in prescribers");
+                logger.debug("Could Not Parse and add to finalValue from left stream in prescribers");
                 e.printStackTrace();
-                System.exit(1);
+                System.exit(0);
             }
             return leftValue;
         };
