@@ -53,8 +53,6 @@ public class completeRecordJSON {
         return (leftValue, rightValue) -> {
             logger.debug("Joining a record");
             ServingRecord creationPoint = new ServingRecord();
-            System.out.println(leftValue);
-            System.out.println(rightValue);
             try {
                 creationPoint.setPatId((Integer.toString(leftValue.getPATID())));
                 creationPoint.setRxNumber(Integer.toString(leftValue.getRXNBR()));
