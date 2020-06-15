@@ -51,7 +51,8 @@ public class runHydration {
             for (String env : sysEnvs.keySet()){
                 if (env.startsWith("KSTREAMS_")){
                     logger.info("Importing config: " + env);
-                    streamsProps.put(env.replaceFirst("KSTREAMS_","").replace('_','.'),sysEnvs.get(env));
+                    streamsProps.put(env.toLowerCase().replaceFirst("KSTREAMS_","")
+                            .replace('_','.'),sysEnvs.get(env));
                 }
             }
         }catch (Exception e){
