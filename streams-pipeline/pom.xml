@@ -33,8 +33,8 @@
 
         <dependency>
             <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
-            <version>3.12.5</version>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>4.0.4</version>
         </dependency>
 
         <dependency>
@@ -108,11 +108,7 @@
             <artifactId>jersey-container-servlet-core</artifactId>
             <version>2.30.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-json-jackson</artifactId>
-            <version>2.30.1</version>
-        </dependency>
+
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
@@ -150,15 +146,10 @@
 
         <dependency>
             <groupId>io.confluent</groupId>
-            <artifactId>monitoring-interceptors</artifactId>
-            <version>5.5.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.confluent</groupId>
             <artifactId>kafka-connect-json-schema-converter</artifactId>
             <version>5.5.0</version>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
