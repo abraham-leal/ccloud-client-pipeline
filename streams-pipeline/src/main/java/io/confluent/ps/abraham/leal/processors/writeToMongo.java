@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import java.util.concurrent.TimeUnit;
 
 public class writeToMongo implements Processor<String, ServingRecord> {
+
     // This is an example of a terminal processor that writes to mongoDB
     private MongoClient mongoClient;
     private MongoDatabase mongoDb;
@@ -26,6 +27,8 @@ public class writeToMongo implements Processor<String, ServingRecord> {
     private final String dbName = System.getenv("MongoDBName");
     private final String collection = System.getenv("MongoCollection");
     private final String dlqTopic = System.getenv("dlqTopic");
+
+
     @Override
     public void init(ProcessorContext context) {
         // Initialize MongoDB client
@@ -40,6 +43,7 @@ public class writeToMongo implements Processor<String, ServingRecord> {
         logger.info("Got database with name: " + dbName);
         mongoDb = mongoClient.getDatabase(dbName);
     }
+
 
     @Override
     public void process(String key, ServingRecord value) {
@@ -100,6 +104,7 @@ public class writeToMongo implements Processor<String, ServingRecord> {
             logger.debug("Successfully written a message to Mongo DB with key: " + key);
         }
     }
+    
 
     @Override
     public void close() {
