@@ -19,8 +19,7 @@ import org.json.JSONObject;
 import java.util.concurrent.TimeUnit;
 
 public class writeToMongo implements Processor<String, ServingRecord> {
-    // This is an example of a transformer that queries mongoDB and
-    // returns a new value with the processed result
+    // This is an example of a terminal processor that writes to mongoDB
     private MongoClient mongoClient;
     private MongoDatabase mongoDb;
     private KafkaProducer<String,ServingRecord> dlqProducer;
@@ -60,11 +59,14 @@ public class writeToMongo implements Processor<String, ServingRecord> {
                 .withWTimeout(500, TimeUnit.MILLISECONDS)
                 .withW("majority");
 
+        // Get collection to write records to from env variable
         MongoCollection<Document> collectionToWrite = mongoDb.getCollection(collection).withWriteConcern(guarantee);
         boolean isWritten = false;
 
         try {
+            // Insert record with guarantees
             InsertOneResult isWrittenDoc = collectionToWrite.insertOne(toWrite);
+            // Check for successful write
             isWritten = isWrittenDoc.wasAcknowledged();
         }catch(com.mongodb.MongoWriteException w){
             logger.info("Failed to write to MongoDB, most likely due to not being able to establish a " +
@@ -72,7 +74,9 @@ public class writeToMongo implements Processor<String, ServingRecord> {
             logger.info("Sending record to DLQ...");
             ProducerRecord<String,ServingRecord> toSend =
                     new ProducerRecord<String, ServingRecord>(dlqTopic,key,value);
+            // Send stacktrace with dlq record in headers
             toSend.headers().add("stacktrace",w.toString().getBytes());
+            // Send time of failure with record in headers
             toSend.headers().add("timestamp",String.valueOf(System.currentTimeMillis()).getBytes());
             dlqProducer.send(toSend);
         }catch(com.mongodb.WriteConcernException c){
@@ -81,21 +85,27 @@ public class writeToMongo implements Processor<String, ServingRecord> {
             logger.info("Sending record to DLQ...");
             ProducerRecord<String,ServingRecord> toSend =
                     new ProducerRecord<String, ServingRecord>(dlqTopic,key,value);
+            // Send stacktrace with dlq record in headers
             toSend.headers().add("stacktrace",c.toString().getBytes());
+            // Send time of failure with record in headers
+            toSend.headers().add("timestamp",String.valueOf(System.currentTimeMillis()).getBytes());
             dlqProducer.send(toSend);
         }catch(com.mongodb.MongoException e){
+            // Unknown error, printing stacktrace and exiting application
             logger.info("Failed to write to MongoDB for unknown reasons.");
             e.printStackTrace();
+            System.exit(0);
         }
 
         if(isWritten){
+            // debug statement of write with key
             logger.debug("Successfully written a message to Mongo DB with key: " + key);
         }
     }
 
     @Override
     public void close() {
-        // Close out mongo connection when finished processing
+        // Clean up resources when the application shuts down to prevent leaks
         mongoClient.close();
         dlqProducer.flush();
         dlqProducer.close();
