@@ -18,30 +18,41 @@ import java.util.concurrent.TimeUnit;
 
 public class writeToMongo implements Processor<String, ServingRecord> {
 
-    // This is an example of a terminal processor that writes to mongoDB
+    // This is an example of a terminal processor that writes to MongoDB
     private MongoClient mongoClient;
-    private MongoDatabase mongoDb;
+    private MongoCollection<Document> mongoCollection;
     private KafkaProducer<String,ServingRecord> dlqProducer;
     private final Logger logger = Logger.getLogger(writeToMongo.class);
-    private final String connectionString = System.getenv("MongoConnectionString");
-    private final String dbName = System.getenv("MongoDBName");
-    private final String collection = System.getenv("MongoCollection");
-    private final String dlqTopic = System.getenv("dlqTopic");
 
 
     @Override
     public void init(ProcessorContext context) {
         // Initialize MongoDB client
+        String connectionString = System.getenv("MongoConnectionString");
+        String dbName = System.getenv("MongoDBName");
+        String collection = System.getenv("MongoCollection");
+
         mongoClient = MongoClients.create(connectionString);
         logger.info("Opened connection to MongoDB");
 
         //Setting up a producer for DLQing
         dlqProducer = new KafkaProducer<>(context.appConfigs());
 
-        // Get connection to specific DB, this assumes info from a single DB,
+        // We are setting a global restraint: Only consider a write successful if the
+        // Write is in all journals of a Majority of MongoDB replicas
+        // With a timeout for answer of 500 milliseconds
+        WriteConcern guarantee = WriteConcern.ACKNOWLEDGED
+                .withJournal(true)
+                .withWTimeout(500, TimeUnit.MILLISECONDS)
+                .withW("majority");
+
+        // Get connection to specific DB and collection, this assumes info from a single DB,
         // but multiple DB clients can be instantiated
         logger.info("Got database with name: " + dbName);
-        mongoDb = mongoClient.getDatabase(dbName);
+        MongoDatabase mongoDb = mongoClient.getDatabase(dbName);
+
+        // Get collection to write records to from env variable
+        mongoCollection = mongoDb.getCollection(collection).withWriteConcern(guarantee);
     }
 
 
@@ -53,21 +64,14 @@ public class writeToMongo implements Processor<String, ServingRecord> {
         JSONObject jsonObj = new JSONObject(valueJSON);
         Document toWrite = Document.parse(jsonObj.toString());
 
-        // We are setting a global restraint: Only consider a write successful if the
-        // Write is in all journals of a Majority of MongoDB replicas
-        // With a timeout for answer of 500 milliseconds
-        WriteConcern guarantee = WriteConcern.ACKNOWLEDGED
-                .withJournal(true)
-                .withWTimeout(500, TimeUnit.MILLISECONDS)
-                .withW("majority");
+        // Set Dlq Topic
+        String dlqTopic = System.getenv("dlqTopic");
 
-        // Get collection to write records to from env variable
-        MongoCollection<Document> collectionToWrite = mongoDb.getCollection(collection).withWriteConcern(guarantee);
         boolean isWritten = false;
 
         try {
             // Insert record with guarantees
-            InsertOneResult isWrittenDoc = collectionToWrite.insertOne(toWrite);
+            InsertOneResult isWrittenDoc = mongoCollection.insertOne(toWrite);
             // Check for successful write
             isWritten = isWrittenDoc.wasAcknowledged();
         }catch(com.mongodb.MongoWriteException w){
@@ -104,7 +108,7 @@ public class writeToMongo implements Processor<String, ServingRecord> {
             logger.debug("Successfully written a message to Mongo DB with key: " + key);
         }
     }
-    
+
 
     @Override
     public void close() {
