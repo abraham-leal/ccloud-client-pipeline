@@ -1,9 +1,7 @@
 package io.confluent.ps.abraham.leal.processors;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 import com.mongodb.WriteConcern;
 import com.mongodb.client.*;
 import com.mongodb.client.result.InsertOneResult;
