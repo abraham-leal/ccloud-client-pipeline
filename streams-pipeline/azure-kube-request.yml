@@ -1,0 +1,113 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streams
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: streams
+  template:
+    metadata:
+      labels:
+        app: streams
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: streams-app
+        image: abereg.azurecr.io/streams/streams-app:latest
+        ports:
+        - containerPort: 7773
+          protocol: TCP
+        env:
+        - name: BOOTSTRAP_SERVERS
+          value: ":9092"
+        - name: API_KEY
+          value: ""
+        - name: API_SECRET
+          value: ""
+        - name: SR_BOOTSTRAP_SERVERS
+          value: ""
+        - name: SR_API_KEY
+          value: ""
+        - name: SR_API_SECRET
+          value: ""
+        - name: KSTREAMS_METRICS_RECORDING_LEVEL
+          value: "DEBUG"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: streams-application
+spec:
+  selector:
+    app: streams
+  ports:
+    - protocol: TCP
+      port: 7773
+      targetPort: 7773
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegraf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telegraf
+  template:
+    metadata:
+      labels:
+        app: telegraf
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: telegraf
+        image: telegraf:1.14.4
+        ports:
+        - containerPort: 7773
+          protocol: TCP
+        env:
+        - name: KSTREAMS_SOURCE
+          value: "http://streams-service:7773"
+        volumeMounts:
+          - name: telegraf-conf
+            mountPath: /etc/telegraf/
+      volumes:
+        - name: telegraf-conf
+          projected:
+            sources:
+            - configMap:
+                name: telegraf-conf
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: telegraf-conf
+data:
+  telegraf.conf: |-
+    [[inputs.jolokia2_agent]]
+      name_prefix = "kstreams_"
+      urls = ["http://streams-0.streams-application.default.svc.cluster.local:7773/jolokia","http://streams-1.streams-application.default.svc.cluster.local:7773/jolokia","http://streams-2.streams-application.default.svc.cluster.local:7773/jolokia"]
+
+      [[inputs.jolokia2_agent.metric]]
+        name = "stream_metrics"
+        mbean  = "kafka.streams:type=stream-metrics,client-id=*"
+
+      [[inputs.jolokia2_agent.metric]]
+        name = "thread_metrics"
+        mbean  = "kafka.streams:type=stream-thread-metrics,thread-id=*"
+
+      [[inputs.jolokia2_agent.metric]]
+        name = "stream_task_metrics"
+        mbean  = "kafka.streams:type=stream-task-metrics,thread-id=*,task-id=*"
+
+      [[inputs.jolokia2_agent.metric]]
+        name = "processor_node_metrics"
+        mbean = "kafka.streams:type=stream-processor-node-metrics,thread-id=*,task-id=*,processor-node-id=*"
+
+    [[outputs.application_insights]]
+      instrumentation_key= "f7b0fb67-e9a6-499f-a76d-3c58cea14ea2"
